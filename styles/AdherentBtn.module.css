@@ -1,0 +1,20 @@
+.adherentBtn {
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightSemiBold);
+  color: var(--colorPrimary);
+  text-wrap: nowrap;
+  background: var(--BtnPrimaryColor);
+  border-radius: 150px;
+  padding: 10px 20px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.adherentBtnIcon {
+  font-size: var(--fontSize12);
+  color: var(--BtnPrimaryColor);
+}
