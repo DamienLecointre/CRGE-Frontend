@@ -12,9 +12,20 @@
   padding: 10px 20px;
   cursor: pointer;
   gap: 10px;
+  transition: all .2s ease-in-out;
+}
+
+.adherentBtn:hover {
+  background: var(--BtnAccentColor);
+}
+
+.adherentBtn:hover .adherentBtnIcon {
+  stroke: var(--BtnSecondaryColor);
 }
 
 .adherentBtnIcon {
   font-size: var(--fontSize12);
-  color: var(--BtnPrimaryColor);
+  color: transparent;
+  stroke: var(--BtnAccentColor);
+  transition: all .2s ease-in-out;
 }

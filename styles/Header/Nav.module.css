@@ -1,0 +1,69 @@
+.navContainer {
+  position: relative;
+  height: 100%;
+  width: 78%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navContent {
+  position: relative;
+  font-size: var(--fontSize11);
+  font-weight: var(--fontWeightSemiBold);
+  color: var(--colorSecondary);
+  cursor: pointer;
+}
+
+.navContent::before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 110%;
+  bottom: 3px;
+  left: -5%;
+  background: var(--bgAccentColor);
+  z-index: -1;
+  transition: all .2s ease-in-out;
+}
+
+.navContent:hover::before {
+  height: var(--pinkUnderlineSize);
+}
+
+.subNavContent {
+  position: relative;
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightMedium);
+  color: var(--colorSecondaryMedium);
+}
+
+.subNavContent:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: var(--pinkVerticallineSize);
+  background: var(--bgAccentColor);
+  top: 50%;
+  right: -16px;
+  transform: translate(0,-50%);
+}
+
+.navSublistContainer {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 30px;
+  opacity: 0;
+  visibility: hidden;
+  top: -5vh;
+  left: 0;
+  transition: all .5s ease-in-out;
+}
+
+.subNavContentShow {
+  opacity: 1;
+  visibility: visible;
+  top: 12vh;
+}

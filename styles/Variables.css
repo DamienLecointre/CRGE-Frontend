@@ -4,6 +4,7 @@
   GENERAL VARIABLE 
   ---------------- */
   --bgPrimaryColor: #f4f5f7;
+  --bgAccentColor: #ec6371;
 
   /* -------------
   TXT VARIABLE 
@@ -13,16 +14,28 @@
   --fontSize11: 1.1rem;
   --fontSize12: 1.2rem;
 
+  --fontWeightMedium:500;
   --fontWeightSemiBold:600;
 
   /* --lineHeight20:20; */
 
   --colorPrimary: #f4f5f7;
+  --colorSecondary: #070709;
+  --colorSecondaryMedium: #454759;
 
   /* -------------
   BTN VARIABLE 
   ---------------- */
   --BtnPrimaryColor: #070709;
+  --BtnSecondaryColor: #f4f5f7;
   --BtnAccentColor: #ec6371;
+
+    /* -----------------
+  SPECIAL SETUP VARIABLE 
+  ---------------------- */
+  --pinkUnderlineSize: 6px;
+  --pinkVerticallineSize: 2px;
 }
+
+
 

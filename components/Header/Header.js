@@ -8,7 +8,7 @@ import Nav from "./Nav";
 // import AdherentBtn from "../UIKit/AdherentBtn";
 
 //STYLES IMPORTS
-import styles from "../../styles/Header.module.css";
+import styles from "../../styles/Header/Header.module.css";
 
 function Header() {
   return (
