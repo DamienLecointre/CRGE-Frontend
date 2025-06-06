@@ -12,7 +12,7 @@ TAG STYLE
 -------- */
 
 .signInContainer {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -21,13 +21,13 @@ TAG STYLE
   background: var(--bgSecondaryColor);
   padding-inline: 80px;
   padding-bottom: 60px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .signInLogo {
-  height: 10vh;
+  height: 15vh;
   width: 100%;
-  margin-top: 60px;
+  margin: 60px 0;
 }
 
 .signInWrapper {
@@ -35,7 +35,6 @@ TAG STYLE
   height: 100%;
   width: 100%;
   max-width: var(--maxWidth);
-  display: flex;
 }
 
 .signInForm {
@@ -44,7 +43,7 @@ TAG STYLE
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 24px 0;
+  padding: 40px 0;
 }
 
 .txtTitle {
@@ -58,12 +57,13 @@ TAG STYLE
   font-size: var(--fontSize1);
   font-weight: var(--fontWeightBold);
   line-height: var(--lineHeight15);
-  padding: 24px 0;
+  padding-top: 24px;
 }
 
 .inputContainer {
   position: relative;
-  margin-top: 32px;
+  width: fit-content;
+  margin-top: 58px;
 }
 
 .label {
@@ -75,9 +75,11 @@ TAG STYLE
   padding-inline: 5px;
   top: -2px;
   transform: translateY(-50%);
+  z-index: 5;
 }
 
 .input {
+  position: relative;
   outline: none;
   height: 40px;
   width: 400px;
@@ -91,22 +93,75 @@ TAG STYLE
   padding: 8px 16px;
 }
 
+.input:focus {
+  border: 2px solid var(--InputColorAccent);
+}
+
 .input::placeholder {
   color: var(--colorPrimary);
 }
 
+.eyeIcon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
 .txtQuestion {
+  width: fit-content;
   font-family: "open sans", sans-serif;
   font-size: var(--fontSize1);
   font-weight: var(--fontWeightBold);
   color: var(--colorAccent);
-  cursor: pointer;
   padding-top: 12px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.txtQuestion:hover {
+  transform: scale(1.1);
 }
 
 .illustartion {
   position: absolute;
-  right: -20%;
+  right: -10%;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.txtGoHomeLink {
+  position: relative;
+  width: fit-content;
+  font-family: "open sans", sans-serif;
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightMedium);
+  line-height: var(--lineHeight15);
+  padding-top: 24px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.txtGoHomeLink::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 0;
+  background: var(--bgAccentColor2);
+  left: 0;
+  bottom: 0;
+  transition: all .2s ease-in-out;
+}
+
+.txtGoHomeLink:hover {
+  transform: scale(1.1);
+}
+
+.txtGoHomeLink:hover::after {
+  width: 100%;
+}
+
+.arrowIcon {
+  padding-right: 12px;
 }

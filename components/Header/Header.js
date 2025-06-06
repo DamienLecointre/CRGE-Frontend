@@ -21,7 +21,6 @@ function Header() {
         style={{ objectFit: "contain" }}
       />
       <Nav />
-      {/* <AdherentBtn /> */}
     </div>
   );
 }
