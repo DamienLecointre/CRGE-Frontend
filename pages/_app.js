@@ -1,10 +1,23 @@
+//NEXT IMPORTS
+import Head from "next/head";
+
+//REDUX IMPORTS
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+import buttons from "../reducers/buttons";
+
+//STYLES IMPORTS
 import "../styles/globals.css";
 import "../styles/Variables.css";
-import Head from "next/head";
+
+//STORE CONFIG
+const store = configureStore({
+  reducer: { buttons },
+});
 
 function App({ Component, pageProps }) {
   return (
-    <>
+    <Provider store={store}>
       <Head>
         <title>
           CRGE - Conseil et Ressource pour les Groupements d'Employeurs
@@ -40,7 +53,7 @@ function App({ Component, pageProps }) {
         /> */}
       </Head>
       <Component {...pageProps} />
-    </>
+    </Provider>
   );
 }
 

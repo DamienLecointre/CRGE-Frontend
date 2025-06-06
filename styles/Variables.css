@@ -3,8 +3,13 @@
   /* -------------
   GENERAL VARIABLE 
   ---------------- */
+
+  --maxWidth:1200px;
+
   --bgPrimaryColor: #f4f5f7;
+  --bgSecondaryColor: #2b2b5f;
   --bgAccentColor: #ec6371;
+  --bgAccentColor2: #32aaaa;
 
   /* -------------
   TXT VARIABLE 
@@ -12,16 +17,26 @@
 
   --fontSize1: 1rem;
   --fontSize11: 1.1rem;
-  --fontSize12: 1.2rem;
+  --fontSize125: 1.25rem;
+  --fontSize375: 3.75rem;
 
+  --fontWeightRegular:400;
   --fontWeightMedium:500;
   --fontWeightSemiBold:600;
-
-  /* --lineHeight20:20; */
+  --fontWeightBold:700;
 
   --colorPrimary: #f4f5f7;
   --colorSecondary: #070709;
+  --colorAccent: #32aaaa;
   --colorSecondaryMedium: #454759;
+  --colorSecondaryLight: #a4a8bc;
+
+  
+  /* --lineHeight20:20; */
+  
+  --lineHeight15:1.5rem;
+  --lineHeight80:5rem;
+  
 
   /* -------------
   BTN VARIABLE 
@@ -29,6 +44,12 @@
   --BtnPrimaryColor: #070709;
   --BtnSecondaryColor: #f4f5f7;
   --BtnAccentColor: #ec6371;
+
+    /* -------------
+  INPUT VARIABLE 
+  ---------------- */
+  --InputPrimaryColor: #f4f5f7;
+  --InputSecondaryColor: #2b2b5f;
 
     /* -----------------
   SPECIAL SETUP VARIABLE 

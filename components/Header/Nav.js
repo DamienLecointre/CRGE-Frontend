@@ -55,7 +55,6 @@ function Nav() {
 
   const handleMouseEnter = (id) => {
     setHoveredId(id);
-    console.log(id);
   };
 
   const handleMouseLeave = () => {

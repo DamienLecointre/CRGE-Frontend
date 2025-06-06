@@ -4,19 +4,24 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
+//NEXT IMPORTS
+import Link from "next/link";
+
 //STYLES IMPORTS
 import styles from "../../styles/UIKit/AdherentBtn.module.css";
 
 function AdherentBtn() {
   return (
-    <button className={styles.adherentBtn}>
-      <FontAwesomeIcon
-        icon={faUser}
-        style={{ strokeWidth: 30 }}
-        className={styles.adherentBtnIcon}
-      />
-      Espace adhérent
-    </button>
+    <Link href="/signIn">
+      <button className={styles.adherentBtn}>
+        <FontAwesomeIcon
+          icon={faUser}
+          style={{ strokeWidth: 30 }}
+          className={styles.adherentBtnIcon}
+        />
+        Espace adhérent
+      </button>
+    </Link>
   );
 }
 

@@ -1,0 +1,112 @@
+
+/* -------------
+GENERAL STYLE 
+------------- */
+
+.txtColor {
+  color: var(--colorPrimary);
+}
+
+/* --------
+TAG STYLE 
+-------- */
+
+.signInContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--bgSecondaryColor);
+  padding-inline: 80px;
+  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+.signInLogo {
+  height: 10vh;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.signInWrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: var(--maxWidth);
+  display: flex;
+}
+
+.signInForm {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+.txtTitle {
+  font-size: var(--fontSize375);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--lineHeight80);
+}
+
+.txtParagraphe {
+  font-family: "open sans", sans-serif;
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--lineHeight15);
+  padding: 24px 0;
+}
+
+.inputContainer {
+  position: relative;
+  margin-top: 32px;
+}
+
+.label {
+  position: absolute;
+  font-family: "open sans", sans-serif;
+  color: var(--colorSecondaryLight);
+  background: var(--InputSecondaryColor);
+  margin-left: 12px;
+  padding-inline: 5px;
+  top: -2px;
+  transform: translateY(-50%);
+}
+
+.input {
+  outline: none;
+  height: 40px;
+  width: 400px;
+  font-family: "open sans", sans-serif;
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightRegular);
+  color: var(--colorPrimary);
+  border-radius: 5px;
+  border: 1px solid var(--InputPrimaryColor);
+  background: none;
+  padding: 8px 16px;
+}
+
+.input::placeholder {
+  color: var(--colorPrimary);
+}
+
+.txtQuestion {
+  font-family: "open sans", sans-serif;
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightBold);
+  color: var(--colorAccent);
+  cursor: pointer;
+  padding-top: 12px;
+}
+
+.illustartion {
+  position: absolute;
+  right: -20%;
+  top: 50%;
+  transform: translateY(-50%);
+}

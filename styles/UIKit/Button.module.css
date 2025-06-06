@@ -1,0 +1,37 @@
+.btnWhite {
+  width: fit-content;
+  position: relative;
+  outline: none;
+  font-size: var(--fontSize125);
+  font-weight: var(--fontWeightMedium);
+  color: var(--colorSecondary);
+  background: var(--BtnSecondaryColor);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 5px 0px 0px rgba(50,170,170,1);
+  padding: 16px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  overflow: hidden;
+}
+
+.btnWhiteText {
+  position: relative;
+  z-index: 1;
+}
+
+.btnWhiteHover {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--bgAccentColor2);
+  top: 100%;
+  left: 0;
+  z-index: 0;
+  transition: all .3s ease-in-out;
+}
+
+.btnWhite:hover .btnWhiteHover{
+  top: 0;
+}
