@@ -22,6 +22,10 @@ import styles from "../styles/SignIn.module.css";
 import Button from "./UIKit/Button";
 
 function SignIn() {
+  // ---------
+  // CONSTANTS
+  // ---------
+  // CONST TO SHOW PASSWORD
   const [showPassword, setShowPassword] = useState(false);
 
   // -------------------------
@@ -32,16 +36,16 @@ function SignIn() {
   };
 
   // ----------------------
-  // PROPRIETE TEXTE BUTTON
+  // DISPATCH TEXTE BUTTON
   // ----------------------
   const dispatch = useDispatch();
 
-  const updateSignInButtonText = (boolean) => {
-    dispatch(addTextToSignInButton(boolean));
+  const updateSignInButtonText = (pageLocation) => {
+    dispatch(addTextToSignInButton(pageLocation));
   };
 
   useEffect(() => {
-    updateSignInButtonText(true);
+    updateSignInButtonText("signin");
   }, []);
 
   return (

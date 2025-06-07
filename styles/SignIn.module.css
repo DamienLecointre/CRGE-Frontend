@@ -17,7 +17,6 @@ TAG STYLE
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
   background: var(--bgSecondaryColor);
   padding-inline: 80px;
   padding-bottom: 60px;
@@ -53,7 +52,7 @@ TAG STYLE
 }
 
 .txtParagraphe {
-  font-family: "open sans", sans-serif;
+  font-family: var(--fontFamilyOpen);
   font-size: var(--fontSize1);
   font-weight: var(--fontWeightBold);
   line-height: var(--lineHeight15);
@@ -68,7 +67,7 @@ TAG STYLE
 
 .label {
   position: absolute;
-  font-family: "open sans", sans-serif;
+  font-family: var(--fontFamilyOpen);
   color: var(--colorSecondaryLight);
   background: var(--InputSecondaryColor);
   margin-left: 12px;
@@ -79,11 +78,11 @@ TAG STYLE
 }
 
 .input {
-  position: relative;
+  /* position: relative; */
   outline: none;
   height: 40px;
   width: 400px;
-  font-family: "open sans", sans-serif;
+  font-family: var(--fontFamilyOpen);
   font-size: var(--fontSize1);
   font-weight: var(--fontWeightRegular);
   color: var(--colorPrimary);
@@ -111,7 +110,7 @@ TAG STYLE
 
 .txtQuestion {
   width: fit-content;
-  font-family: "open sans", sans-serif;
+  font-family: var(--fontFamilyOpen);
   font-size: var(--fontSize1);
   font-weight: var(--fontWeightBold);
   color: var(--colorAccent);
@@ -134,7 +133,7 @@ TAG STYLE
 .txtGoHomeLink {
   position: relative;
   width: fit-content;
-  font-family: "open sans", sans-serif;
+  font-family: var(--fontFamilyOpen);
   font-size: var(--fontSize1);
   font-weight: var(--fontWeightMedium);
   line-height: var(--lineHeight15);

@@ -2,18 +2,18 @@
   width: fit-content;
   position: relative;
   outline: none;
+  border: none;
   font-size: var(--fontSize125);
   font-weight: var(--fontWeightMedium);
   color: var(--colorSecondary);
   background: var(--BtnSecondaryColor);
-  border: none;
   border-radius: 5px;
   box-shadow: 0px 5px 0px 0px rgba(50,170,170,1);
   padding: 16px;
   margin-top: 40px;
   cursor: pointer;
-  transition: all .2s ease-in-out;
   overflow: hidden;
+  transition: all .2s ease-in-out;
 }
 
 .btnWhiteText {

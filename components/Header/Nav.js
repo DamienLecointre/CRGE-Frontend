@@ -1,3 +1,4 @@
+//REACT IMPORTS
 import React, { useState } from "react";
 
 //COMPONENTS IMPORTS
@@ -44,14 +45,14 @@ function Nav() {
   ];
 
   // ----------
-  // CONSTANTES
+  // CONSTANTS
   // ----------
-
+  // CONST STATE HOVER
   const [hoveredId, setHoveredId] = useState(null);
 
-  // ---------
-  // FUNCTIONS
-  // ---------
+  // ---------------------------------------
+  // FUNCTIONS TO SHOW SUBTITLE NAV ON HOVER
+  // ---------------------------------------
 
   const handleMouseEnter = (id) => {
     setHoveredId(id);
@@ -112,7 +113,7 @@ function Nav() {
           {geSubList}
         </ul>
       )}
-      {/* Sous-menu GE */}
+      {/* Sous-menu SERVICES */}
       {i === 2 && (
         <ul
           className={`${styles.navSublistContainer} ${
@@ -125,9 +126,9 @@ function Nav() {
     </li>
   ));
 
-  // -----
-  // RENDU
-  // -----
+  // -------
+  // DISPLAY
+  // -------
 
   return (
     <>

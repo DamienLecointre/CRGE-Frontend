@@ -1,3 +1,4 @@
+//REACT IMPORTS
 import React from "react";
 
 //ICONS IMPORTS
@@ -12,15 +13,13 @@ import styles from "../../styles/UIKit/AdherentBtn.module.css";
 
 function AdherentBtn() {
   return (
-    <Link href="/signIn">
-      <button className={styles.adherentBtn}>
-        <FontAwesomeIcon
-          icon={faUser}
-          style={{ strokeWidth: 30 }}
-          className={styles.adherentBtnIcon}
-        />
-        Espace adhérent
-      </button>
+    <Link href="/signIn" className={styles.adherentBtn}>
+      <FontAwesomeIcon
+        icon={faUser}
+        style={{ strokeWidth: 30 }}
+        className={styles.adherentBtnIcon}
+      />
+      Espace adhérent
     </Link>
   );
 }

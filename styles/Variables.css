@@ -15,6 +15,8 @@
   TXT VARIABLE 
   ---------------- */
 
+  --fontFamilyOpen:"open sans", sans-serif;
+
   --fontSize1: 1rem;
   --fontSize11: 1.1rem;
   --fontSize125: 1.25rem;

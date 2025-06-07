@@ -1,8 +1,5 @@
+//REACT IMPORTS
 import React from "react";
-
-//ICONS IMPORTS
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 //COMPONENTS IMPORTS
 import Header from "./Header/Header";

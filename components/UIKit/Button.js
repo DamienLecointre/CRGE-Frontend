@@ -11,7 +11,8 @@ function Button() {
   return (
     <button className={styles.btnWhite}>
       <span className={styles.btnWhiteText}>
-        {buttons ? "JE ME CONNECTE" : ""}
+        {buttons === "signin" ? "JE ME CONNECTE" : ""}
+        {/* {buttons === "home" ? "GO" : ""} */}
       </span>
       <span className={styles.btnWhiteHover}></span>
     </button>

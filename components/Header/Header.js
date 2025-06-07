@@ -1,3 +1,4 @@
+//REACT IMPORTS
 import React from "react";
 
 //NEXT IMPORTS
@@ -5,7 +6,6 @@ import Image from "next/image";
 
 //COMPONENTS IMPORTS
 import Nav from "./Nav";
-// import AdherentBtn from "../UIKit/AdherentBtn";
 
 //STYLES IMPORTS
 import styles from "../../styles/Header/Header.module.css";
