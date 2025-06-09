@@ -1,0 +1,41 @@
+.heroContainer {
+  height: 100%;
+  width: 100%;
+  max-width: var(--maxWidth);
+  margin-inline: auto;
+}
+
+.heroWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.txtContainer {
+  height: fit-content;
+  width: 50%;
+}
+
+.title {
+  font-size: var(--fontSize475);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--lineHeight80);
+  color: var(--colorSecondary);
+  padding-top: 48px;
+}
+
+.paragraph {
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize125);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--lineHeight2);
+  color: var(--colorSecondary);
+  padding: 16px 0;
+
+}
+
+.illustartion {
+  width: 50%;
+}

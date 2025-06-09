@@ -9,6 +9,9 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { addTextToSignInButton } from "../reducers/buttons";
 
+//COMPONENTS IMPORTS
+import Button from "./UIKit/Button";
+
 //ICONS IMPORTS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -19,7 +22,6 @@ import {
 
 //STYLES IMPORTS
 import styles from "../styles/SignIn.module.css";
-import Button from "./UIKit/Button";
 
 function SignIn() {
   // ---------
@@ -146,7 +148,7 @@ function SignIn() {
             />
           </div>
           <span className={styles.txtQuestion}>Mot de passe oublié ?</span>
-          <Button />
+          <Button btnStyle="white" />
           <span className={styles.txtQuestion}>Pas encore de compte ?</span>
           <Image
             className={styles.illustartion}
