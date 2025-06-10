@@ -24,8 +24,30 @@
 }
 
 .adherentBtnIcon {
-  font-size: var(--fontSize12);
+  font-size: var(--fontSize125);
   color: transparent;
   stroke: var(--BtnAccentColor);
   transition: all .2s ease-in-out;
+}
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 1200px) {
+  .adherentBtn {
+    padding: 10px;
+  }
+  .adherentBtnTxt {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .adherentBtn {
+    padding: 10px 20px;
+  }
+  .adherentBtnTxt {
+    display: block;
+  }
 }

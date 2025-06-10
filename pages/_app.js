@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import buttons from "../reducers/buttons";
 import heros from "../reducers/heros";
+import burgerMenu from "../reducers/burgerMenu";
 
 //STYLES IMPORTS
 import "../styles/globals.css";
@@ -13,7 +14,7 @@ import "../styles/Variables.css";
 
 //STORE CONFIG
 const store = configureStore({
-  reducer: { buttons, heros },
+  reducer: { buttons, heros, burgerMenu },
 });
 
 function App({ Component, pageProps }) {

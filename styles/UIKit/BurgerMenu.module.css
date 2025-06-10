@@ -1,0 +1,74 @@
+.burgerMenuContainer {
+  position: relative;
+  display: none;
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--BtnPrimaryColor);
+  margin-left: 24px;
+  transition: all .2s ease-in-out;
+}
+
+.burgerMenuFocus {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border: 2px solid var(--BtnAccentColor);
+  margin-left: 24px;
+  transition: all .2s ease-in-out;
+}
+
+.line {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 70%;
+  left: 50%;
+  background: var(--BtnPrimaryColor);
+}
+
+.upperLine {
+  top: 10px;
+  transform: translate(-50%,0);
+  transition: all .5s ease-in-out;
+}
+
+.upperLineRotate {
+  top: 50%;
+  transform: translate(-50%,-50%) rotate(45deg);
+  transition: all .5s ease-in-out;
+}
+
+.middleLine {
+  top: 50%;
+  transform: translate(-50%,-50%);
+  transition: all .2s ease-in-out;
+}
+
+.middleLineHidden {
+  width: 0;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  transition: all .2s ease-in-out;
+}
+
+.downLine {
+  bottom: 10px;
+  transform: translate(-50%,0);
+  transition: all .5s ease-in-out;
+}
+
+.downLineRotate {
+  bottom: 50%;
+  transform: translate(-50%,50%) rotate(-45deg);
+  transition: all .5s ease-in-out;
+}
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 1000px) {
+  .burgerMenuContainer {
+    display: block;
+  }
+}

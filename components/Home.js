@@ -8,6 +8,7 @@ import { addContentToHero } from "../reducers/heros";
 //COMPONENTS IMPORTS
 import Header from "./Header/Header";
 import Hero from "./Hero/Hero";
+import NavBurgerMenu from "./Header/NavBurgerMenu";
 
 //STYLES IMPORTS
 import styles from "../styles/Home.module.css";
@@ -28,6 +29,7 @@ function Home() {
     <div className={styles.homeContainer}>
       <Header />
       <Hero />
+      <NavBurgerMenu />
     </div>
   );
 }

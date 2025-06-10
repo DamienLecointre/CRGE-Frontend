@@ -7,4 +7,19 @@
   justify-content: space-between;
   padding: 24px 0;
   margin-inline: auto;
+  column-gap: 50px;
+}
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 1200px) {
+  .imgContainer {
+    height: 60px;
+    height: auto;
+    width: 160px;
+    width: auto;
+  }
+
 }

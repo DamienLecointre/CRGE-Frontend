@@ -65,5 +65,19 @@
 .subNavContentShow {
   opacity: 1;
   visibility: visible;
-  top: 12vh;
+  top: 8vh;
+}
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 1000px) {
+  .navContainer {
+    justify-content: flex-end;
+  }
+  .navWrapper {
+    display: none;
+  }
+
 }

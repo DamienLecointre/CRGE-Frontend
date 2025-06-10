@@ -3,6 +3,10 @@ import React, { useState } from "react";
 
 //COMPONENTS IMPORTS
 import AdherentBtn from "../UIKit/AdherentBtn";
+import BurgerMenu from "../UIKit/BurgerMenu";
+
+//DATAS IMPORTS
+import navData from "../../data/navData.json";
 
 //STYLES IMPORTS
 import styles from "../../styles/Header/Nav.module.css";
@@ -11,38 +15,8 @@ function Nav() {
   // -----
   // DATA
   // -----
-  const listData = [
-    "Le CRGE",
-    "Les Groupements d'employeurs",
-    "Nos services",
-    "Nos évènements",
-  ];
-
-  const crgeSubListdata = [
-    "Qui sommes-nous ?",
-    "Notre action de plaidoyer",
-    "Notre gouvernance",
-    "Notre équipe",
-    "Nos adhérents",
-    "Notre actualité",
-    "Nous rejoindre",
-    "Nous contacter",
-  ];
-
-  const geSubListdata = [
-    "Qu'est-ce qu'un GE",
-    "Mode d'emploi",
-    "Avantages",
-    "Les GE en Nouvelle-Aquitaine",
-  ];
-
-  const servicesSubListdata = [
-    "Juridique",
-    "Paye",
-    "Formation",
-    "Gestion",
-    "Appui à la création",
-  ];
+  const { listData, crgeSubListdata, geSubListdata, servicesSubListdata } =
+    navData;
 
   // ----------
   // CONSTANTS
@@ -87,6 +61,7 @@ function Nav() {
   const primaryNav = listData.map((item, i) => (
     <li
       key={i}
+      className={styles.navWrapper}
       onMouseEnter={() => handleMouseEnter(i)}
       onMouseLeave={handleMouseLeave}
     >
@@ -135,6 +110,7 @@ function Nav() {
       <ul className={styles.navContainer}>
         {primaryNav}
         <AdherentBtn />
+        <BurgerMenu />
       </ul>
     </>
   );

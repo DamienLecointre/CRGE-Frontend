@@ -14,6 +14,7 @@ function Header() {
   return (
     <div className={styles.headerContainer}>
       <Image
+        className={styles.imgContainer}
         src="/logo_icons/logoTxt.svg"
         alt="logo CRGE avec texte"
         height={100}

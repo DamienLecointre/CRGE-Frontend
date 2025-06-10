@@ -1,0 +1,31 @@
+{
+  "listData": [
+    "Le CRGE",
+    "Les Groupements d'employeurs",
+    "Nos services",
+    "Nos évènements"
+  ],
+  "crgeSubListdata": [
+    "Qui sommes-nous ?",
+    "Notre action de plaidoyer",
+    "Notre gouvernance",
+    "Notre équipe",
+    "Nos adhérents",
+    "Notre actualité",
+    "Nous rejoindre",
+    "Nous contacter"
+  ],
+  "geSubListdata": [
+    "Qu'est-ce qu'un GE",
+    "Mode d'emploi",
+    "Avantages",
+    "Les GE en Nouvelle-Aquitaine"
+  ],
+  "servicesSubListdata": [
+    "Juridique",
+    "Paye",
+    "Formation",
+    "Gestion",
+    "Appui à la création"
+  ]
+}

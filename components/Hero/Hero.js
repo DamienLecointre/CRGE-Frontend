@@ -45,13 +45,15 @@ function Hero() {
               : ""}
           </p>
         </div>
-        <Image
-          className={styles.illustartion}
-          src={herosContent === "home" ? "/illustrations/team.svg" : ""}
-          alt={herosContent === "home" ? "/team illustrations" : ""}
-          height={500}
-          width={600}
-        />
+        {herosContent === "home" && (
+          <Image
+            className={styles.illustartion}
+            src="/illustrations/team.svg"
+            alt="team illustration"
+            height={500}
+            width={600}
+          />
+        )}
       </div>
       <Button btnStyle="black" />
     </div>

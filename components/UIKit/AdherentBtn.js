@@ -19,7 +19,7 @@ function AdherentBtn() {
         style={{ strokeWidth: 30 }}
         className={styles.adherentBtnIcon}
       />
-      Espace adhérent
+      <span className={styles.adherentBtnTxt}>Espace adhérent</span>
     </Link>
   );
 }

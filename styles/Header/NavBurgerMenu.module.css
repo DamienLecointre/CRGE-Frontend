@@ -1,0 +1,73 @@
+.navContainer {
+  position: absolute;
+  display: none;
+  height: 90vh;
+  width: 100%;
+  background: var(--bgSecondaryColor);
+  left: 100%;
+  top: 10%;
+  padding: 60px 20px 0;
+  transition: all .3s ease-in-out;
+  z-index: 10;
+}
+
+.navContainerShow {
+  left: 0;
+  /* transition: all .3s ease-in-out; */
+}
+
+.navList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fontSize166);
+  font-weight: var(--fontWeightSemiBold);
+  color: var(--colorPrimary);
+  padding-bottom: 24px;
+}
+
+.subNavContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: var(--bgSecondaryColor);
+  left: 0;
+  top: 0;
+  padding: 60px 20px 0;
+  transition: all .3s ease-in-out;
+  transform: translateX(100%);
+  z-index: 20;
+}
+
+.subNavContainerShow {
+  transform: translateX(0);
+}
+
+.subNavList {
+  font-size: var(--fontSize125);
+}
+
+.goBackContainer {
+  display: flex;
+  align-items: center;
+  font-size: var(--fontSize125);
+  color: var(--colorPrimary);
+  margin-bottom: 44px;
+}
+
+.subNavIcon {
+  font-size: var(--fontSize25);
+  color: var(--colorPrimary);
+  margin-right: 20px;
+}
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 1000px) {
+  .navContainer {
+    display: block;
+  }
+}
