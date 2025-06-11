@@ -107,10 +107,11 @@ function SignIn() {
         <div className={styles.signInForm}>
           <h1 className={`${styles.txtColor} ${styles.txtTitle}`}>
             <Image
+              className={styles.waveHandIcon}
               src="/illustrations/emojihand.svg"
               alt="hand wave"
               height={50}
-              width={100}
+              width={80}
             ></Image>
             Bienvenue sur votre espace adhérent !
           </h1>
