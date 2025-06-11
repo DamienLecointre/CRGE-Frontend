@@ -24,7 +24,6 @@ function Hero() {
   // DATA
   // ----
   const { title, paragraph, imgSrc, imgAlt } = heroData.heroHome;
-  console.log(heroData.heroHome);
 
   // ----------------------
   // DISPATCH TEXTE BUTTON

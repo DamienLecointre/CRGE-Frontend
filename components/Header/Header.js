@@ -12,7 +12,7 @@ import styles from "../../styles/Header/Header.module.css";
 
 function Header() {
   return (
-    <div className={styles.headerContainer}>
+    <header className={styles.headerContainer}>
       <Image
         className={styles.imgContainer}
         src="/logo_icons/logoTxt.svg"
@@ -22,7 +22,7 @@ function Header() {
         style={{ objectFit: "contain" }}
       />
       <Nav />
-    </div>
+    </header>
   );
 }
 

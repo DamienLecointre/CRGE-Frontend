@@ -1,6 +1,9 @@
 //REACT IMPORTS
 import React, { useEffect } from "react";
 
+//NEXT IMPORTS
+import Image from "next/image";
+
 //REDUX IMPORTS
 import { useDispatch } from "react-redux";
 import { addContentToHero } from "../reducers/heros";
@@ -26,10 +29,26 @@ function Home() {
     updateHeroContent("home");
   }, []);
   return (
-    <div className={styles.homeContainer}>
+    <div className={styles.sectionContainer}>
       <Header />
-      <Hero />
-      <NavBurgerMenu />
+      <main>
+        <Hero />
+        <NavBurgerMenu />
+        <div
+          className={`${styles.sectionContainer} ${styles.sectionMarginTop}`}
+        >
+          <Image
+            className={styles.sectionTitleIllustration}
+            src="/illustrations/greenLeaf.svg"
+            alt="illustration feuille verte"
+            height={110}
+            width={110}
+          />
+          <h2 className={styles.sectionTitle}>
+            Des services sur mesure pour votre réussite
+          </h2>
+        </div>
+      </main>
     </div>
   );
 }
