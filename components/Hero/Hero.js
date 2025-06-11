@@ -12,11 +12,20 @@ import { addTextToSignInButton } from "../../reducers/buttons";
 //COMPONENTS IMPORTS
 import Button from "../UIKit/Button";
 
+//DATAS IMPORTS
+import heroData from "../../data/heroData.json";
+
 //STYLES IMPORTS
 import styles from "../../styles/Hero/Hero.module.css";
 
 function Hero() {
   const herosContent = useSelector((state) => state.heros.value);
+  // ----
+  // DATA
+  // ----
+  const { title, paragraph, imgSrc, imgAlt } = heroData.heroHome;
+  console.log(heroData.heroHome);
+
   // ----------------------
   // DISPATCH TEXTE BUTTON
   // ----------------------
@@ -34,22 +43,17 @@ function Hero() {
       <div className={styles.heroWrapper}>
         <div className={styles.txtContainer}>
           <h1 className={styles.title}>
-            {herosContent === "home"
-              ? "Une équipe pluridisciplinaire à votre écoute"
-              : ""}
+            {herosContent === "home" ? `${title}` : null}
           </h1>
-          <nav>{herosContent === "home" ? "" : ""}</nav>
           <p className={styles.paragraph}>
-            {herosContent === "home"
-              ? "Le CRGE, Centre de Ressources pour les Groupements d'Employeurs, est un organisme national qui accompagne les Groupements d'Employeurs (GE) dans leur création, leur développement et leur gestion. Il propose un large éventail de services, notamment : le conseil juridique, social et financier, la formation des gestionnaires de GE, la mise à disposition d'outils et de ressources, ainsi que l'animation du réseau des GE."
-              : ""}
+            {herosContent === "home" ? `${paragraph}` : null}
           </p>
         </div>
         {herosContent === "home" && (
           <Image
             className={styles.illustartion}
-            src="/illustrations/team.svg"
-            alt="team illustration"
+            src={imgSrc}
+            alt={imgAlt}
             height={500}
             width={600}
           />

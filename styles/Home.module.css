@@ -2,7 +2,17 @@
   position: relative;
   height: 100%;
   width: 100%;
-  padding: 0 80px;
+  padding-inline: 80px;
   margin-bottom: var(--rowGapBetweenSection);
   overflow-x: hidden;
+}
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 500px) {
+  .homeContainer {
+    padding-inline: 40px;
+  }
 }

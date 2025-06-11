@@ -51,3 +51,12 @@ MEDIA QUERIES
     display: block;
   }
 }
+
+@media (max-width: 700px) {
+  .adherentBtn {
+    padding: 10px;
+  }
+  .adherentBtnTxt {
+    display: none;
+  }
+}

@@ -17,9 +17,21 @@ MEDIA QUERIES
 @media (max-width: 1200px) {
   .imgContainer {
     height: 60px;
-    height: auto;
     width: 160px;
-    width: auto;
+    /* height: auto; */
+    /* width: auto; */
   }
+}
 
+@media (max-width: 1000px) {
+  .headerContainer {
+    column-gap: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .imgContainer {
+    height: 40px;
+    width: 140px;
+  }
 }

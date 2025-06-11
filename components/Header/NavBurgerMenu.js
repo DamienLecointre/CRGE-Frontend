@@ -1,5 +1,5 @@
 //REACT IMPORTS
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //REDUX IMPORTS
 import { useSelector } from "react-redux";
@@ -49,6 +49,10 @@ function NavBurgerMenu() {
         return [];
     }
   };
+
+  useEffect(() => {
+    setSelectedSubMenu(null);
+  }, [showNav]);
   // ----------------------
   // FUNCTIONS DISPLAY LIST
   // ----------------------

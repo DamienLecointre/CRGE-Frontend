@@ -39,3 +39,50 @@
 .illustartion {
   width: 50%;
 }
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 1200px) {
+  .heroContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .heroWrapper {
+    flex-direction: column-reverse;
+  }
+  .txtContainer {
+    width: 100%;
+  }
+  .illustartion {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .title {
+    font-size: var(--fontSize375);
+    padding-top: 26px;
+  }
+}
+
+@media (max-width: 630px) {
+  .title {
+    font-size: var(--fontSize25);
+    line-height: var(--lineHeight3);
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: var(--fontSize2);
+    line-height: var(--lineHeight25);
+  }
+  .paragraph {
+    font-size: var(--fontSize1);
+  }
+}
