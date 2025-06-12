@@ -13,12 +13,10 @@
 .cardsWrapper {
   display: flex;
   transition: transform 0.5s ease;
-  width: fit-content;
 }
 
 .cardWrapper {
-  height: fit-content;
-  flex: 0 0 calc(100% / 3);
+  position: relative;
   padding-inline: 30px;
 }
 
@@ -28,7 +26,6 @@
 }
 
 .cardTextWrapper {
-  position: relative;
   padding-left: 50px;
   cursor: pointer;
 }
@@ -48,6 +45,7 @@
 
 .cardText {
   position: relative;
+  width: 100%;
   font-size: var(--fontSize1);
   font-weight: var(--fontWeightRegular);
   color: var(--colorSecondary);
@@ -86,13 +84,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 40px;
   column-gap: 10px;
 }
 
 .scrollBar {
   height: 5px;
-  width: 40px;
+  width: 38px;
   background-color: #ccc;
   cursor: pointer;
 }
@@ -100,3 +98,13 @@
 .scrollBar.active {
   background: var(--bgSecondaryColor);
 }
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+/* @media (max-width: 740px) {
+  .cardWrapper {
+  flex: 0 0 calc(100% / 2);
+  }
+} */

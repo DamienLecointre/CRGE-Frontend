@@ -14,7 +14,7 @@
 .sectionTitleIllustration {
   position: absolute;
   top: 0;
-  left: 15vw;
+  left: 25%;
 }
 
 .sectionTitle {
@@ -33,8 +33,28 @@
 MEDIA QUERIES
 ------------- */
 
+@media (max-width: 740px) {
+  .sectionTitleIllustration {
+    height: 15%;
+    width: 15%;
+    top: -20px;
+  }
+  .sectionTitle {
+    font-size: var(--fontSize25);
+    line-height: var(--lineHeight3);
+  }
+}
+
 @media (max-width: 500px) {
-  .homeContainer {
+  .sectionContainer {
     padding-inline: 40px;
+  }
+  .sectionTitle {
+    font-size: var(--fontSize166);
+    line-height: var(--lineHeight2);
+  }
+  .sectionTitleIllustration {
+    height: 10%;
+    width: 10%;
   }
 }
