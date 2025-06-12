@@ -1,50 +1,53 @@
 .cardsContainer {
-  height: 100%;
   width: 100%;
-  max-width: 100%;
   display: flex;
-  flex-wrap: nowrap;
-  column-gap: 40px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory; 
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  flex-direction: column;
+  align-items: center;
 }
 
-.cardsContainer::-webkit-scrollbar {
-  display: none;
+.viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.cardsWrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: fit-content;
 }
 
 .cardWrapper {
-  max-width: calc((100% - 80px) / 3);
-  flex: 0 0 calc((100% - 80px) / 3);
-  scroll-snap-align: start;
+  height: fit-content;
+  flex: 0 0 calc(100% / 3);
+  padding-inline: 30px;
 }
 
 .cardImg {
-  margin-bottom: 50px;
+  width: 100%;
+  margin-bottom: 80px;
 }
 
 .cardTextWrapper {
   position: relative;
   padding-left: 50px;
+  cursor: pointer;
+}
+
+.cardTextWrapper:hover .numberBg:after{
+  width: 100%;
 }
 
 .cardTitle {
   position: relative;
-  width: 100%;
   font-size: var(--fontSize15);
   font-weight: var(--fontWeightMedium);
   color: var(--colorSecondary);
-  line-height: var(--lineHeight2);
-  padding-bottom: 8px;
+  margin-bottom: 8px;
   z-index: 5;
 }
 
 .cardText {
   position: relative;
-  font-family: var(--fontFamilyOpen);
   font-size: var(--fontSize1);
   font-weight: var(--fontWeightRegular);
   color: var(--colorSecondary);
@@ -52,12 +55,48 @@
 }
 
 .numberBg {
+  display: block;
   position: absolute;
   font-size: var(--fontSize1250);
   font-weight: var(--fontWeightBold);
   color: var(--colorSecondaryLight2);
-  line-height: 0.8;
+  background-clip: text;
+  line-height: .8;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.numberBg::after {
+  content: attr(data-text);
+  position: absolute;
   left: 0;
   top: 0;
-  z-index: 0;
+  color: var(--colorAccent);
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.5s ease;
+  z-index: 1;
+}
+
+.scrollBarContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  column-gap: 10px;
+}
+
+.scrollBar {
+  height: 5px;
+  width: 40px;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.scrollBar.active {
+  background: var(--bgSecondaryColor);
 }
