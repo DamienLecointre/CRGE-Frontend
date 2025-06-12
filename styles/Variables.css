@@ -21,11 +21,13 @@
   --fontSize1: 1rem;
   --fontSize11: 1.1rem;
   --fontSize125: 1.25rem;
+  --fontSize15: 1.5rem;
   --fontSize166: 1.66rem;
   --fontSize2: 2rem;
   --fontSize25: 2.5rem;
   --fontSize375: 3.75rem;
   --fontSize475: 4.75rem;
+  --fontSize1250: 12.5rem;
 
   --fontWeightRegular:400;
   --fontWeightMedium:500;
@@ -37,6 +39,7 @@
   --colorAccent: #32aaaa;
   --colorSecondaryMedium: #454759;
   --colorSecondaryLight: #a4a8bc;
+  --colorSecondaryLight2: #E3E5EA;
   
   --lineHeight15:1.5rem;
   --lineHeight2:2rem;

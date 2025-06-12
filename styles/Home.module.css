@@ -7,13 +7,14 @@
 }
 
 .sectionMarginTop {
+  position: relative;
   margin-top: var(--spaceBetweenSection);
 }
 
 .sectionTitleIllustration {
   position: absolute;
   top: 0;
-  left: 30%;
+  left: 15vw;
 }
 
 .sectionTitle {
@@ -25,6 +26,7 @@
   line-height: var(--lineHeight80);
   text-align: center;
   margin-inline: auto;
+  margin-bottom: 72px;
 }
 
 /* -------------

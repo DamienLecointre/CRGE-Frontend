@@ -12,6 +12,7 @@ import { addContentToHero } from "../reducers/heros";
 import Header from "./Header/Header";
 import Hero from "./Hero/Hero";
 import NavBurgerMenu from "./Header/NavBurgerMenu";
+import ServiceCards from "./UIKit/ServiceCards";
 
 //STYLES IMPORTS
 import styles from "../styles/Home.module.css";
@@ -34,9 +35,7 @@ function Home() {
       <main>
         <Hero />
         <NavBurgerMenu />
-        <div
-          className={`${styles.sectionContainer} ${styles.sectionMarginTop}`}
-        >
+        <div className={`sectionWrapper ${styles.sectionMarginTop}`}>
           <Image
             className={styles.sectionTitleIllustration}
             src="/illustrations/greenLeaf.svg"
@@ -47,6 +46,7 @@ function Home() {
           <h2 className={styles.sectionTitle}>
             Des services sur mesure pour votre réussite
           </h2>
+          <ServiceCards />
         </div>
       </main>
     </div>

@@ -12,7 +12,7 @@ import styles from "../../styles/Header/Header.module.css";
 
 function Header() {
   return (
-    <header className={styles.headerContainer}>
+    <header className={`sectionWrapper ${styles.headerContainer}`}>
       <Image
         className={styles.imgContainer}
         src="/logo_icons/logoTxt.svg"

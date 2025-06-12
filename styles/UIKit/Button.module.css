@@ -9,7 +9,7 @@
   background: var(--BtnSecondaryColor);
   border-radius: 5px;
   box-shadow: 0px 5px 0px 0px rgba(50,170,170,1);
-  padding: 16px;
+  padding: 16px 16px 12px;
   margin-top: 40px;
   cursor: pointer;
   overflow: hidden;
@@ -48,7 +48,7 @@
   background: var(--BtnPrimaryColor);
   border-radius: 5px;
   box-shadow: 0px 5px 0px 0px rgba(50,170,170,1);
-  padding: 16px;
+  padding: 16px 16px 12px;
   margin-top: 40px;
   cursor: pointer;
   overflow: hidden;

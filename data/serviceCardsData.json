@@ -1,0 +1,9 @@
+{
+  "cardsData":[
+    {"img":"/illustrations/serviceJuridique.svg","title":"Juridique","text":"Bénéficiez de conseils juridiques spécialisés pour gérer efficacement vos questions légales en matière d'emploi et de gestion du personnel."},
+    {"img":"/illustrations/servicePaye.svg","title":"Paye","text":"Simplifiez la gestion de la paie de votre entreprise grâce à notre expertise en matière de rémunération et de déclarations sociales."},
+    {"img":"/illustrations/serviceFormation.svg","title":"Formation","text":" Investissez dans le développement de vos compétences et de celles de vos collaborateurs avec nos programmes de formation adaptés à vos besoins."},
+    {"img":"/illustrations/serviceGestion.svg","title":"Gestion","text":" Améliorez le fonctionnement de votre GE en prenant appui sur nos compétences en matière stratégique, économique et financière."},
+    {"img":"/illustrations/serviceAppuiCreation.svg","title":"Appui à la création","text":"Transformez sereinement votre idée de partage d'emploi en projet de GE solide et structuré en vous faisant accompagner par nos experts du sujet."}
+  ]
+}

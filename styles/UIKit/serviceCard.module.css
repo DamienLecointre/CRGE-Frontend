@@ -1,0 +1,63 @@
+.cardsContainer {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: 40px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.cardsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.cardWrapper {
+  max-width: calc((100% - 80px) / 3);
+  flex: 0 0 calc((100% - 80px) / 3);
+  scroll-snap-align: start;
+}
+
+.cardImg {
+  margin-bottom: 50px;
+}
+
+.cardTextWrapper {
+  position: relative;
+  padding-left: 50px;
+}
+
+.cardTitle {
+  position: relative;
+  width: 100%;
+  font-size: var(--fontSize15);
+  font-weight: var(--fontWeightMedium);
+  color: var(--colorSecondary);
+  line-height: var(--lineHeight2);
+  padding-bottom: 8px;
+  z-index: 5;
+}
+
+.cardText {
+  position: relative;
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightRegular);
+  color: var(--colorSecondary);
+  z-index: 5;
+}
+
+.numberBg {
+  position: absolute;
+  font-size: var(--fontSize1250);
+  font-weight: var(--fontWeightBold);
+  color: var(--colorSecondaryLight2);
+  line-height: 0.8;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
