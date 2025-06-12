@@ -23,7 +23,7 @@ import {
 //STYLES IMPORTS
 import styles from "../styles/SignIn.module.css";
 
-function SignIn() {
+function SignUp() {
   // ---------
   // CONSTANTS
   // ---------
@@ -47,8 +47,12 @@ function SignIn() {
   };
 
   useEffect(() => {
-    updateSignInButtonText("signin");
+    updateSignInButtonText("signup");
   }, []);
+
+  const handleSignupClick = () => {
+    console.log("Bouton CRÉER MON COMPTE cliqué !");
+  };
 
   return (
     <div className={styles.signInContainer}>
@@ -113,21 +117,31 @@ function SignIn() {
               height={50}
               width={80}
             ></Image>
-            Bienvenue sur votre espace adhérent !
+            Bienvenue sur l'espace de création de votre compte !
           </h1>
           <p className={`${styles.txtColor} ${styles.txtParagraphe}`}>
-            Connectez-vous pour accéder à vos ressources exclusives, bénéficier
-            de nos services spécialisés et rester informé des dernières
-            actualités du CRGE.
+            Veuillez créer votre compte en renseignant tous les champs de saisie
+            ci-dessous.
           </p>
           <div className={styles.inputContainer}>
-            <label htmlFor="email" className={styles.label}>
-              Identifiant
+            <label htmlFor="prénom" className={styles.label}>
+              Prénom
             </label>
             <input
-              type="email"
-              placeholder="johndoe@gmail.com"
-              name="email"
+              type="texte"
+              placeholder="John"
+              name="prénom"
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.inputContainer}>
+            <label htmlFor="nom" className={styles.label}>
+              Nom
+            </label>
+            <input
+              type="texte"
+              placeholder="Doe"
+              name="nom"
               className={styles.input}
             />
           </div>
@@ -148,10 +162,26 @@ function SignIn() {
               onClick={togglePassword}
             />
           </div>
-          <span className={styles.txtQuestion}>Mot de passe oublié ?</span>
-          <Button btnStyle="white" />
-          <Link href="/signUp" className={styles.txtQuestion}>
-            Pas encore de compte ?
+          <div className={styles.inputContainer}>
+            <label htmlFor="confirmPassword" className={styles.label}>
+              Confirmez le mot de passe
+            </label>
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="--------"
+              name="confirmPassword"
+              className={styles.input}
+            />
+
+            <FontAwesomeIcon
+              icon={showPassword ? faEyeSlash : faEye}
+              className={`${styles.txtColor} ${styles.eyeIcon}`}
+              onClick={togglePassword}
+            />
+          </div>
+          <Button btnStyle="white" onClickSignup={handleSignupClick} />
+          <Link href="/signIn" className={styles.txtQuestion}>
+            Déjà inscrit ?
           </Link>
           <Image
             className={styles.illustartion}
@@ -173,4 +203,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default SignUp;
