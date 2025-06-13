@@ -21,7 +21,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 //STYLES IMPORTS
-import styles from "../styles/SignIn.module.css";
+import styles from "../styles/Sign.module.css";
 
 function SignIn() {
   // ---------
@@ -51,9 +51,9 @@ function SignIn() {
   }, []);
 
   return (
-    <div className={styles.signInContainer}>
+    <div className={styles.signContainer}>
       <svg
-        className={styles.signInLogo}
+        className={styles.signLogo}
         width="215"
         height="60"
         viewBox="0 0 215 60"
@@ -103,8 +103,8 @@ function SignIn() {
           </clipPath>
         </defs>
       </svg>
-      <div className={styles.signInWrapper}>
-        <div className={styles.signInForm}>
+      <div className={styles.signWrapper}>
+        <div className={styles.signForm}>
           <h1 className={`${styles.txtColor} ${styles.txtTitle}`}>
             <Image
               className={styles.waveHandIcon}
@@ -122,7 +122,7 @@ function SignIn() {
           </p>
           <div className={styles.inputContainer}>
             <label htmlFor="email" className={styles.label}>
-              Identifiant
+              Email
             </label>
             <input
               type="email"

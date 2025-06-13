@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 //NEXT IMPORTS
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 //REDUX IMPORTS
 import { useDispatch } from "react-redux";
@@ -21,7 +22,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 //STYLES IMPORTS
-import styles from "../styles/SignIn.module.css";
+import styles from "../styles/Sign.module.css";
+
+//ENVIRONMENT VARIABLE
+const backendUrlAddNewUser =
+  process.env.NEXT_PUBLIC_URL_BACKEND_USERS_ADDNEWUSERS;
 
 function SignUp() {
   // ---------
@@ -29,6 +34,19 @@ function SignUp() {
   // ---------
   // CONST TO SHOW PASSWORD
   const [showPassword, setShowPassword] = useState(false);
+  // INPUTS CONSTANTS
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  // ERROR MESSAGE CONSTANTS
+  const [emptyFieldAlert, setEmptyFieldAlert] = useState(false);
+  const [emailAlreadyUsed, setEmailAlreadyUsed] = useState(false);
+  const [isWrongFormat, setIsWrongFormat] = useState(false);
+  const [ismatchingPassword, setIsmatchingPassword] = useState(false);
+  // CONFIRM PROFIL CREATED CONSTANTS
+  const [newUserAdded, setNewUserAdded] = useState(false);
 
   // -------------------------
   // FUNCTION TO SHOW PASSWORD
@@ -41,6 +59,7 @@ function SignUp() {
   // DISPATCH TEXTE BUTTON
   // ----------------------
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const updateSignInButtonText = (pageLocation) => {
     dispatch(addTextToSignInButton(pageLocation));
@@ -50,14 +69,75 @@ function SignUp() {
     updateSignInButtonText("signup");
   }, []);
 
+  // ------------------------
+  // FUNCTION TO HIDDEN ERROR
+  // ------------------------
+  const showTemporaryError = (setErrorFunction, duration = 2000) => {
+    setErrorFunction(true);
+    setTimeout(() => {
+      setErrorFunction(false);
+    }, duration);
+  };
+
+  // ---------------
+  // ACOUNT CREATING
+  // ---------------
   const handleSignupClick = () => {
-    console.log("Bouton CRÉER MON COMPTE cliqué !");
+    if (!firstName || !lastName || !email || !password || !confirmPassword) {
+      showTemporaryError(setEmptyFieldAlert);
+    } else {
+      const newUser = {
+        firstName,
+        lastName,
+        email,
+        password,
+        confirmPassword,
+      };
+      if (password !== confirmPassword) {
+        showTemporaryError(setIsmatchingPassword);
+        return;
+      }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showTemporaryError(setIsWrongFormat);
+        return;
+      }
+      fetch(`${backendUrlAddNewUser}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newUser),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log("Données envoyées data:", data);
+          if (data.error === "Email already used") {
+            showTemporaryError(setEmailAlreadyUsed);
+          } else {
+            setFirstName("");
+            setLastName("");
+            setEmail("");
+            setPassword("");
+            setConfirmPassword("");
+            setEmptyFieldAlert(false);
+            setEmailAlreadyUsed(false);
+            setIsmatchingPassword(false);
+            setNewUserAdded(true);
+            setTimeout(() => {
+              setNewUserAdded(false);
+              router.push("/");
+            }, 2000);
+          }
+        })
+        .catch((error) => {
+          console.error("Erreur lors de l'envoi de l'évènement :", error);
+        });
+    }
   };
 
   return (
-    <div className={styles.signInContainer}>
+    <div className={styles.signContainer}>
       <svg
-        className={styles.signInLogo}
+        className={styles.signLogo}
         width="215"
         height="60"
         viewBox="0 0 215 60"
@@ -107,8 +187,8 @@ function SignUp() {
           </clipPath>
         </defs>
       </svg>
-      <div className={styles.signInWrapper}>
-        <div className={styles.signInForm}>
+      <div className={styles.signWrapper}>
+        <div className={styles.signForm}>
           <h1 className={`${styles.txtColor} ${styles.txtTitle}`}>
             <Image
               className={styles.waveHandIcon}
@@ -123,6 +203,11 @@ function SignUp() {
             Veuillez créer votre compte en renseignant tous les champs de saisie
             ci-dessous.
           </p>
+          {emptyFieldAlert && (
+            <p className={styles.alertMessage}>
+              Veuillez remplir tous les champs de saisie
+            </p>
+          )}
           <div className={styles.inputContainer}>
             <label htmlFor="prénom" className={styles.label}>
               Prénom
@@ -131,6 +216,8 @@ function SignUp() {
               type="texte"
               placeholder="John"
               name="prénom"
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstName}
               className={styles.input}
             />
           </div>
@@ -142,9 +229,30 @@ function SignUp() {
               type="texte"
               placeholder="Doe"
               name="nom"
+              onChange={(e) => setLastName(e.target.value)}
+              value={lastName}
               className={styles.input}
             />
           </div>
+          <div className={styles.inputContainer}>
+            <label htmlFor="email" className={styles.label}>
+              Email
+            </label>
+            <input
+              type="email"
+              placeholder="johndoe@gmail.com"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              className={styles.input}
+            />
+          </div>
+          {emailAlreadyUsed && (
+            <p className={styles.alertMessage}>Email déjà utilisé</p>
+          )}
+          {isWrongFormat && (
+            <p className={styles.alertMessage}>Format d'email invalide</p>
+          )}
           <div className={styles.inputContainer}>
             <label htmlFor="password" className={styles.label}>
               Mot de passe
@@ -153,6 +261,8 @@ function SignUp() {
               type={showPassword ? "text" : "password"}
               placeholder="--------"
               name="password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
               className={styles.input}
             />
 
@@ -170,15 +280,26 @@ function SignUp() {
               type={showPassword ? "text" : "password"}
               placeholder="--------"
               name="confirmPassword"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              value={confirmPassword}
               className={styles.input}
             />
-
             <FontAwesomeIcon
               icon={showPassword ? faEyeSlash : faEye}
               className={`${styles.txtColor} ${styles.eyeIcon}`}
               onClick={togglePassword}
             />
           </div>
+          {ismatchingPassword && (
+            <p className={styles.alertMessage}>
+              Les mots de passe ne correspondent pas
+            </p>
+          )}
+          {newUserAdded && (
+            <p className={styles.alertMessage}>
+              Votre compte a été créé avec succès !
+            </p>
+          )}
           <Button btnStyle="white" onClickSignup={handleSignupClick} />
           <Link href="/signIn" className={styles.txtQuestion}>
             Déjà inscrit ?

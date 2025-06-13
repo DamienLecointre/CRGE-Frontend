@@ -13,7 +13,7 @@ function Button({ btnStyle, onClickSignup }) {
     btnStyle === "white" ? styles.btnWhite : styles.btnBlack;
   const handleClick = () => {
     if (buttons === "signup" && onClickSignup) {
-      onClickSignup(); // Déclenche la fonction passée en prop
+      onClickSignup();
     }
   };
   return (
