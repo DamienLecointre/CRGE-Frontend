@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 //NEXT IMPORTS
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 //REDUX IMPORTS
 import { useDispatch } from "react-redux";
@@ -23,9 +24,23 @@ import {
 //STYLES IMPORTS
 import styles from "../styles/Sign.module.css";
 
+const backendUsersSignin = process.env.NEXT_PUBLIC_URL_BACKEND_USERS_SIGNIN;
+
 function SignIn() {
+  // CONST REDIRECTION TO WEBSITE PAGE
+  const router = useRouter();
+
+  // CONST INPUT VALUE
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   // CONST TO SHOW PASSWORD
   const [showPassword, setShowPassword] = useState(false);
+
+  // CONST ALERT MESSAGES
+  const [isEmptyField, setIsEmptyField] = useState(false);
+  const [isWrongField, setIsWrongField] = useState(false);
+  const [isSigninSuccess, setIsSigninSuccess] = useState(false);
 
   // -------------------------
   // FUNCTION TO SHOW PASSWORD
@@ -46,6 +61,52 @@ function SignIn() {
   useEffect(() => {
     updateSignInButtonText("signin");
   }, []);
+
+  // ---------------------------
+  // // FUNCTION TO HIDDEN ERROR
+  // ---------------------------
+  const showTemporaryError = (setErrorFunction, duration = 3000) => {
+    setErrorFunction(true);
+    setTimeout(() => {
+      setErrorFunction(false);
+    }, duration);
+  };
+
+  // --------------------
+  // HANDLE CLICK SIGN IN
+  // --------------------
+
+  const handleClickSignin = () => {
+    if (!email || !password) {
+      showTemporaryError(setIsEmptyField);
+      return;
+    } else {
+      const userData = {
+        email,
+        password,
+      };
+      fetch(`${backendUsersSignin}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          if (data.error === "Wrong email or password") {
+            showTemporaryError(setIsWrongField);
+          } else {
+            setEmail("");
+            setPassword("");
+            showTemporaryError(setIsSigninSuccess);
+            setTimeout(() => {
+              setIsSigninSuccess(false);
+              router.push("/");
+            }, 1000);
+          }
+        });
+    }
+  };
 
   return (
     <div className={styles.signContainer}>
@@ -117,6 +178,11 @@ function SignIn() {
             de nos services spécialisés et rester informé des dernières
             actualités du CRGE.
           </p>
+          {isEmptyField && (
+            <p className={styles.alertMessage}>
+              Veuillez remplir tous les champs de saisie
+            </p>
+          )}
           <div className={styles.inputContainer}>
             <label htmlFor="email" className={styles.label}>
               Email
@@ -126,6 +192,8 @@ function SignIn() {
               placeholder="johndoe@gmail.com"
               name="email"
               className={styles.input}
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
             />
           </div>
           <div className={styles.inputContainer}>
@@ -137,6 +205,8 @@ function SignIn() {
               placeholder="--------"
               name="password"
               className={styles.input}
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
             />
             <FontAwesomeIcon
               icon={showPassword ? faEyeSlash : faEye}
@@ -145,7 +215,15 @@ function SignIn() {
             />
           </div>
           <span className={styles.txtQuestion}>Mot de passe oublié ?</span>
-          <Button btnStyle="white" />
+          {isWrongField && (
+            <p className={styles.alertMessage}>
+              Email ou mot de passe incorrect
+            </p>
+          )}
+          {isSigninSuccess && (
+            <p className={styles.alertMessage}>Identification réussie !!!</p>
+          )}
+          <Button btnStyle="white" onClickSignin={handleClickSignin} />
           <Link href="/signUp" className={styles.txtQuestion}>
             Pas encore de compte ?
           </Link>

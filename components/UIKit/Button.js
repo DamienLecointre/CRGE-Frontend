@@ -7,13 +7,16 @@ import { useSelector } from "react-redux";
 //STYLES IMPORTS
 import styles from "../../styles/UIKit/Button.module.css";
 
-function Button({ btnStyle, onClickSignup }) {
+function Button({ btnStyle, onClickSignup, onClickSignin }) {
   const buttons = useSelector((state) => state.buttons.value);
   const btnStyleVariant =
     btnStyle === "white" ? styles.btnWhite : styles.btnBlack;
   const handleClick = () => {
     if (buttons === "signup" && onClickSignup) {
       onClickSignup();
+    }
+    if (buttons === "signin" && onClickSignin) {
+      onClickSignin();
     }
   };
   return (
