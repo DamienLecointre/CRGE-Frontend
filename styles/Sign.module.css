@@ -58,7 +58,6 @@ TAG STYLE
   line-height: var(--lineHeight15);
   padding-top: 24px;
 }
-
 .inputContainer {
   position: relative;
   width: fit-content;
@@ -114,7 +113,7 @@ TAG STYLE
   font-size: var(--fontSize1);
   font-weight: var(--fontWeightBold);
   color: var(--colorAccent);
-  padding-top: 12px;
+  padding-top: 20px;
   cursor: pointer;
   transition: all .2s ease-in-out;
 }
@@ -172,6 +171,8 @@ SPECIAL TAG SETUP
 -------------- */
 
 .alertMessage {
+  display: flex;
+  flex-direction: column;
   font-size: var(--fontSize125);
   color: var(--colorAccent2);
   padding-top: 20px;

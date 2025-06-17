@@ -24,9 +24,6 @@ import {
 import styles from "../styles/Sign.module.css";
 
 function SignIn() {
-  // ---------
-  // CONSTANTS
-  // ---------
   // CONST TO SHOW PASSWORD
   const [showPassword, setShowPassword] = useState(false);
 
@@ -141,7 +138,6 @@ function SignIn() {
               name="password"
               className={styles.input}
             />
-
             <FontAwesomeIcon
               icon={showPassword ? faEyeSlash : faEye}
               className={`${styles.txtColor} ${styles.eyeIcon}`}

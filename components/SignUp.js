@@ -24,29 +24,30 @@ import {
 //STYLES IMPORTS
 import styles from "../styles/Sign.module.css";
 
-//ENVIRONMENT VARIABLE
-const backendUrlAddNewUser =
+const backendUsersAddNewUsers =
   process.env.NEXT_PUBLIC_URL_BACKEND_USERS_ADDNEWUSERS;
 
 function SignUp() {
-  // ---------
-  // CONSTANTS
-  // ---------
-  // CONST TO SHOW PASSWORD
-  const [showPassword, setShowPassword] = useState(false);
-  // INPUTS CONSTANTS
+  // CONST REDIRECTION TO WEBSITE PAGE
+  const router = useRouter();
+
+  // CONST INPUT VALUE
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  // ERROR MESSAGE CONSTANTS
-  const [emptyFieldAlert, setEmptyFieldAlert] = useState(false);
-  const [emailAlreadyUsed, setEmailAlreadyUsed] = useState(false);
-  const [isWrongFormat, setIsWrongFormat] = useState(false);
-  const [ismatchingPassword, setIsmatchingPassword] = useState(false);
-  // CONFIRM PROFIL CREATED CONSTANTS
-  const [newUserAdded, setNewUserAdded] = useState(false);
+
+  // CONST TO SHOW PASSWORD
+  const [showPassword, setShowPassword] = useState(false);
+
+  // CONST ALERT MESSAGES
+  const [isEmptyFiled, setIsEmptyFiled] = useState(false);
+  const [isWrongEmailFormat, setIsWrongEmailFormat] = useState(false);
+  const [isEmailUsed, setIsEmailUsed] = useState(false);
+  const [isWrongPasswordFormat, setIsWrongPasswordFormat] = useState(false);
+  const [isMatchinPassword, setIsMatchinPassword] = useState(false);
+  const [isUserCreated, setIsUserCreated] = useState(false);
 
   // -------------------------
   // FUNCTION TO SHOW PASSWORD
@@ -54,12 +55,10 @@ function SignUp() {
   const togglePassword = () => {
     setShowPassword((prev) => !prev);
   };
-
   // ----------------------
   // DISPATCH TEXTE BUTTON
   // ----------------------
   const dispatch = useDispatch();
-  const router = useRouter();
 
   const updateSignInButtonText = (pageLocation) => {
     dispatch(addTextToSignInButton(pageLocation));
@@ -69,67 +68,70 @@ function SignUp() {
     updateSignInButtonText("signup");
   }, []);
 
-  // ------------------------
-  // FUNCTION TO HIDDEN ERROR
-  // ------------------------
-  const showTemporaryError = (setErrorFunction, duration = 2000) => {
+  // ---------------------------
+  // // FUNCTION TO HIDDEN ERROR
+  // ---------------------------
+  const showTemporaryError = (setErrorFunction, duration = 3000) => {
     setErrorFunction(true);
     setTimeout(() => {
       setErrorFunction(false);
     }, duration);
   };
 
-  // ---------------
-  // ACOUNT CREATING
-  // ---------------
-  const handleSignupClick = () => {
+  // ---------------------------
+  // HANDLE CLICK CREATE ACCOUNT
+  // ---------------------------
+
+  const handleClickSignup = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
     if (!firstName || !lastName || !email || !password || !confirmPassword) {
-      showTemporaryError(setEmptyFieldAlert);
+      showTemporaryError(setIsEmptyFiled);
+      return;
     } else {
       const newUser = {
         firstName,
         lastName,
         email,
         password,
-        confirmPassword,
       };
-      if (password !== confirmPassword) {
-        showTemporaryError(setIsmatchingPassword);
-        return;
-      }
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        showTemporaryError(setIsWrongFormat);
+        showTemporaryError(setIsWrongEmailFormat);
         return;
       }
-      fetch(`${backendUrlAddNewUser}`, {
+      if (!passwordRegex.test(password)) {
+        showTemporaryError(setIsWrongPasswordFormat);
+        return;
+      }
+      if (password !== confirmPassword) {
+        showTemporaryError(setIsMatchinPassword);
+        return;
+      }
+      fetch(`${backendUsersAddNewUsers}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newUser),
       })
         .then((response) => response.json())
         .then((data) => {
-          // console.log("Données envoyées data:", data);
+          console.log(data);
           if (data.error === "Email already used") {
-            showTemporaryError(setEmailAlreadyUsed);
+            showTemporaryError(setIsEmailUsed);
+            return;
           } else {
             setFirstName("");
             setLastName("");
             setEmail("");
             setPassword("");
             setConfirmPassword("");
-            setEmptyFieldAlert(false);
-            setEmailAlreadyUsed(false);
-            setIsmatchingPassword(false);
-            setNewUserAdded(true);
+            showTemporaryError(setIsUserCreated);
             setTimeout(() => {
-              setNewUserAdded(false);
+              setIsUserCreated(false);
               router.push("/");
-            }, 2000);
+            }, 3000);
           }
-        })
-        .catch((error) => {
-          console.error("Erreur lors de l'envoi de l'évènement :", error);
         });
     }
   };
@@ -197,41 +199,42 @@ function SignUp() {
               height={50}
               width={80}
             ></Image>
-            Bienvenue sur l'espace de création de votre compte !
+            Bienvenue sur l'espace de création de compte !
           </h1>
           <p className={`${styles.txtColor} ${styles.txtParagraphe}`}>
-            Veuillez créer votre compte en renseignant tous les champs de saisie
-            ci-dessous.
+            Créez votre compte pour pouvoir accéder à toutes les ressources
+            exclusives, bénéficier de nos services spécialisés et rester informé
+            des dernières actualités du CRGE.
           </p>
-          {emptyFieldAlert && (
+          {isEmptyFiled && (
             <p className={styles.alertMessage}>
               Veuillez remplir tous les champs de saisie
             </p>
           )}
           <div className={styles.inputContainer}>
-            <label htmlFor="prénom" className={styles.label}>
+            <label htmlFor="firstName" className={styles.label}>
               Prénom
             </label>
             <input
-              type="texte"
-              placeholder="John"
-              name="prénom"
+              type="text"
+              placeholder="john"
+              name="firstName"
+              className={styles.input}
               onChange={(e) => setFirstName(e.target.value)}
               value={firstName}
-              className={styles.input}
             />
           </div>
           <div className={styles.inputContainer}>
-            <label htmlFor="nom" className={styles.label}>
+            <label htmlFor="lasttName" className={styles.label}>
               Nom
             </label>
             <input
-              type="texte"
-              placeholder="Doe"
-              name="nom"
+              type="text"
+              placeholder="doe"
+              name="lasttName"
+              className={styles.input}
               onChange={(e) => setLastName(e.target.value)}
               value={lastName}
-              className={styles.input}
             />
           </div>
           <div className={styles.inputContainer}>
@@ -242,16 +245,18 @@ function SignUp() {
               type="email"
               placeholder="johndoe@gmail.com"
               name="email"
+              className={styles.input}
               onChange={(e) => setEmail(e.target.value)}
               value={email}
-              className={styles.input}
             />
           </div>
-          {emailAlreadyUsed && (
-            <p className={styles.alertMessage}>Email déjà utilisé</p>
+          {isWrongEmailFormat && (
+            <p className={styles.alertMessage}>
+              Le format d'email est incorrect
+            </p>
           )}
-          {isWrongFormat && (
-            <p className={styles.alertMessage}>Format d'email invalide</p>
+          {isEmailUsed && (
+            <p className={styles.alertMessage}>Cet email est déjà utilisé</p>
           )}
           <div className={styles.inputContainer}>
             <label htmlFor="password" className={styles.label}>
@@ -261,11 +266,10 @@ function SignUp() {
               type={showPassword ? "text" : "password"}
               placeholder="--------"
               name="password"
+              className={styles.input}
               onChange={(e) => setPassword(e.target.value)}
               value={password}
-              className={styles.input}
             />
-
             <FontAwesomeIcon
               icon={showPassword ? faEyeSlash : faEye}
               className={`${styles.txtColor} ${styles.eyeIcon}`}
@@ -273,16 +277,16 @@ function SignUp() {
             />
           </div>
           <div className={styles.inputContainer}>
-            <label htmlFor="confirmPassword" className={styles.label}>
+            <label htmlFor="password" className={styles.label}>
               Confirmez le mot de passe
             </label>
             <input
               type={showPassword ? "text" : "password"}
               placeholder="--------"
-              name="confirmPassword"
+              name="password"
+              className={styles.input}
               onChange={(e) => setConfirmPassword(e.target.value)}
               value={confirmPassword}
-              className={styles.input}
             />
             <FontAwesomeIcon
               icon={showPassword ? faEyeSlash : faEye}
@@ -290,19 +294,24 @@ function SignUp() {
               onClick={togglePassword}
             />
           </div>
-          {ismatchingPassword && (
+          {isWrongPasswordFormat && (
+            <p className={styles.alertMessage}>
+              le mot de passe doit contenir au moins 8 caractères dont :{" "}
+              <span>- une lettre majuscule</span> <span>- une miniscule</span>{" "}
+              <span>- un chiffre</span> <span>- un caractère spécial</span>
+            </p>
+          )}
+          {isMatchinPassword && (
             <p className={styles.alertMessage}>
               Les mots de passe ne correspondent pas
             </p>
           )}
-          {newUserAdded && (
-            <p className={styles.alertMessage}>
-              Votre compte a été créé avec succès !
-            </p>
+          {isUserCreated && (
+            <p className={styles.alertMessage}>Compte créé avec succes !!!</p>
           )}
-          <Button btnStyle="white" onClickSignup={handleSignupClick} />
+          <Button btnStyle="white" onClickSignup={handleClickSignup} />
           <Link href="/signIn" className={styles.txtQuestion}>
-            Déjà inscrit ?
+            Déjà un compte ?
           </Link>
           <Image
             className={styles.illustartion}

@@ -3,8 +3,8 @@ import React from "react";
 //COMPONENTS IMPORTS
 import SignUp from "../components/SignUp";
 
-function SignInPage() {
+function SignUpPage() {
   return <SignUp />;
 }
 
-export default SignInPage;
+export default SignUpPage;
