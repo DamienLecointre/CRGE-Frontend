@@ -31,7 +31,7 @@ function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="index, follow" />
         {/* <link rel="canonical" href="https://www.tonsite.com/ton-url/" /> */}
-        <link rel="icon" type="image/svg+xml" href="/logo_icons/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/logo_icons/Favicon.svg" />
         {/* Open Graph
         <meta property="og:title" content="Titre pour les réseaux sociaux" />
         <meta
