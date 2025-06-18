@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 
 //REDUX IMPORTS
 import { useDispatch } from "react-redux";
-import { addTextToSignInButton } from "../reducers/buttons";
+import { addTextToButton } from "../reducers/buttons";
 
 //COMPONENTS IMPORTS
 import Button from "./UIKit/Button";
@@ -61,7 +61,7 @@ function SignUp() {
   const dispatch = useDispatch();
 
   const updateSignInButtonText = (pageLocation) => {
-    dispatch(addTextToSignInButton(pageLocation));
+    dispatch(addTextToButton(pageLocation));
   };
 
   useEffect(() => {

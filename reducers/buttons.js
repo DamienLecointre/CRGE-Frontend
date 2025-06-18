@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: false,
+  value: "",
 };
 
 export const buttonsSlice = createSlice({
   name: "buttons",
   initialState,
   reducers: {
-    addTextToSignInButton: (state, action) => {
+    addTextToButton: (state, action) => {
       state.value = action.payload;
     },
   },
 });
 
-export const { addTextToSignInButton } = buttonsSlice.actions;
+export const { addTextToButton } = buttonsSlice.actions;
 export default buttonsSlice.reducer;
