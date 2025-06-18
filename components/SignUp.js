@@ -1,14 +1,10 @@
 //REACT IMPORTS
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 //NEXT IMPORTS
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
-//REDUX IMPORTS
-import { useDispatch } from "react-redux";
-import { addTextToButton } from "../reducers/buttons";
 
 //COMPONENTS IMPORTS
 import Button from "./UIKit/Button";
@@ -49,24 +45,15 @@ function SignUp() {
   const [isMatchinPassword, setIsMatchinPassword] = useState(false);
   const [isUserCreated, setIsUserCreated] = useState(false);
 
+  // CONST TO CHECK IF USER CONNECTED
+  const [isConnected, setIsConnected] = useState(false);
+
   // -------------------------
   // FUNCTION TO SHOW PASSWORD
   // -------------------------
   const togglePassword = () => {
     setShowPassword((prev) => !prev);
   };
-  // ----------------------
-  // DISPATCH TEXTE BUTTON
-  // ----------------------
-  const dispatch = useDispatch();
-
-  const updateSignInButtonText = (pageLocation) => {
-    dispatch(addTextToButton(pageLocation));
-  };
-
-  useEffect(() => {
-    updateSignInButtonText("signup");
-  }, []);
 
   // ---------------------------
   // // FUNCTION TO HIDDEN ERROR
@@ -120,7 +107,7 @@ function SignUp() {
           if (data.error === "Email already used") {
             showTemporaryError(setIsEmailUsed);
             return;
-          } else {
+          } else if (data.result === true) {
             setFirstName("");
             setLastName("");
             setEmail("");
@@ -130,7 +117,7 @@ function SignUp() {
             setTimeout(() => {
               setIsUserCreated(false);
               router.push("/");
-            }, 3000);
+            }, 1500);
           }
         });
     }
@@ -309,7 +296,11 @@ function SignUp() {
           {isUserCreated && (
             <p className={styles.alertMessage}>Compte créé avec succes !!!</p>
           )}
-          <Button btnStyle="white" onClickSignup={handleClickSignup} />
+          <Button
+            btnStyle="white"
+            btnLocation="signup"
+            onClickSignup={handleClickSignup}
+          />
           <Link href="/signIn" className={styles.txtQuestion}>
             Déjà un compte ?
           </Link>

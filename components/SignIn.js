@@ -1,14 +1,10 @@
 //REACT IMPORTS
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 //NEXT IMPORTS
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
-//REDUX IMPORTS
-import { useDispatch } from "react-redux";
-import { addTextToButton } from "../reducers/buttons";
 
 //COMPONENTS IMPORTS
 import Button from "./UIKit/Button";
@@ -48,19 +44,6 @@ function SignIn() {
   const togglePassword = () => {
     setShowPassword((prev) => !prev);
   };
-
-  // ----------------------
-  // DISPATCH TEXTE BUTTON
-  // ----------------------
-  const dispatch = useDispatch();
-
-  const updateSignInButtonText = (pageLocation) => {
-    dispatch(addTextToButton(pageLocation));
-  };
-
-  useEffect(() => {
-    updateSignInButtonText("signin");
-  }, []);
 
   // ---------------------------
   // // FUNCTION TO HIDDEN ERROR
@@ -223,7 +206,11 @@ function SignIn() {
           {isSigninSuccess && (
             <p className={styles.alertMessage}>Identification réussie !!!</p>
           )}
-          <Button btnStyle="white" onClickSignin={handleClickSignin} />
+          <Button
+            btnStyle="white"
+            btnLocation="signin"
+            onClickSignin={handleClickSignin}
+          />
           <Link href="/signUp" className={styles.txtQuestion}>
             Pas encore de compte ?
           </Link>

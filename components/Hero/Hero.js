@@ -1,13 +1,11 @@
 //REACT IMPORTS
-import React, { useEffect } from "react";
+import React from "react";
 
 //NEXT IMPORTS
 import Image from "next/image";
 
 //REDUX IMPORTS
-import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { addTextToButton } from "../../reducers/buttons";
 
 //COMPONENTS IMPORTS
 import Button from "../UIKit/Button";
@@ -25,18 +23,6 @@ function Hero() {
   // ----
   const { title, paragraph, imgSrc, imgAlt } = heroData.heroHome;
 
-  // ----------------------
-  // DISPATCH TEXTE BUTTON
-  // ----------------------
-  const dispatch = useDispatch();
-
-  const updateSignInButtonText = (pageLocation) => {
-    dispatch(addTextToButton(pageLocation));
-  };
-
-  useEffect(() => {
-    updateSignInButtonText("hero");
-  }, []);
   return (
     <div className={styles.heroContainer}>
       <div className={styles.heroWrapper}>
@@ -58,7 +44,7 @@ function Hero() {
           />
         )}
       </div>
-      <Button btnStyle="black" />
+      <Button btnStyle="black" btnLocation="hero" />
     </div>
   );
 }
