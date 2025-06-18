@@ -16,3 +16,5 @@ export const buttonsSlice = createSlice({
 
 export const { addTextToButton } = buttonsSlice.actions;
 export default buttonsSlice.reducer;
+
+// FILE CAN BE DELETED

@@ -1,7 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: false,
+  value: {
+    firstName: "",
+    lastName: "",
+    isConnected: false,
+  },
 };
 
 export const connectionSlice = createSlice({
@@ -9,7 +13,8 @@ export const connectionSlice = createSlice({
   initialState,
   reducers: {
     addConnectionToStore: (state, action) => {
-      state.value.push(action.payload);
+      console.log("VALEUR RECU DANS REDUCER :", action.payload);
+      state.value = action.payload;
     },
   },
 });

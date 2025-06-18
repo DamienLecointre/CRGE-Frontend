@@ -6,6 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+//REDUX IMPORTS
+import { useDispatch } from "react-redux";
+import { addConnectionToStore } from "../reducers/isConnected";
+
 //COMPONENTS IMPORTS
 import Button from "./UIKit/Button";
 
@@ -65,6 +69,22 @@ function SignUp() {
     }, duration);
   };
 
+  // --------------------------------------
+  // FUNCTION TO DISPATCH CONNECTION STATUS
+  // --------------------------------------
+
+  const dispatch = useDispatch();
+
+  const addConnectionStatus = (userFirstName, userLastName, status) => {
+    dispatch(
+      addConnectionToStore({
+        firstName: userFirstName,
+        lastName: userLastName,
+        isConnected: status,
+      })
+    );
+  };
+
   // ---------------------------
   // HANDLE CLICK CREATE ACCOUNT
   // ---------------------------
@@ -114,6 +134,8 @@ function SignUp() {
             setPassword("");
             setConfirmPassword("");
             showTemporaryError(setIsUserCreated);
+            setIsConnected(true);
+            addConnectionStatus(data.user.firstName, data.user.lastName, true);
             setTimeout(() => {
               setIsUserCreated(false);
               router.push("/");
