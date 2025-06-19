@@ -72,7 +72,8 @@ function SignIn() {
     userFirstName,
     userLastName,
     userEmail,
-    status
+    status,
+    isAdmin
   ) => {
     dispatch(
       addConnectionToStore({
@@ -80,6 +81,7 @@ function SignIn() {
         lastName: userLastName,
         email: userEmail,
         isConnected: status,
+        isAdmin,
       })
     );
   };
@@ -117,7 +119,8 @@ function SignIn() {
               data.user.firstName,
               data.user.lastName,
               data.user.email,
-              true
+              true,
+              data.user.admin
             );
             setTimeout(() => {
               setIsSigninSuccess(false);

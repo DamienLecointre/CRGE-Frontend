@@ -23,8 +23,11 @@ GENERALS SETTINGS
   width: 100%;
   max-width: var(--maxWidth);
   margin-inline: auto;
-  /* padding-left: calc(50% - var(--maxWidth) /2);
-  padding-right: calc(50% - var(--maxWidth) /2); */
+}
+
+.sectionPaddingInline {
+  padding-left: calc(50% - var(--maxWidth) /2);
+  padding-right: calc(50% - var(--maxWidth) /2);
 }
 
 .paddingInline {

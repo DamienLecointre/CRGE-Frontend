@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 
 //NEXT IMPORTS
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 //REDUX IMPORTS
 import { useDispatch } from "react-redux";
@@ -13,11 +14,15 @@ import Header from "./Header/Header";
 import Hero from "./Hero/Hero";
 import NavBurgerMenu from "./Header/NavBurgerMenu";
 import ServiceCards from "./UIKit/ServiceCards";
+import Button from "../components/UIKit/Button";
 
 //STYLES IMPORTS
 import styles from "../styles/Home.module.css";
 
 function Home() {
+  // CONST REDIRECTION TO WEBSITE PAGE
+  const router = useRouter();
+
   // ----------------------
   // DISPATCH HERO CONTENTS
   // ----------------------
@@ -29,11 +34,24 @@ function Home() {
   useEffect(() => {
     updateHeroContent("home");
   }, []);
+
+  // ----------------------------
+  // FUNCTION TO GO TO EVENT PAGE
+  // ----------------------------
+
+  const handleClickGoToEvent = () => {
+    // console.log("event page");
+    router.push("/events");
+  };
+
   return (
     <div className={styles.sectionContainer}>
       <Header />
       <main>
         <Hero />
+        <div className={`sectionPaddingInline `}>
+          <Button btnStyle="black" btnLocation="hero" />
+        </div>
         <NavBurgerMenu />
         <div className={`paddingInline`}>
           <div className={`sectionWrapper ${styles.sectionMarginTop}`}>
@@ -62,8 +80,23 @@ function Home() {
             <h2 className={styles.sectionTitle}>Actualité</h2>
           </div>
         </div>
-        <div className={styles.serviceBg}></div>
-        <div className={styles.sectionServiceWrapper}></div>
+        <div className={`sectionPaddingInline ${styles.actualiteContainer}`}>
+          <Image
+            className={styles.actualiteIllustartion}
+            src="/illustrations/actualite.svg"
+            alt="illustration homme assis entrain de lire"
+            height={350}
+            width={400}
+          />
+          <h5 className={styles.actualiteTitle}>Restez informé</h5>
+        </div>
+        <div className={styles.actualiteBtn}>
+          <Button
+            btnStyle="black"
+            btnLocation="homeActualite"
+            onClickToEvent={handleClickGoToEvent}
+          />
+        </div>
       </main>
     </div>
   );

@@ -30,6 +30,48 @@
 }
 
 /* -------------
+ACTU TAGS STYLE
+------------- */
+
+.actualiteLeafIllustration {
+  position: absolute;
+  top: 0;
+  left: 42%;
+}
+
+.actualiteContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--bgSecondaryColor) 0%,var(--bgSecondaryColor) 34% ,var(--bgPrimaryColor) 34% ,var(--bgPrimaryColor) 100%);
+}
+
+.actualiteIllustartion {
+  position: absolute;
+  top: 0;
+  transform:translate(0, -70%);
+}
+
+.actualiteTitle {
+  position: relative;
+  font-size: var(--fontSize1250);
+  font-weight: var(--fontWeightMedium);
+  line-height: var(--lineHeight224);
+  color: var(--colorPrimary);
+  writing-mode: vertical-rl;
+  text-align: end;
+  right: 20%;
+  transform: rotate(180deg);
+}
+
+.actualiteBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------
 MEDIA QUERIES
 ------------- */
 
@@ -57,19 +99,4 @@ MEDIA QUERIES
     height: 10%;
     width: 10%;
   }
-}
-
-/* ---
-TESTS
---- */
-
-.sectionServiceWrapper {
-  padding-left: calc(50% - var(--maxWidth) /2);
-  padding-right: calc(50% - var(--maxWidth) /2);
-}
-
-.serviceBg {
-  height: 500px;
-  width: 100%;
-  background: red;
 }

@@ -6,6 +6,7 @@ const initialState = {
     lastName: "",
     email: "",
     isConnected: false,
+    isAdmin: false,
   },
 };
 
@@ -14,7 +15,7 @@ export const connectionSlice = createSlice({
   initialState,
   reducers: {
     addConnectionToStore: (state, action) => {
-      console.log("VALEUR RECU DANS REDUCER :", action.payload);
+      console.log("VALEUR RECU DANS REDUCER ISCONNECTED :", action.payload);
       state.value = action.payload;
     },
   },

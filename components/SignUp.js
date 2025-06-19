@@ -79,7 +79,8 @@ function SignUp() {
     userFirstName,
     userLastName,
     userEmail,
-    status
+    status,
+    isAdmin
   ) => {
     dispatch(
       addConnectionToStore({
@@ -87,6 +88,7 @@ function SignUp() {
         lastName: userLastName,
         email: userEmail,
         isConnected: status,
+        isAdmin,
       })
     );
   };
@@ -145,7 +147,8 @@ function SignUp() {
               data.user.firstName,
               data.user.lastName,
               data.user.email,
-              true
+              true,
+              data.user.admin
             );
             setTimeout(() => {
               setIsUserCreated(false);
