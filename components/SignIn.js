@@ -6,6 +6,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+//REDUX IMPORTS
+import { useDispatch } from "react-redux";
+import { addConnectionToStore } from "../reducers/isConnected";
+
 //COMPONENTS IMPORTS
 import Button from "./UIKit/Button";
 
@@ -38,6 +42,9 @@ function SignIn() {
   const [isWrongField, setIsWrongField] = useState(false);
   const [isSigninSuccess, setIsSigninSuccess] = useState(false);
 
+  // CONST TO CHECK IF USER CONNECTED
+  const [isConnected, setIsConnected] = useState(false);
+
   // -------------------------
   // FUNCTION TO SHOW PASSWORD
   // -------------------------
@@ -53,6 +60,22 @@ function SignIn() {
     setTimeout(() => {
       setErrorFunction(false);
     }, duration);
+  };
+
+  // --------------------------------------
+  // FUNCTION TO DISPATCH CONNECTION STATUS
+  // --------------------------------------
+
+  const dispatch = useDispatch();
+
+  const addConnectionStatus = (userFirstName, userLastName, status) => {
+    dispatch(
+      addConnectionToStore({
+        firstName: userFirstName,
+        lastName: userLastName,
+        isConnected: status,
+      })
+    );
   };
 
   // --------------------
@@ -78,10 +101,13 @@ function SignIn() {
           console.log(data);
           if (data.error === "Wrong email or password") {
             showTemporaryError(setIsWrongField);
-          } else {
+            return;
+          } else if (data.result === true) {
             setEmail("");
             setPassword("");
             showTemporaryError(setIsSigninSuccess);
+            setIsConnected(true);
+            addConnectionStatus(data.user.firstName, data.user.lastName, true);
             setTimeout(() => {
               setIsSigninSuccess(false);
               router.push("/");
