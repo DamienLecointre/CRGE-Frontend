@@ -35,19 +35,35 @@ function Home() {
       <main>
         <Hero />
         <NavBurgerMenu />
-        <div className={`sectionWrapper ${styles.sectionMarginTop}`}>
-          <Image
-            className={styles.sectionTitleIllustration}
-            src="/illustrations/greenLeaf.svg"
-            alt="illustration feuille verte"
-            height={110}
-            width={110}
-          />
-          <h2 className={styles.sectionTitle}>
-            Des services sur mesure pour votre réussite
-          </h2>
-          <ServiceCards />
+        <div className={`paddingInline`}>
+          <div className={`sectionWrapper ${styles.sectionMarginTop}`}>
+            <Image
+              className={styles.serviceLeafIllustration}
+              src="/illustrations/greenLeaf.svg"
+              alt="illustration feuille verte"
+              height={110}
+              width={110}
+            />
+            <h2 className={styles.sectionTitle}>
+              Des services sur mesure pour votre réussite
+            </h2>
+            <ServiceCards />
+          </div>
         </div>
+        <div className={`paddingInline`}>
+          <div className={`sectionWrapper ${styles.sectionMarginTop}`}>
+            <Image
+              className={styles.actualiteLeafIllustration}
+              src="/illustrations/greenLeaf.svg"
+              alt="illustration feuille verte"
+              height={110}
+              width={110}
+            />
+            <h2 className={styles.sectionTitle}>Actualité</h2>
+          </div>
+        </div>
+        <div className={styles.serviceBg}></div>
+        <div className={styles.sectionServiceWrapper}></div>
       </main>
     </div>
   );

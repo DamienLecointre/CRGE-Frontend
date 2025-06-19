@@ -24,27 +24,29 @@ function Hero() {
   const { title, paragraph, imgSrc, imgAlt } = heroData.heroHome;
 
   return (
-    <div className={styles.heroContainer}>
-      <div className={styles.heroWrapper}>
-        <div className={styles.txtContainer}>
-          <h1 className={styles.title}>
-            {herosContent === "home" ? `${title}` : null}
-          </h1>
-          <p className={styles.paragraph}>
-            {herosContent === "home" ? `${paragraph}` : null}
-          </p>
+    <div className={`paddingInline`}>
+      <div className={styles.heroContainer}>
+        <div className={styles.heroWrapper}>
+          <div className={styles.txtContainer}>
+            <h1 className={styles.title}>
+              {herosContent === "home" ? `${title}` : null}
+            </h1>
+            <p className={styles.paragraph}>
+              {herosContent === "home" ? `${paragraph}` : null}
+            </p>
+          </div>
+          {herosContent === "home" && (
+            <Image
+              className={styles.illustartion}
+              src={imgSrc}
+              alt={imgAlt}
+              height={500}
+              width={600}
+            />
+          )}
         </div>
-        {herosContent === "home" && (
-          <Image
-            className={styles.illustartion}
-            src={imgSrc}
-            alt={imgAlt}
-            height={500}
-            width={600}
-          />
-        )}
+        <Button btnStyle="black" btnLocation="hero" />
       </div>
-      <Button btnStyle="black" btnLocation="hero" />
     </div>
   );
 }
