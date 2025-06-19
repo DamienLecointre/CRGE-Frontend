@@ -68,11 +68,17 @@ function SignIn() {
 
   const dispatch = useDispatch();
 
-  const addConnectionStatus = (userFirstName, userLastName, status) => {
+  const addConnectionStatus = (
+    userFirstName,
+    userLastName,
+    userEmail,
+    status
+  ) => {
     dispatch(
       addConnectionToStore({
         firstName: userFirstName,
         lastName: userLastName,
+        email: userEmail,
         isConnected: status,
       })
     );
@@ -107,7 +113,12 @@ function SignIn() {
             setPassword("");
             showTemporaryError(setIsSigninSuccess);
             setIsConnected(true);
-            addConnectionStatus(data.user.firstName, data.user.lastName, true);
+            addConnectionStatus(
+              data.user.firstName,
+              data.user.lastName,
+              data.user.email,
+              true
+            );
             setTimeout(() => {
               setIsSigninSuccess(false);
               router.push("/");

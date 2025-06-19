@@ -75,11 +75,17 @@ function SignUp() {
 
   const dispatch = useDispatch();
 
-  const addConnectionStatus = (userFirstName, userLastName, status) => {
+  const addConnectionStatus = (
+    userFirstName,
+    userLastName,
+    userEmail,
+    status
+  ) => {
     dispatch(
       addConnectionToStore({
         firstName: userFirstName,
         lastName: userLastName,
+        email: userEmail,
         isConnected: status,
       })
     );
@@ -135,7 +141,12 @@ function SignUp() {
             setConfirmPassword("");
             showTemporaryError(setIsUserCreated);
             setIsConnected(true);
-            addConnectionStatus(data.user.firstName, data.user.lastName, true);
+            addConnectionStatus(
+              data.user.firstName,
+              data.user.lastName,
+              data.user.email,
+              true
+            );
             setTimeout(() => {
               setIsUserCreated(false);
               router.push("/");

@@ -33,7 +33,10 @@ function AdherentBtn() {
   };
 
   return (
-    <Link href="/signIn" className={styles.adherentBtn}>
+    <Link
+      href={isUserConnected.isConnected === true ? "/profil" : "/signIn"}
+      className={styles.adherentBtn}
+    >
       <FontAwesomeIcon
         icon={faUser}
         style={{ strokeWidth: 30 }}

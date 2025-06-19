@@ -4,6 +4,7 @@ const initialState = {
   value: {
     firstName: "",
     lastName: "",
+    email: "",
     isConnected: false,
   },
 };
