@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 
 //NEXT IMPORTS
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 //REDUX IMPORTS
@@ -17,6 +18,11 @@ import styles from "../../styles/Hero/Hero.module.css";
 
 const backendHeroContent = process.env.NEXT_PUBLIC_URL_BACKEND_HERO_CONTENT;
 function Hero() {
+  // CONST URL CUSTOM DISPLAY
+  const displayNames = {
+    accueil: "Accueil",
+    events: ["CRGE", "Notre actualité"],
+  };
   const herosContent = useSelector((state) => state.heros.value);
   const allowToUpdateFile = useSelector((state) => state.connection.value);
 
@@ -51,10 +57,15 @@ function Hero() {
   }, []);
 
   // CONST TO CUT URL IN DIFFERENTS PARTS
-  const pathSegments =
+  const rawSegments =
     router.pathname === "/"
-      ? ["accueil"]
-      : ["accueil", ...router.pathname.split("/").filter(Boolean)];
+      ? ["Accueil"]
+      : ["Accueil", ...router.pathname.split("/").filter(Boolean)];
+
+  const displaySegments = rawSegments.flatMap((segment) => {
+    const value = displayNames[segment];
+    return Array.isArray(value) ? value : value || segment;
+  });
 
   return (
     <div className={`paddingInline`}>
@@ -73,12 +84,25 @@ function Hero() {
             <h1 className={styles.title}>{title}</h1>
             {herosContent !== "home" && (
               <ul className={styles.breadcrumb}>
-                {pathSegments.map((segment, index) => (
-                  <li key={index}>
-                    {segment.replace(/-/g, "·")}{" "}
-                    {index < pathSegments.length - 1 && " . "}
-                  </li>
-                ))}
+                {displaySegments.map((segment, index) => {
+                  const isLast = index === displaySegments.length - 1;
+                  return (
+                    <li
+                      key={index}
+                      className={`${styles.linkBreadcrumb} ${
+                        isLast ? styles.lastBreadcrumb : ""
+                      }`}
+                    >
+                      {index === 0 && index !== isLast ? (
+                        <Link href="/" className={styles.linkBreadcrumb}>
+                          {segment}
+                        </Link>
+                      ) : (
+                        segment
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             )}
             <p className={styles.paragraph}>{paragraph}</p>

@@ -18,6 +18,7 @@
 
   --fontFamilyOpen:"open sans", sans-serif;
 
+  --fontSize08: 0.8rem;
   --fontSize1: 1rem;
   --fontSize11: 1.1rem;
   --fontSize125: 1.25rem;
@@ -42,6 +43,7 @@
   --colorSecondaryLight: #a4a8bc;
   --colorSecondaryLight2: #E3E5EA;
   
+  --lineHeight1:1rem;
   --lineHeight15:1.5rem;
   --lineHeight2:2rem;
   --lineHeight25:2.5rem;
