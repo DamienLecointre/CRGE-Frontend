@@ -1,0 +1,13 @@
+.updateText {
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize125);
+  font-weight: var(--fontWeightMedium);
+  color: var(--colorAccent);
+  text-decoration: underline;
+}
+
+.updateIcon {
+  font-size: large;
+  padding-left: 15px;
+  cursor: pointer;
+}

@@ -1,0 +1,363 @@
+{
+  "eventData":[ 
+  {"id": "25-ans-crge","category":"Actu CRGE","title":"25 ans au service des GE : CRGE célèbre un anniversaire marquant","titleImg":"/ressources/Icon_feuille-bougie-25ans.png","date":"15 Avr. 2025","introImg":"/ressources/banniere-web-25ans-GE.gif","intro":"En 2025, CRGE fête ses 25 ans d'existence. Depuis sa création, notre organisation s'est imposée comme un pilier essentiel pour les Groupements d'Employeurs en France, en les accompagnant dans leur développement et en défendant leurs intérêts.","section":[{"title":"Une mission au cœur de l'emploi partagé","content":"CRGE a pour vocation de promouvoir l'emploi à temps partagé, une solution innovante qui permet aux entreprises de mutualiser leurs ressources humaines tout en offrant aux salariés des parcours professionnels sécurisés. Avec plus de 5 000 salariés en équivalent temps plein et des centaines d'entreprises adhérentes, le réseau joue un rôle clé dans la dynamisation des territoires et la création d'emplois durables."},{"title":"Une vision tournée vers l'avenir","content":"En célébrant cet anniversaire, CRGE réaffirme son engagement envers les valeurs qui ont guidé ses actions depuis le début : dynamiser les bassins de vie locaux, faciliter l'accès à l'emploi, et promouvoir le dialogue social. Avec une nouvelle identité et un site web modernisé, l'organisation se prépare à relever les défis des prochaines décennies."},{"title":"Des services adaptés aux besoins des GE","content":"Au fil des années, CRGE a développé une expertise unique pour répondre aux besoins des Groupements d'Employeurs. Ses services incluent des conseils juridiques, la gestion des payes, des formations professionnelles, et un appui stratégique pour la création et la gestion des GE. Ces initiatives ont permis de professionnaliser les GE et de renforcer leur impact économique et social."},{"title":"Un réseau en constante évolution","content":"CRGE ne cesse d'innover pour répondre aux besoins changeants des GE. Chaque année, des formations, des webinaires, et des événements professionnels sont organisés pour favoriser le partage d'expériences et la création de liens entre les acteurs du réseau. Ces efforts contribuent à renforcer la visibilité et la pérennité des GE en France."},{"title":"Un événement pour marquer l'année","content":"Pour clôturer cette année exceptionnelle, CRGE organise un grand événement en fin d'année, réunissant ses adhérents, ses partenaires et toutes celles et ceux qui soutiennent ses actions . Cette célébration sera l'occasion de revenir sur les moments forts des 25 dernières années, de partager des témoignages inspirants et de renforcer les liens au sein du réseau."},{"content":" Au programme : conférences, ateliers… et une soirée conviviale pour célébrer ensemble cet anniversaire. Les détails seront bientôt disponibles."}]
+  },
+{
+      "id": "seminaire-ia-2025",
+      "category": "Événement CRGE",
+      "title": "Séminaire national : L’IA au service de votre GE",
+      "titleImg": "/ressources/icon_ia_seminaire.png",
+      "date": "12 Juin 2025",
+      "introImg": "",
+      "intro": "Rejoignez-nous le 12 juin à Bayonne pour un séminaire dédié à l’intelligence artificielle appliquée aux Groupements d’Employeurs.",
+      "sections": [
+        {
+          "title": "Objectifs",
+          "content": "Ce séminaire vise à démystifier l’IA et à proposer des cas d’usage concrets pour les GE.\nNous présenterons des outils d’automatisation de la gestion administrative, des solutions d’analyse prédictive pour anticiper les besoins en personnel, ainsi que des assistants numériques pour améliorer l’intégration des nouveaux salariés.\nLes participants repartiront avec des pistes de projets immédiatement applicables et adaptés à leur structure.\nNous souhaitons ainsi permettre aux GE d’accélérer leur transformation numérique et d’optimiser leurs processus.\nDes retours d’expérience d’organisations pionnières seront présentés pour illustrer les bénéfices réels de l’IA."
+        },
+        {
+          "title": "Programme",
+          "content": "La matinée sera consacrée à une présentation des fondamentaux de l’intelligence artificielle et de ses applications concrètes.\nL’après-midi sera placé sous le signe de l’atelier pratique avec un « serious game » où les participants expérimenteront des outils d’IA.\nPlusieurs stands seront proposés toute la journée pour découvrir des solutions technologiques ciblées : chatbot RH, logiciel de suivi des compétences, etc.\nUn moment d’échange et de networking permettra aux participants de partager leurs idées, questions et contacts.\nEnfin, une séance de synthèse clôturera la journée en identifiant les prochaines étapes à mettre en œuvre dans chaque GE."
+        },
+        {
+          "title": "Public visé",
+          "content": "Cet événement s’adresse aux dirigeants et chargés de projets au sein des GE, aux responsables RH et aux administrateurs souhaitant explorer les usages de l’IA.\nAucune compétence technique poussée n’est nécessaire pour participer : l’objectif est de rendre l’IA accessible et opérationnelle.\nLes participants pourront repartir avec des pistes concrètes pour initier leur propre démarche de transformation numérique.\nIls auront l’occasion de rencontrer des pairs et des professionnels du numérique pour enrichir leur réseau.\nNous encourageons également l’inscription de duos (dirigeant + RH) pour favoriser une dynamique de réflexion collective."
+        }
+      ]
+    },
+    {
+      "id": "formation-conges-malaise-2025",
+      "category": "Formation CRGE",
+      "title": "Formation : Congés payés et maladie – adaptations légales",
+      "titleImg": "",
+      "date": "19 Juin 2025",
+      "introImg": "",
+      "intro": "Un module de formation ciblé pour comprendre et appliquer les adaptations récentes de la gestion des congés payés et absences maladie dans les GE.",
+      "sections": [
+        {
+          "title": "Intervenants",
+          "content": "La formation sera animée par des juristes spécialisés en droit du travail, experts dans le domaine des GE.\nIls apporteront un éclairage juridique pointu sur les nouveautés législatives et réglementaires.\nLes cas pratiques présentés permettront de contextualiser les règles dans l’environnement spécifique des GE.\nLes participants pourront poser leurs questions et recevoir des réponses personnalisées sur leurs cas réels.\nUn support complet sera remis en fin de session avec des fiches pratiques et des synthèses de la réglementation."
+        },
+        {
+          "title": "Contenu",
+          "content": "Le programme couvre la gestion des congés payés, le suivi des absences pour maladie et les conséquences en termes de paie et de droit du travail.\nIl s’agira également d’analyser les impacts potentiels sur la planification RH et la gestion des compétences.\nLes participants travailleront sur des situations courantes rencontrées dans les GE : anticipation d’absence, répartition des heures, maintenance de la charge.\nUne partie de la formation sera dédiée aux dispositifs de protection des salariés en cas d’absences prolongées ou fractionnées.\nEnfin, un temps d’échange permettra de capitaliser sur les expériences des GE présents et d’envisager des pistes d’amélioration collective."
+        }
+      ]
+    },
+    {
+      "id": "webinaire-juridique-2025-06-20",
+      "category": "Webinaire CRGE",
+      "title": "Webinaire : Juridique et GE – Vendredi pratique",
+      "titleImg": "",
+      "date": "20 Juin 2025",
+      "introImg": "",
+      "intro": "Séance en ligne le 20 juin visant à décomposer les aspects juridiques essentiels du fonctionnement des GE au quotidien.",
+      "sections": [
+        {
+          "title": "Thèmes abordés",
+          "content": "Cette séance abordera la constitution des contrats de mise à disposition, les responsabilités partagées entre adhérents, ainsi que les obligations sociales et fiscales.\nLes participants pourront poser leurs questions en direct à un avocat spécialisé en droit des GE.\nAu cours du webinaire, des cas réels seront étudiés pour illustrer les enjeux juridiques fréquents.\nUn guide pratique numérique sera distribué à l’issue de l’événement, contenant des modèles adaptables à chaque GE.\nUn temps d’échange permettra aux participants de partager leurs problématiques spécifiques et d’obtenir des premiers conseils."
+        }
+      ]
+    },
+    {
+      "id": "formation-social-media-2025-07-10",
+      "category": "Formation CRGE",
+      "title": "Formation : Communiquer sur les réseaux sociaux pour votre GE",
+      "titleImg": "",
+      "date": "10 Juil. 2025",
+      "introImg": "",
+      "intro": "Ce module pratique vise à aider les GE à améliorer leur visibilité en ligne via les principaux réseaux sociaux.",
+      "sections": [
+        {
+          "title": "Ateliers pratiques",
+          "content": "Vous apprendrez à créer des visuels attractifs, à rédiger des messages percutants et à adapter votre ton pour chaque plateforme.\nDes exemples concrets de publications réussies seront analysés pour en tirer les bonnes pratiques.\nNous aborderons également la programmation et l’analyse des statistiques pour optimiser votre stratégie.\nDes temps de mise en pratique permettront de créer en direct des postes sur Facebook, LinkedIn et Instagram.\nUn plan d’action personnalisé sera remis à chaque participant pour engager sa communauté sur le long terme."
+        }
+      ]
+    },
+    {
+      "id": "webinaire-40ans-loi-25juil2025",
+      "category": "Webinaire CRGE",
+      "title": "Webinaire : GE fête les 40 ans de la loi sur les GE",
+      "titleImg": "",
+      "date": "25 Juil. 2025",
+      "introImg": "",
+      "intro": "Webinaire exceptionnel dédié au 40e anniversaire de la législation encadrant les Groupements d’Employeurs.",
+      "sections": [
+        {
+          "title": "Panel",
+          "content": "Un panel composé de juristes, d’historiens et de praticiens reviendra sur l’évolution juridique du statut de GE depuis 1985.\nNous analyserons les grandes réformes, leurs impacts sur les structures, et les perspectives d’avenir.\nLes témoignages de GE ayant vécu différentes époques permettront de mesurer les progrès réalisés.\nUn débat sera organisé sur les enjeux actuels : emploi partagé, flexibilité, reconnaissance institutionnelle.\nEnfin, une synthèse des enseignements sera publiée en ligne après l’événement."
+        }
+      ]
+    },
+    {
+      "id": "ag-occitanie-2025-07-09",
+      "category": "Événement régional",
+      "title": "AG Occitanie & Séminaire 40 ans des GE",
+      "titleImg": "",
+      "date": "09 Juil. 2025",
+      "introImg": "",
+      "intro": "L’Assemblée générale annuelle de CRGE Occitanie combinée à un séminaire spécial autour des 40 ans de la loi sur les GE.",
+      "sections": [
+        {
+          "title": "Thématique",
+          "content": "Le séminaire portera sur la prospection territoriale, la fidélisation des adhérents et la valorisation des talents locaux.\nVous découvrirez des projets innovants menés par les GE de la région sur des thématiques telles que l’agriculture, le numérique et la santé.\nL’AG permettra de faire le point sur la vie associative, les actions menées et les perspectives pour l’année à venir.\nUn moment de convivialité est prévu en fin de journée pour renforcer les liens entre GE et partenaires.\nUn résumé des interventions sera diffusé par la suite aux adhérents et disponible sur l’espace membre."
+        }
+      ]
+    },
+    {
+      "id": "formation-lfss-2025-07-03",
+      "category": "Formation CRGE",
+      "title": "Formation LFSS 2025 : impacts sur le calcul des effectifs",
+      "titleImg": "",
+      "date": "03 Juil. 2025",
+      "introImg": "",
+      "intro": "Atelier technique sur les implications de la loi de financement de la sécurité sociale 2025 pour les Groupements d’Employeurs.",
+      "sections": [
+        {
+          "title": "Contenu",
+          "content": "Cette formation approfondit les nouvelles règles liées à l’effectif salarié, aux exonérations et au calcul des cotisations.\nElle présentera des simulations chiffrées pour illustrer les changements sur les déclarations PAJÉO et DSN.\nLes participants recevront des outils pratiques pour adapter leurs méthodes de suivi administratif.\nDes conseillers CRGE seront présents pour répondre aux cas spécifiques de chaque GE.\nUn guide reprenant toutes les modifications sera remis en fin de session."
+        }
+      ]
+    },
+    {
+      "id": "atelier-cse-ge-2024-11-22",
+      "category": "Événement CRGE",
+      "title": "Première rencontre des CSE de GE",
+      "titleImg": "",
+      "date": "22 Nov. 2024",
+      "introImg": "",
+      "intro": "Rencontre inédite réunissant les membres des Comités Sociaux et Économiques des GE adhérents.",
+      "sections": [
+        {
+          "title": "Objectif",
+          "content": "Favoriser l’échange de bonnes pratiques entre membres de CSE pour les structures multi‑entreprises.\nPrésenter les responsabilités légales et les bonnes pratiques dans le dialogue social au sein des GE.\nDonner des retours concrets d’expériences de CSE impliqués dans des projets innovants.\nIdentifier ensemble les points de vigilance et les leviers d’amélioration pour dynamiser l’action sociale.\nLes échanges se sont clôturés par un atelier participatif pour élaborer une charte de bonnes pratiques."
+        }
+      ]
+    },
+    {
+      "id": "webinaire-travailleurs-chaleur-2025-06-20",
+      "category": "Webinaire CRGE",
+      "title": "Webinaire : Travailleurs exposés à la chaleur et GE",
+      "titleImg": "",
+      "date": "20 Juin 2025",
+      "introImg": "",
+      "intro": "Focus sur les obligations légales et pratiques à mettre en œuvre pour protéger les salariés exposés à la chaleur.",
+      "sections": [
+        {
+          "title": "Public visé",
+          "content": "S’adressant aux gestionnaires RH, responsables santé-sécurité et administrateurs de GE concernés par les conditions de travail.\nNous y aborderons les dispositifs de prévention, les outils de mesure, et les obligations réglementaires.\nLes participants recevront des conseils pratiques pour organiser des plans d’action au sein de leurs structures.\nLes retours d’expérience de GE intervenant dans les secteurs de l’agriculture et du BTP seront partagés.\nUn guide synthétique sera mis à disposition des participants après la session."
+        }
+      ]
+    },
+    {
+      "id": "seminaire-hiver-2022-paris",
+      "category": "Événement CRGE",
+      "title": "Séminaire d’hiver des GE – Paris",
+      "titleImg": "",
+      "date": "Déc. 2022",
+      "introImg": "",
+      "intro": "Séminaire annuel organisé à Paris à destination des GE pour favoriser les échanges pendant l’hiver.",
+      "sections": [
+        {
+          "title": "Programme",
+          "content": "Tables rondes autour des enjeux saisonniers de gestion du personnel partagé.\nAteliers thématiques : fiscalité, recrutement, dialogue social.\nTemps de networking pour renforcer les liens entre GE de différentes régions.\nPrésence d’experts extérieurs pour partager retours et conseils pratiques.\nUne restitution des travaux a été publiée sur le site CRGE début 2023."
+        }
+      ]
+    },
+    {
+      "id": "convention-europeenne-2006",
+      "category": "Histoire CRGE",
+      "title": "Convention européenne des GE – La Rochelle",
+      "titleImg": "",
+      "date": "2006",
+      "introImg": "",
+      "intro": "CRGE a été à l’initiative de la première convention européenne des GE à La Rochelle.",
+      "sections": [
+        {
+          "title": "Participants",
+          "content": "Cet événement a rassemblé des GE français et européens autour des enjeux de l’emploi partagé.\nDe nombreux intervenants internationaux ont présenté des approches comparées.\nDes ateliers thématiques ont traité de la législation, des outils partagés, et des financements.\nCette convention a ouvert la voie à une coopération transfrontalière renforcée.\nUn rapport final a été diffusé auprès des partenaires et institutions européennes."
+        }
+      ]
+    },
+    {
+      "id": "cerge-bruxelles-2008",
+      "category": "Histoire CRGE",
+      "title": "Inauguration du CERGE – Bruxelles",
+      "titleImg": "",
+      "date": "2008",
+      "introImg": "",
+      "intro": "Mise en place du Centre Européen de Ressources pour les Groupements d’Employeurs (CERGE).",
+      "sections": [
+        {
+          "title": "Visée",
+          "content": "Le CERGE a été conçu comme un lieu d’échange pour les praticiens et chercheurs en GE.\nIl a reçu le soutien d’institutions européennes et d’organisations nationales.\nDes publications communes ont été lancées pour diffuser les bonnes pratiques.\nDes séminaires et études comparatives ont été réalisés pendant plusieurs années.\nCe centre a contribué à la professionnalisation du GE dans le contexte européen."
+        }
+      ]
+    },
+    {
+      "id": "festival-uniques-2025-05-15",
+      "category": "Participation CRGE",
+      "title": "Festival UNIQUES 2025 – Toulouse",
+      "titleImg": "",
+      "date": "15 Mai 2025",
+      "introImg": "",
+      "intro": "CRGE Occitanie était présente au festival UNIQUES organisé au Stadium de Toulouse.",
+      "sections": [
+        {
+          "title": "Intervention",
+          "content": "Nous avons animé un atelier dédié à la présentation du modèle GE auprès d’un public professionnel.\nDes démonstrations de nos services et outils ont été proposées aux visiteurs.\nUn stand a permis aux structures intéressées de poser leurs questions et de nouer des contacts.\nPlusieurs projets de nouvelles coopérations territoriales ont été initiés sur place.\nUn bilan sera partagé avec les participants et mis en ligne prochainement."
+        }
+      ]
+    },
+    {
+      "id": "conference-juristes-2024-12-16",
+      "category": "Publication CRGE",
+      "title": "Publications juridiques décembre 2024",
+      "titleImg": "",
+      "date": "16 Déc. 2024",
+      "introImg": "",
+      "intro": "CRGE publie en décembre 2024 un ensemble de guides juridiques destinés aux GE.",
+      "sections": [
+        {
+          "title": "Documents",
+          "content": "Ces publications couvrent des thèmes tels que l’emploi des seniors, la gestion des contrats courts et le dialogue social.\nElles proposent des fiches pratiques et des modèles adaptables aux GE.\nLe travail a été réalisé avec le concours d’avocats et d’universitaires.\nChaque document est téléchargeable librement sur le site de CRGE.\nDes webinaires de présentation des contenus seront organisés début 2025."
+        }
+      ]
+    },
+    {
+      "id": "newsletter-rse-handicap-2025-04-22",
+      "category": "Vidéo RSE",
+      "title": "Episode 3 – GEAG Cellule RSE 2024 : Handicap & GE",
+      "titleImg": "",
+      "date": "22 Avril 2025",
+      "introImg": "",
+      "intro": "Troisième volet vidéo de la série RSE dédiée à l’intégration des personnes en situation de handicap dans les GE.",
+      "sections": [
+        {
+          "title": "Contenu",
+          "content": "Cette vidéo présente des témoignages de salariés et responsables GE impliqués dans l’inclusion.\nDes exemples concrets de bonnes pratiques sont détaillés.\nLes freins identifiés et les leviers mobilisables sont exposés.\nUn travail pédagogique est proposé pour sensibiliser les équipes.\nDes liens vers ressources et partenaires sont fournis en description."
+        }
+      ]
+    },
+    {
+      "id": "newsletter-rse-handicap-2025-04-07",
+      "category": "Vidéo RSE",
+      "title": "Episode 2 – GEAG Cellule RSE 2024 : Handicap & GE",
+      "titleImg": "",
+      "date": "07 Avril 2025",
+      "introImg": "",
+      "intro": "Deuxième épisode d’une série autour de la responsabilité sociétale et de la question du handicap dans les GE.",
+      "sections": [
+        {
+          "title": "Contenu",
+          "content": "Cette étape explore les dispositifs internes permettant d’améliorer l’accessibilité.\nElle met en avant des initiatives innovantes mises en œuvre par des adhérents CRGE.\nDes retours d’expérience montrent les bénéfices humains et organisationnels.\nUn échange est organisé avec des experts du secteur médico-social.\nEnfin, des ressources utiles sont proposées à la fin de la vidéo."
+        }
+      ]
+    },
+    {
+      "id": "newsletter-rse-handicap-2025-03-25",
+      "category": "Vidéo RSE",
+      "title": "Episode 1 – GEAG Cellule RSE 2024 : Handicap & GE",
+      "titleImg": "",
+      "date": "25 Mars 2025",
+      "introImg": "",
+      "intro": "Premier volet de la série RSE consacrée à la thématique du handicap au sein des GE.",
+      "sections": [
+        {
+          "title": "Présentation",
+          "content": "Présentation de la Cellule RSE GEAG et de ses objectifs 2024.\nContexte et enjeux de l’inclusion dans les structures partagées.\nProgramme prévu pour cette série de vidéos.\nIntervenants : représentants de GE et personnes en situation de handicap.\nProchaines thématiques abordées dans les épisodes suivants."
+        }
+      ]
+    },
+    {
+      "id": "temoignage-ge-pays-loire-2025",
+      "category": "Actualité GE",
+      "title": "Découvrez les GE de Pays de la Loire",
+      "titleImg": "",
+      "date": "2025",
+      "introImg": "",
+      "intro": "Une plongée dans les actions et innovations portées par les 17 GE adhérents en Pays de la Loire.",
+      "sections": [
+        {
+          "title": "Faits marquants",
+          "content": "Chaque GE est présenté à travers son secteur d’activité, ses projets structurants et ses partenariats locaux.\nDes thématiques comme l’économie circulaire, les services à la personne et l’agriculture sont mises en lumière.\nPlusieurs GE ont lancé des projets pilotes récompensés au niveau régional.\nLes témoignages d’adhérents illustrent la diversité des parcours et des appuis mobilisés.\nUn guide synthétique sera disponible sur le site CRGE Région Pays de la Loire."
+        }
+      ]
+    },
+    {
+      "id": "tva-exoneration-2024-12-18",
+      "category": "Actualité GE",
+      "title": "Avancée : GE exonérés de TVA",
+      "titleImg": "",
+      "date": "18 Déc. 2024",
+      "introImg": "",
+      "intro": "Bonne nouvelle annoncée fin 2024 : les Groupements d’Employeurs peuvent bénéficier d’une exonération de TVA dans certains cas.",
+      "sections": [
+        {
+          "title": "Impacts",
+          "content": "La mesure de la DGFIP réduit significativement le coût de fonctionnement des GE dans le secteur non lucratif.\nElle concerne les activités de coordination, de gestion et de formation mises en place par les GE.\nLes GE peuvent désormais réinvestir ces économies dans le développement de projets structurants.\nCette annonce a été saluée par la communauté CRGE comme un enjeu majeur de soutien.\nUn guide explicatif a été mis en ligne pour détailler les critères d’éligibilité et la démarche à suivre."
+        }
+      ]
+    },
+    {
+      "id": "indicator-table-ronde-2024-10",
+      "category": "Actualité GE",
+      "title": "Table ronde : indicateurs clés d’un GE",
+      "titleImg": "",
+      "date": "10 Oct. 2024",
+      "introImg": "",
+      "intro": "Organisation d’un temps fort par GENOV’ lors de la célébration de ses 30 ans autour des indicateurs de performance des GE.",
+      "sections": [
+        {
+          "title": "Thèmes",
+          "content": "Comment mesurer l’efficacité territoriale, la qualité de service et la pérennité financière ?\nDes experts ont présenté des tableaux de bord adaptés aux GE.\nDes retours de terrain ont permis de confronter indicateurs quantitatifs et qualitatifs.\nUn guide d’accompagnement pour mettre en place ces indicateurs sera prochainement publié.\nUn webinaire de restitution a été organisé pour élargir la diffusion aux adhérents."
+        }
+      ]
+    },
+    {
+      "id": "region-nouvelle-aquitaine-soutien-2024",
+      "category": "Actualité GE",
+      "title": "Dispositif de soutien aux GE Nouvelle‑Aquitaine",
+      "titleImg": "",
+      "date": "2024",
+      "introImg": "",
+      "intro": "La région Nouvelle‑Aquitaine a lancé un dispositif inédit de soutien financier et technique aux Groupements d’Employeurs en 2024.",
+      "sections": [
+        {
+          "title": "Cibles",
+          "content": "Sont concernées les GE qui interviennent dans les secteurs non agricoles, artisanaux ou médico-sociaux.\nLe dispositif prévoit des subventions jusqu’à 30 % des dépenses éligibles.\nUn accompagnement renforcé est offert pour la structuration des projets territoriaux.\nPlusieurs ateliers de présentation ont été organisés dans les grandes villes régionales.\nLes candidatures sont clôturées à la fin de l’année et feront l’objet d’un bilan au début de 2025."
+        }
+      ]
+    },
+    {
+      "id": "crge-rencontre-adherents-2024",
+      "category": "Actu CRGE",
+      "title": "CRGE à la rencontre de ses adhérents",
+      "titleImg": "",
+      "date": "Début 2024",
+      "introImg": "",
+      "intro": "CRGE a lancé début 2024 une série de visites sur le terrain auprès de ses GE adhérents pour renforcer le lien et mieux comprendre les besoins.",
+      "sections": [
+        {
+          "title": "Détails",
+          "content": "Ces visites ont été menées dans plus de 10 régions différentes.\nElles ont permis de collecter des témoignages et d'identifier des points de friction à résoudre.\nDes ateliers participatifs ont été organisés pour co-construire des pistes d'amélioration.\nCes retours ont alimenté la feuille de route stratégique de CRGE pour 2024-2026.\nUn rapport de synthèse est en cours de finalisation et sera diffusé prochainement."
+        }
+      ]
+    },
+    {
+      "id": "nouvelle-identite-site-2025",
+      "category": "Actu CRGE",
+      "title": "Nouveau nom, nouvelle identité et nouveau site",
+      "titleImg": "",
+      "date": "Début 2025",
+      "introImg": "",
+      "intro": "CRGE inaugure en 2025 une nouvelle charte graphique accompagnée d'un site web modernisé, plus ergonomique et riche en contenus.",
+      "sections": [
+        {
+          "title": "Points forts",
+          "content": "La nouvelle identité visuelle permet une meilleure lisibilité des contenus et une expérience utilisateur optimisée.\nLe site offre un espace ressource enrichi (guides, webinaires, actualités) régulièrement mis à jour.\nUne section dédiée aux adhérents permet un accès simplifié aux services de gestion, formation et accompagnement.\nDes témoignages vidéo et des retours d'expérience sont désormais mis en avant.\nUne newsletter auto-personnalisée est également proposée pour recevoir les actualités par région et thématique."
+        }
+      ]
+    }
+  ] 
+}

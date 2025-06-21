@@ -58,6 +58,26 @@ TAG STYLE
   line-height: var(--lineHeight15);
   padding-top: 24px;
 }
+
+.txtInputTitle {
+  position: relative;
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize125);
+  font-weight: var(--fontWeightSemiBold);
+  line-height: var(--lineHeight15);
+  padding-top: 24px;
+}
+
+.txtInputTitle::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: var(--bgPrimaryColor);
+  left: 0;
+  bottom: -10px;
+}
+
 .inputContainer {
   position: relative;
   width: fit-content;
@@ -67,17 +87,16 @@ TAG STYLE
 .label {
   position: absolute;
   font-family: var(--fontFamilyOpen);
-  color: var(--colorSecondaryLight);
+  color: var(--colorPrimary);
   background: var(--InputSecondaryColor);
   margin-left: 12px;
   padding-inline: 5px;
   top: -2px;
   transform: translateY(-50%);
-  z-index: 5;
+  z-index: 1;
 }
 
 .input {
-  /* position: relative; */
   outline: none;
   height: 40px;
   width: 400px;
@@ -97,6 +116,7 @@ TAG STYLE
 
 .input::placeholder {
   color: var(--colorPrimary);
+  opacity: 0.5;
 }
 
 .eyeIcon {
@@ -105,6 +125,15 @@ TAG STYLE
   right: 16px;
   transform: translateY(-50%);
   cursor: pointer;
+}
+
+.selectOption {
+  color: var(--colorSecondary);
+}
+
+.inputContainerSideSide {
+  display: flex;
+  column-gap: 40px;
 }
 
 .txtQuestion {

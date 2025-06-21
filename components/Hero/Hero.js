@@ -23,7 +23,11 @@ function Hero() {
     accueil: "Accueil",
     events: ["CRGE", "Notre actualité"],
   };
+
+  // CONST FOR HERO CONTENT FIELD
   const herosContent = useSelector((state) => state.heros.value);
+
+  // CONST DISPLAY PERMISSION TO UPDATE WEBSITE
   const allowToUpdateFile = useSelector((state) => state.connection.value);
 
   // CONST REDIRECTION TO WEBSITE PAGE
@@ -33,7 +37,7 @@ function Hero() {
   const [heroHomeData, setHeroHomeData] = useState([]);
 
   // -------------------------------------
-  // FUNCTIONTO FIND MATCHING HEROSCONTENT
+  // FUNCTION TO FIND MATCHING HEROSCONTENT
   // -------------------------------------
 
   const currentSectionData = heroHomeData.find(
@@ -56,6 +60,14 @@ function Hero() {
       .catch((error) => console.error("Erreur lors du fetch :", error));
   }, []);
 
+  // ------------------------
+  // FUNCTION TO EDIT CONTENT
+  // ------------------------
+
+  const handleClickToEdit = () => {
+    console.log("edit");
+  };
+
   // CONST TO CUT URL IN DIFFERENTS PARTS
   const rawSegments =
     router.pathname === "/"
@@ -76,6 +88,7 @@ function Hero() {
             <FontAwesomeIcon
               icon={faPenToSquare}
               className={styles.updateIcon}
+              onClick={handleClickToEdit}
             />
           </span>
         )}

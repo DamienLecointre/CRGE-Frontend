@@ -1,135 +1,18 @@
 //REACT IMPORTS
 import React, { useState } from "react";
-
-//NEXT IMPORTS
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-
-//REDUX IMPORTS
-import { useDispatch } from "react-redux";
-import { addConnectionToStore } from "../reducers/isConnected";
-
-//COMPONENTS IMPORTS
-import Button from "./UIKit/Button";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 //ICONS IMPORTS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowLeft,
-  faEye,
-  faEyeSlash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 
 //STYLES IMPORTS
-import styles from "../styles/Sign.module.css";
+import styles from "../../styles/Sign.module.css";
 
-const backendUsersSignin = process.env.NEXT_PUBLIC_URL_BACKEND_USERS_SIGNIN;
-
-function SignIn() {
-  // CONST REDIRECTION TO WEBSITE PAGE
-  const router = useRouter();
-
-  // CONST INPUT VALUE
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  // CONST TO SHOW PASSWORD
-  const [showPassword, setShowPassword] = useState(false);
-
-  // CONST ALERT MESSAGES
-  const [isEmptyField, setIsEmptyField] = useState(false);
-  const [isWrongField, setIsWrongField] = useState(false);
-  const [isSigninSuccess, setIsSigninSuccess] = useState(false);
-
-  // CONST TO CHECK IF USER CONNECTED
-  const [isConnected, setIsConnected] = useState(false);
-
-  // -------------------------
-  // FUNCTION TO SHOW PASSWORD
-  // -------------------------
-  const togglePassword = () => {
-    setShowPassword((prev) => !prev);
-  };
-
-  // ---------------------------
-  // // FUNCTION TO HIDDEN ERROR
-  // ---------------------------
-  const showTemporaryError = (setErrorFunction, duration = 3000) => {
-    setErrorFunction(true);
-    setTimeout(() => {
-      setErrorFunction(false);
-    }, duration);
-  };
-
-  // --------------------------------------
-  // FUNCTION TO DISPATCH CONNECTION STATUS
-  // --------------------------------------
-
-  const dispatch = useDispatch();
-
-  const addConnectionStatus = (
-    userFirstName,
-    userLastName,
-    userEmail,
-    status,
-    isAdmin
-  ) => {
-    dispatch(
-      addConnectionToStore({
-        firstName: userFirstName,
-        lastName: userLastName,
-        email: userEmail,
-        isConnected: status,
-        isAdmin,
-      })
-    );
-  };
-
-  // --------------------
-  // HANDLE CLICK SIGN IN
-  // --------------------
-
-  const handleClickSignin = () => {
-    if (!email || !password) {
-      showTemporaryError(setIsEmptyField);
-      return;
-    } else {
-      const userData = {
-        email,
-        password,
-      };
-      fetch(`${backendUsersSignin}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          // console.log(data);
-          if (data.error === "Wrong email or password") {
-            showTemporaryError(setIsWrongField);
-            return;
-          } else if (data.result === true) {
-            setEmail("");
-            setPassword("");
-            showTemporaryError(setIsSigninSuccess);
-            setIsConnected(true);
-            addConnectionStatus(
-              data.user.firstName,
-              data.user.lastName,
-              data.user.email,
-              true,
-              data.user.admin
-            );
-            setTimeout(() => {
-              setIsSigninSuccess(false);
-              router.push("/");
-            }, 1000);
-          }
-        });
-    }
-  };
+function EventsEdit() {
+  // CONST FOR DATE PICKER STATE
+  const [selectedDate, setSelectedDate] = useState(null);
 
   return (
     <div className={styles.signContainer}>
@@ -185,93 +68,76 @@ function SignIn() {
         </defs>
       </svg>
       <div className={styles.signWrapper}>
-        <div className={styles.signForm}>
-          <h1 className={`${styles.txtColor} ${styles.txtTitle}`}>
-            <Image
-              className={styles.waveHandIcon}
-              src="/illustrations/emojihand.svg"
-              alt="hand wave"
-              height={50}
-              width={80}
-            ></Image>
-            Bienvenue sur votre espace adhérent !
-          </h1>
-          <p className={`${styles.txtColor} ${styles.txtParagraphe}`}>
-            Connectez-vous pour accéder à vos ressources exclusives, bénéficier
-            de nos services spécialisés et rester informé des dernières
-            actualités du CRGE.
-          </p>
-          {isEmptyField && (
-            <p className={styles.alertMessage}>
-              Veuillez remplir tous les champs de saisie
-            </p>
-          )}
+        <h1 className={`${styles.txtColor} ${styles.txtTitle}`}>
+          Créez votre évènement
+        </h1>
+        <p className={`${styles.txtColor} ${styles.txtInputTitle}`}>
+          Entête de l'évènement
+        </p>
+        <div className={styles.inputContainerSideSide}>
           <div className={styles.inputContainer}>
-            <label htmlFor="email" className={styles.label}>
-              Email
+            <label htmlFor="categories" className={styles.label}>
+              Catégory
             </label>
-            <input
-              type="email"
-              placeholder="johndoe@gmail.com"
-              name="email"
-              className={styles.input}
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
+            <select name="categories" className={styles.input}>
+              <option value="" className={styles.selectOption}>
+                Selectionnez une catégorie
+              </option>
+              <option value="Actu CRGE" className={styles.selectOption}>
+                Actu CRGE
+              </option>
+              <option value="Actu GE" className={styles.selectOption}>
+                Actu GE
+              </option>
+            </select>
           </div>
           <div className={styles.inputContainer}>
-            <label htmlFor="password" className={styles.label}>
-              Mot de passe
+            <label htmlFor="dateEvent" className={styles.label}>
+              Date de l'évènement
             </label>
-            <input
-              type={showPassword ? "text" : "password"}
-              placeholder="--------"
-              name="password"
-              className={styles.input}
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-            <FontAwesomeIcon
-              icon={showPassword ? faEyeSlash : faEye}
-              className={`${styles.txtColor} ${styles.eyeIcon}`}
-              onClick={togglePassword}
-            />
+            <div>
+              <DatePicker
+                selected={selectedDate}
+                onChange={(date) => setSelectedDate(date)}
+                placeholderText="JJ/MM/AAAA"
+                dateFormat="dd/MM/yyyy"
+                className={styles.input}
+                popperPlacement="bottom-end"
+                calendarClassName="custom-calendar"
+              />
+            </div>
           </div>
-          <span className={styles.txtQuestion}>Mot de passe oublié ?</span>
-          {isWrongField && (
-            <p className={styles.alertMessage}>
-              Email ou mot de passe incorrect
-            </p>
-          )}
-          {isSigninSuccess && (
-            <p className={styles.alertMessage}>Identification réussie !!!</p>
-          )}
-          <Button
-            btnStyle="white"
-            btnLocation="signin"
-            onClickSignin={handleClickSignin}
-          />
-          <Link href="/signUp" className={styles.txtQuestion}>
-            Pas encore de compte ?
-          </Link>
-          <Image
-            className={styles.illustartion}
-            src="/illustrations/signup.svg"
-            alt="illustration sign in"
-            height={700}
-            width={700}
-          />
-          <Link
-            href="/home"
-            className={`${styles.txtColor} ${styles.txtGoHomeLink}`}
-          >
-            <FontAwesomeIcon icon={faArrowLeft} className={styles.arrowIcon} />
-            Aller sur CRGE
-          </Link>
         </div>
+        <div className={styles.inputContainerSideSide}>
+          <div className={styles.inputContainer}>
+            <label htmlFor="titreEvent" className={styles.label}>
+              Titre de l'évènement
+            </label>
+            <input
+              type="text"
+              placeholder="Saisissez un titre"
+              name="titreEvent"
+              className={styles.input}
+            />
+          </div>
+          <div className={styles.inputContainer}>
+            <label htmlFor="imgTitreEvent" className={styles.label}>
+              Image de l'évènement
+            </label>
+            <input
+              type="text"
+              placeholder="Selectionnez une image"
+              name="imgTitreEvent"
+              className={styles.input}
+            />
+          </div>
+        </div>
+        <p className={`${styles.txtColor} ${styles.txtInputTitle}`}>
+          Description de l'évènement
+        </p>
       </div>
     </div>
   );
 }
 
-export default SignIn;
+export default EventsEdit;
