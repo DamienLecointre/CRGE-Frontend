@@ -12,16 +12,16 @@ import { useSelector } from "react-redux";
 //COMPONENTS IMPORTS
 import Header from "./Header/Header";
 import Hero from "./Hero/Hero";
-import ActualiteCards from "./UIKit/actualiteCards";
+import ActualiteCards from "./UIKit/ActualiteCards";
 
 //ICONS IMPORTS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
 //STYLES IMPORTS
-import styles from "../styles/Events.module.css";
+import styles from "../styles/Actualite.module.css";
 
-function Events() {
+function Actualite() {
   // CONST REDIRECTION TO WEBSITE PAGE
   const router = useRouter();
 
@@ -37,14 +37,14 @@ function Events() {
   };
 
   useEffect(() => {
-    updateHeroContent("events");
+    updateHeroContent("actualite");
   }, []);
 
   // ------------------------------
   // HANDLE CLICK TO UPDATE SECTION
   // ------------------------------
 
-  const handleClickToCreateEvent = () => {
+  const handleClickToCreateActu = () => {
     // console.log("edit");
     router.push("/edit/eventsEdit");
   };
@@ -61,7 +61,7 @@ function Events() {
               <FontAwesomeIcon
                 icon={faPenToSquare}
                 className={styles.updateIcon}
-                onClick={handleClickToCreateEvent}
+                onClick={handleClickToCreateActu}
               />
             </span>
           )}
@@ -72,4 +72,4 @@ function Events() {
   );
 }
 
-export default Events;
+export default Actualite;

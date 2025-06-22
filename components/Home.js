@@ -39,9 +39,9 @@ function Home() {
   // FUNCTION TO GO TO EVENT PAGE
   // ----------------------------
 
-  const handleClickGoToEvent = () => {
+  const handleClickGoToActualite = () => {
     // console.log("event page");
-    router.push("/events");
+    router.push("/actualite");
   };
 
   return (
@@ -94,7 +94,7 @@ function Home() {
           <Button
             btnStyle="black"
             btnLocation="homeActualite"
-            onClickToEvent={handleClickGoToEvent}
+            onClickToEvent={handleClickGoToActualite}
           />
         </div>
       </main>
