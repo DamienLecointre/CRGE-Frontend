@@ -1,0 +1,111 @@
+.actuCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-top: 48px;
+}
+
+.actuCardswrapper {
+  min-height: 350px;
+  flex: 1 1 20%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bgWhite);
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px 0px rgb(7, 7, 9,0.1),0px 1px 2px -1px rgb(7, 7, 9,0.1);
+  -webkit-box-shadow: 0px 1px 3px 0px rgb(7, 7, 9,0.1),0px 1px 2px -1px rgb(7, 7, 9,0.1);
+  -moz-box-shadow: 0px 1px 3px 0px rgb(7, 7, 9,0.1),0px 1px 2px -1px rgb(7, 7, 9,0.1);  
+  padding: 24px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.actuCardswrapper:hover {
+  box-shadow: 0px 4px 6px -4px rgba(7, 7, 9, .1), 0px 10px 15px -3px rgba(7, 7, 9, .1);
+  -webkit-box-shadow:0px 4px 6px -4px rgba(7, 7, 9, .1), 0px 10px 15px -3px rgba(7, 7, 9, .1);
+  -moz-box-shadow:0px 4px 6px -4px rgba(7, 7, 9, .1), 0px 10px 15px -3px rgba(7, 7, 9, .1);
+  background: var(--bgAccentColorHoverCards);
+  transform: translateY(-10px);
+}
+
+.actuCardswrapper:hover .cardsLink::before {
+  width: 100%;
+}
+
+.categoryTitle {
+  width: fit-content;
+  position: relative;
+  font-size: var(--fontSize08);
+  font-weight: var(--fontWeightLight);
+  line-height: var(--lineHeight1);
+  color: var(--colorSecondary);
+  padding-inline: 5px;
+  z-index: 5;
+}
+
+.categoryTitle::after {
+  content: "";
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  background: var(--bgAccentColorLow);
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.cardsContent {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+
+.cardsTitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: var(--fontSize15);
+  font-weight: var(--fontWeightMedium);
+  line-height: var(--lineHeight2);
+  color: var(--colorSecondary);
+}
+
+.cardsIntro {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightRegular);
+  line-height: var(--lineHeight15);
+  color: var(--colorSecondary);
+}
+
+.cardsLink {
+  width: fit-content;
+  position: relative;
+  font-size: var(--fontSize08);
+  font-weight: var(--fontWeightRegular);
+  line-height: var(--lineHeight1);
+  color: var(--colorLink);
+  padding-inline: 24px;
+}
+
+.cardsLink::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 20px;
+  background: var(--colorLink);
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all .3s ease-in-out;
+}

@@ -21,7 +21,7 @@ function Hero() {
   // CONST URL CUSTOM DISPLAY
   const displayNames = {
     accueil: "Accueil",
-    events: ["CRGE", "Notre actualité"],
+    actualite: ["CRGE", "Notre actualité"],
   };
 
   // CONST FOR HERO CONTENT FIELD
