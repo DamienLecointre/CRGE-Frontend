@@ -15,6 +15,7 @@ import Hero from "./Hero/Hero";
 import NavBurgerMenu from "./Header/NavBurgerMenu";
 import ServiceCards from "./UIKit/ServiceCards";
 import Button from "../components/UIKit/Button";
+import ActualiteCards from "./UIKit/ActualiteCards";
 
 //STYLES IMPORTS
 import styles from "../styles/Home.module.css";
@@ -48,7 +49,7 @@ function Home() {
     <div className={styles.sectionContainer}>
       <Header />
       <main>
-        <Hero />
+        <Hero heroStyle={"whiteBg"} />
         <div className={`sectionPaddingInline `}>
           <Button btnStyle="black" btnLocation="hero" />
         </div>
@@ -89,6 +90,7 @@ function Home() {
             width={400}
           />
           <h5 className={styles.actualiteTitle}>Restez informé</h5>
+          <ActualiteCards pageLocation="homeActualite" />
         </div>
         <div className={styles.actualiteBtn}>
           <Button

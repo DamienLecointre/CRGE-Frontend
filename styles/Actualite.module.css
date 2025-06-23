@@ -11,3 +11,9 @@
   padding-left: 15px;
   cursor: pointer;
 }
+
+.btnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

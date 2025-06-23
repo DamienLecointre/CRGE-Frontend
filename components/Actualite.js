@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import Header from "./Header/Header";
 import Hero from "./Hero/Hero";
 import ActualiteCards from "./UIKit/ActualiteCards";
+import Button from "../components/UIKit/Button";
 
 //ICONS IMPORTS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -45,14 +46,14 @@ function Actualite() {
   // ------------------------------
 
   const handleClickToCreateActu = () => {
-    // console.log("edit");
-    router.push("/edit/eventsEdit");
+    console.log("edit");
+    // router.push("/actualiteDetail");
   };
 
   return (
-    <div className={styles.sectionContainer}>
+    <div>
       <Header />
-      <Hero />
+      <Hero heroStyle={"whiteBg"} />
       <div className={"paddingInline"}>
         <div className={"sectionWrapper"}>
           {allowToUpdateFile.isAdmin === true && (
@@ -61,11 +62,14 @@ function Actualite() {
               <FontAwesomeIcon
                 icon={faPenToSquare}
                 className={styles.updateIcon}
-                onClick={handleClickToCreateActu}
+                // onClick={handleClickToCreateActu}
               />
             </span>
           )}
-          <ActualiteCards />
+          <ActualiteCards pageLocation="actualité" />
+          <div className={styles.btnContainer}>
+            <Button btnLocation="actualité" />
+          </div>
         </div>
       </div>
     </div>

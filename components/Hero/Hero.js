@@ -17,11 +17,12 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../styles/Hero/Hero.module.css";
 
 const backendHeroContent = process.env.NEXT_PUBLIC_URL_BACKEND_HERO_CONTENT;
-function Hero() {
+function Hero({ heroStyle }) {
   // CONST URL CUSTOM DISPLAY
   const displayNames = {
     accueil: "Accueil",
     actualite: ["CRGE", "Notre actualité"],
+    actualiteDetail: ["Notre actualité", "TITRE DE L'ACTUALITE"],
   };
 
   // CONST FOR HERO CONTENT FIELD
@@ -79,9 +80,46 @@ function Hero() {
     return Array.isArray(value) ? value : value || segment;
   });
 
+  // ------------------------------
+  // FUNCTION TO DISPLAY BREADCRUMB
+  // ------------------------------
+
+  const breadcrumb = () => {
+    return (
+      herosContent !== "home" && (
+        <ul className={styles.breadcrumb}>
+          {displaySegments.map((segment, index) => {
+            const isLast = index === displaySegments.length - 1;
+            return (
+              <li
+                key={index}
+                className={`${styles.linkBreadcrumb} ${
+                  isLast ? styles.lastBreadcrumb : ""
+                }`}
+              >
+                {index === 0 && index !== isLast ? (
+                  <Link href="/" className={styles.linkBreadcrumb}>
+                    {segment}
+                  </Link>
+                ) : (
+                  segment
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )
+    );
+  };
+
   return (
-    <div className={`paddingInline`}>
+    <div
+      className={`paddingInline ${
+        heroStyle === "blueBg" ? styles.heroBlueBgContainer : ""
+      }`}
+    >
       <div className={styles.heroContainer}>
+        {/* Span pour modifier contenu */}
         {allowToUpdateFile.isAdmin === true && (
           <span className={styles.updateText}>
             Modifier le contenu de cette section
@@ -92,44 +130,61 @@ function Hero() {
             />
           </span>
         )}
-        <div className={styles.heroWrapper}>
-          <div className={styles.txtContainer}>
-            <h1 className={styles.title}>{title}</h1>
-            {herosContent !== "home" && (
-              <ul className={styles.breadcrumb}>
-                {displaySegments.map((segment, index) => {
-                  const isLast = index === displaySegments.length - 1;
-                  return (
-                    <li
-                      key={index}
-                      className={`${styles.linkBreadcrumb} ${
-                        isLast ? styles.lastBreadcrumb : ""
-                      }`}
-                    >
-                      {index === 0 && index !== isLast ? (
-                        <Link href="/" className={styles.linkBreadcrumb}>
-                          {segment}
-                        </Link>
-                      ) : (
-                        segment
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
+        {heroStyle === "whiteBg" && (
+          <div className={styles.heroWrapper}>
+            <div className={styles.txtContainer}>
+              <h1 className={styles.title}>{title}</h1>
+              {/* File d'ariane  */}
+              {breadcrumb()}
+              <p className={styles.paragraph}>{paragraph}</p>
+            </div>
+            {imgSrc && imgAlt && (
+              <Image
+                className={styles.illustartion}
+                src={imgSrc}
+                alt={imgAlt}
+                height={500}
+                width={600}
+              />
             )}
-            <p className={styles.paragraph}>{paragraph}</p>
           </div>
-          {imgSrc && imgAlt && (
-            <Image
-              className={styles.illustartion}
-              src={imgSrc}
-              alt={imgAlt}
-              height={500}
-              width={600}
-            />
-          )}
-        </div>
+        )}
+        {heroStyle === "blueBg" && (
+          <div className={styles.heroWrapper}>
+            <div className={styles.txtContainer}>
+              <p className={styles.categoryTitle}>CATEGORY</p>
+              <h1
+                className={
+                  heroStyle === "blueBg"
+                    ? `${styles.title} ${styles.whiteText}`
+                    : ""
+                }
+              >
+                TITRE
+              </h1>
+              {/* File d'ariane  */}
+              {breadcrumb()}
+              <p
+                className={
+                  heroStyle === "blueBg"
+                    ? `${styles.paragraph} ${styles.whiteText}`
+                    : ""
+                }
+              >
+                DATE
+              </p>
+            </div>
+            {imgSrc && imgAlt && (
+              <Image
+                className={styles.illustartion}
+                src={imgSrc}
+                alt={imgAlt}
+                height={500}
+                width={600}
+              />
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,3 +1,7 @@
+/* -------------------
+HERO WHITE BG STYLE
+------------------- */
+
 .heroContainer {
   height: 100%;
   width: 100%;
@@ -46,6 +50,59 @@
   padding-bottom: 40px;
 }
 
+.paragraph {
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize125);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--lineHeight2);
+  color: var(--colorSecondary);
+  padding: 16px 0;
+
+}
+
+.illustartion {
+  width: 50%;
+}
+
+/* ------------------
+HERO BLUE BG STYLE
+------------------ */
+
+.heroBlueBgContainer {
+  background: var(--bgSecondaryColor);
+}
+
+.categoryTitle,
+.whiteText {
+  color: var(--colorPrimary);
+}
+
+
+.categoryTitle {
+  width: fit-content;
+  position: relative;
+  font-size: var(--lineHeight2);
+  font-weight: var(--fontWeightBold);
+  padding-top: 24px;
+  padding-inline: 4px;
+  z-index: 5;
+}
+
+.categoryTitle::after {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  background: var(--bgAccentColor);
+  z-index: -1;
+  left: 0;
+  bottom: 3px;
+}
+
+/* ----------
+BREADCRUMB
+---------- */
+
 .linkBreadcrumb {
   position: relative;
   font-family: var(--fontFamilyOpen);
@@ -73,20 +130,6 @@
 
 .lastBreadcrumb {
   color: var(--colorSecondaryMedium);
-}
-
-.paragraph {
-  font-family: var(--fontFamilyOpen);
-  font-size: var(--fontSize125);
-  font-weight: var(--fontWeightBold);
-  line-height: var(--lineHeight2);
-  color: var(--colorSecondary);
-  padding: 16px 0;
-
-}
-
-.illustartion {
-  width: 50%;
 }
 
 /* -------------

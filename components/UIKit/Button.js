@@ -36,6 +36,7 @@ function Button({
         {btnLocation === "profil" ? "SE DÉCONNECTER" : ""}
         {btnLocation === "hero" ? "EN SAVOIR PLUS" : ""}
         {btnLocation === "homeActualite" ? "TOUTE L'ACTUALITÉ" : ""}
+        {btnLocation === "actualité" ? "VOIR PLUS D'ACTUALITÉ" : ""}
       </span>
       <span className={styles.btnWhiteHover}></span>
     </button>
