@@ -1,0 +1,82 @@
+/* -----------
+GENERAL TAG
+----------- */
+
+.introContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.illustartionContainer {
+  position: relative;
+  height: 25vh;
+  width: 100%;
+}
+
+.text {
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightMedium);
+  line-height: var(--lineHeight15);
+  color: var(--colorSecondary);
+  padding: 20px 0;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 24px;
+}
+
+.sectionWrapper {
+  flex: 1 1 40%;
+}
+
+.sectionTitle {
+  font-size: var(--fontSize166);
+  font-weight: var(--fontWeightSemiBold);
+  line-height: var(--lineHeight15);
+  color: var(--colorAccent2);
+}
+
+
+
+/* ----------
+BREADCRUMB
+---------- */
+
+.breadcrumb {
+  display: flex;
+  column-gap: 20px;
+  padding-top: 16px;
+  padding-bottom: 40px;
+}
+
+.linkBreadcrumb {
+  position: relative;
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize08);
+  font-weight: var(--fontWeightSemiBold);
+  line-height: var(--lineHeight1);
+  color: var(--colorSecondaryLight);
+}
+
+.linkBreadcrumb::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: var(--bgAccentColor2);
+  top: 50%;
+  right: 0;
+  transform: translate(10px,-50%);
+}
+
+.linkBreadcrumb:last-child::after {
+  content: none;
+}
+
+.lastBreadcrumb {
+  color: var(--colorSecondaryMedium);
+}

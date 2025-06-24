@@ -25,9 +25,9 @@ function ActualiteCards({ pageLocation }) {
   // CONST ENTER OF DATA ACTU
   const actualiteData = actuData.actualiteData;
 
-  // ----------------------------------
-  // FUNCTION TO DISPATCH CARDS CONTENT
-  // ----------------------------------
+  // ------------------------------------------------------------
+  // FUNCTION TO DISPATCH CARDS CONTENT & GO TO ACTU DETAILS PAGE
+  // ------------------------------------------------------------
 
   const dispatch = useDispatch();
 
@@ -53,15 +53,7 @@ function ActualiteCards({ pageLocation }) {
         section,
       })
     );
-  };
-
-  // -------------------------------------------
-  // FUNCTION TO SELECT & VIEW MORE ACTU DETAILS
-  // -------------------------------------------
-
-  const handleClickViewMoreDetails = () => {
-    console.log("details from card :", actualiteData);
-    // router.push("/actualiteDetail");
+    router.push("/actualiteDetail");
   };
 
   // ------------------------------

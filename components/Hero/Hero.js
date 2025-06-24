@@ -28,6 +28,10 @@ function Hero({ heroStyle }) {
   // CONST FOR HERO CONTENT FIELD
   const herosContent = useSelector((state) => state.heros.value);
 
+  // CONST FOR HERO ACTUALITY CONTENT FIELD
+  const actuContent = useSelector((state) => state.actualiteDetail.value);
+  // console.log(actuContent);
+
   // CONST DISPLAY PERMISSION TO UPDATE WEBSITE
   const allowToUpdateFile = useSelector((state) => state.connection.value);
 
@@ -118,7 +122,7 @@ function Hero({ heroStyle }) {
         heroStyle === "blueBg" ? styles.heroBlueBgContainer : ""
       }`}
     >
-      <div className={styles.heroContainer}>
+      <div className={`sectionWrapper`}>
         {/* Span pour modifier contenu */}
         {allowToUpdateFile.isAdmin === true && (
           <span className={styles.updateText}>
@@ -150,20 +154,18 @@ function Hero({ heroStyle }) {
           </div>
         )}
         {heroStyle === "blueBg" && (
-          <div className={styles.heroWrapper}>
-            <div className={styles.txtContainer}>
-              <p className={styles.categoryTitle}>CATEGORY</p>
+          <div className={styles.heroWrapperBlueBg}>
+            <div className={styles.txtContainerBlueBg}>
+              <p className={styles.categoryTitle}>{actuContent.category}</p>
               <h1
                 className={
                   heroStyle === "blueBg"
-                    ? `${styles.title} ${styles.whiteText}`
+                    ? `${styles.titleBlueBg} ${styles.whiteText}`
                     : ""
                 }
               >
-                TITRE
+                {actuContent.title}
               </h1>
-              {/* File d'ariane  */}
-              {breadcrumb()}
               <p
                 className={
                   heroStyle === "blueBg"
@@ -171,16 +173,16 @@ function Hero({ heroStyle }) {
                     : ""
                 }
               >
-                DATE
+                {actuContent.date}
               </p>
             </div>
             {imgSrc && imgAlt && (
               <Image
-                className={styles.illustartion}
-                src={imgSrc}
-                alt={imgAlt}
-                height={500}
-                width={600}
+                className={styles.illustartionBlueBg}
+                src={actuContent.titleImg}
+                alt={actuContent.title}
+                height={400}
+                width={400}
               />
             )}
           </div>

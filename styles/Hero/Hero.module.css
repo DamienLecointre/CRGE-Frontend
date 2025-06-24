@@ -2,12 +2,12 @@
 HERO WHITE BG STYLE
 ------------------- */
 
-.heroContainer {
+/* .heroContainer {
   height: 100%;
   width: 100%;
   max-width: var(--maxWidth);
   margin-inline: auto;
-}
+} */
 
 .updateText {
   font-family: var(--fontFamilyOpen);
@@ -43,13 +43,6 @@ HERO WHITE BG STYLE
   padding-top: 48px;
 }
 
-.breadcrumb {
-  display: flex;
-  column-gap: 20px;
-  padding-top: 16px;
-  padding-bottom: 40px;
-}
-
 .paragraph {
   font-family: var(--fontFamilyOpen);
   font-size: var(--fontSize125);
@@ -70,6 +63,20 @@ HERO BLUE BG STYLE
 
 .heroBlueBgContainer {
   background: var(--bgSecondaryColor);
+  margin-top: 48px;
+}
+
+.heroWrapperBlueBg {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.txtContainerBlueBg {
+  height: 100%;
+  width: 60%;
 }
 
 .categoryTitle,
@@ -81,7 +88,7 @@ HERO BLUE BG STYLE
 .categoryTitle {
   width: fit-content;
   position: relative;
-  font-size: var(--lineHeight2);
+  font-size: var(--fontSize2);
   font-weight: var(--fontWeightBold);
   padding-top: 24px;
   padding-inline: 4px;
@@ -99,9 +106,27 @@ HERO BLUE BG STYLE
   bottom: 3px;
 }
 
+.titleBlueBg {
+  font-size: var(--fontSize475);
+  font-weight: var(--fontWeightSemiBold);
+  line-height: var(--lineHeight80);
+  padding-top: 48px;
+}
+
+.illustartionBlueBg {
+  width: 40%;
+}
+
 /* ----------
 BREADCRUMB
 ---------- */
+
+.breadcrumb {
+  display: flex;
+  column-gap: 20px;
+  padding-top: 16px;
+  padding-bottom: 40px;
+}
 
 .linkBreadcrumb {
   position: relative;
