@@ -15,36 +15,46 @@ const backendNavContent = process.env.NEXT_PUBLIC_URL_BACKEND_NAV_CONTENT;
 
 function Nav() {
   // CONST TO SAVE NAV DATA
-  const [listData, setListData] = useState([]);
-  const [crgeSubListdata, setCrgeSubListdata] = useState([]);
-  const [geSubListdata, setGeSubListdata] = useState([]);
-  const [servicesSubListdata, setServicesSubListdata] = useState([]);
+  const [navData, setNavData] = useState({
+    listData: [],
+    crgeSubListdata: [],
+    geSubListdata: [],
+    servicesSubListdata: [],
+  });
 
   // -------------------------------
   // USEEFFECT TO GET NAV DATA FILES
   // -------------------------------
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    setLoading(true);
     fetch(`${backendNavContent}`)
       .then((response) => {
-        if (!response.ok) throw new Error("Serveur doesn't answer");
+        if (!response.ok) throw new Error("Serveur ne répond pas");
         return response.json();
       })
       .then((data) => {
-        // console.log(
-        //   "Résultat du fetch navComponent : ",
-        //   data.navData[0].listData
-        // );
         if (data && Array.isArray(data.navData)) {
-          setListData(data.navData[0].listData);
-          setCrgeSubListdata(data.navData[0].crgeSubListdata);
-          setGeSubListdata(data.navData[0].geSubListdata);
-          setServicesSubListdata(data.navData[0].servicesSubListdata);
+          setNavData({
+            listData: data.navData[0].listData,
+            crgeSubListdata: data.navData[0].crgeSubListdata,
+            geSubListdata: data.navData[0].geSubListdata,
+            servicesSubListdata: data.navData[0].servicesSubListdata,
+          });
+          setError(null);
         } else {
-          console.warn("navData manquant ou invalide :", data);
+          setError("Données navData manquantes ou invalides");
         }
       })
-      .catch((error) => console.error("Fetch error :", error));
+      .catch((err) => {
+        console.error("Fetch error :", err);
+        setError(err.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   // ----------
@@ -68,6 +78,9 @@ function Nav() {
   // -----------------
   // FUNCTIONS DISPLAY
   // -----------------
+
+  if (loading) return <div>Chargement...</div>;
+  if (error) return <div>Erreur : {error}</div>;
 
   const crgeSubList = crgeSubListdata.map((item, i) => (
     <li key={i} className={`${styles.navContent} ${styles.subNavContent}`}>
