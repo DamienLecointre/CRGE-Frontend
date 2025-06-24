@@ -81,6 +81,7 @@ function ServiceCards() {
         return response.json();
       })
       .then((data) => {
+        console.log(data);
         if (data && Array.isArray(data.serviceCardsData)) {
           // console.log(data.serviceCardsData[0].cardsData);
           setServiceCardsDataFromDb(data.serviceCardsData[0].cardsData);
