@@ -14,7 +14,7 @@ import styles from "../../styles/Header/Nav.module.css";
 const backendNavContent = process.env.NEXT_PUBLIC_URL_BACKEND_NAV_CONTENT;
 
 function Nav() {
-  // CONST TO SAVE NAV DATA
+  // STATE pour toutes les données de navigation regroupées
   const [navData, setNavData] = useState({
     listData: [],
     crgeSubListdata: [],
@@ -22,20 +22,17 @@ function Nav() {
     servicesSubListdata: [],
   });
 
-  // -------------------------------
-  // USEEFFECT TO GET NAV DATA FILES
-  // -------------------------------
+  // Etats pour loading et erreur
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true);
-    fetch(`${backendNavContent}`)
-      .then((response) => {
+    async function fetchNav() {
+      setLoading(true);
+      try {
+        const response = await fetch(`${backendNavContent}`);
         if (!response.ok) throw new Error("Serveur ne répond pas");
-        return response.json();
-      })
-      .then((data) => {
+        const data = await response.json();
         if (data && Array.isArray(data.navData)) {
           setNavData({
             listData: data.navData[0].listData,
@@ -47,37 +44,24 @@ function Nav() {
         } else {
           setError("Données navData manquantes ou invalides");
         }
-      })
-      .catch((err) => {
-        console.error("Fetch error :", err);
+      } catch (err) {
         setError(err.message);
-      })
-      .finally(() => {
+        console.error("Fetch error :", err);
+      } finally {
         setLoading(false);
-      });
+      }
+    }
+    fetchNav();
   }, []);
 
-  // ----------
-  // CONSTANTS
-  // ----------
-  // CONST STATE HOVER
+  // Etats pour hover menu
   const [hoveredId, setHoveredId] = useState(null);
+  const handleMouseEnter = (id) => setHoveredId(id);
+  const handleMouseLeave = () => setHoveredId(null);
 
-  // ---------------------------------------
-  // FUNCTIONS TO SHOW SUBTITLE NAV ON HOVER
-  // ---------------------------------------
-
-  const handleMouseEnter = (id) => {
-    setHoveredId(id);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredId(null);
-  };
-
-  // -----------------
-  // FUNCTIONS DISPLAY
-  // -----------------
+  // Extraction pour lisibilité
+  const { listData, crgeSubListdata, geSubListdata, servicesSubListdata } =
+    navData;
 
   if (loading) return <div>Chargement...</div>;
   if (error) return <div>Erreur : {error}</div>;
@@ -130,6 +114,7 @@ function Nav() {
           {geSubList}
         </ul>
       )}
+
       {/* Sous-menu SERVICES */}
       {i === 2 && (
         <ul
@@ -142,10 +127,6 @@ function Nav() {
       )}
     </li>
   ));
-
-  // -------
-  // DISPLAY
-  // -------
 
   return (
     <>
