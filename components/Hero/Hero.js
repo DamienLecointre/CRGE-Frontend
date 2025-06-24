@@ -40,6 +40,32 @@ function Hero({ heroStyle }) {
 
   // CONST TO SAVE HERO DATA
   const [heroHomeData, setHeroHomeData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchHero() {
+      setLoading(true);
+      try {
+        const response = await fetch(backendHeroContent);
+        if (!response.ok) throw new Error("Serveur ne répond pas");
+        const data = await response.json();
+        if (data && Array.isArray(data.heroData)) {
+          setHeroHomeData(data.heroData);
+          setError(null);
+        } else {
+          setError("heroData manquant ou invalide");
+          console.warn("heroData manquant ou invalide :", data);
+        }
+      } catch (err) {
+        console.error("Fetch error :", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchHero();
+  }, []);
 
   // -------------------------------------
   // FUNCTION TO FIND MATCHING HEROSCONTENT
@@ -54,22 +80,6 @@ function Hero({ heroStyle }) {
   const paragraph = currentSectionData?.paragraph || "";
   const imgSrc = currentSectionData?.imgSrc || "";
   const imgAlt = currentSectionData?.imgAlt || "";
-
-  useEffect(() => {
-    fetch(`${backendHeroContent}`)
-      .then((response) => {
-        if (!response.ok) throw new Error("Serveur doesn't answer");
-        return response.json();
-      })
-      .then((data) => {
-        if (data && Array.isArray(data.heroData)) {
-          setHeroHomeData(data.heroData);
-        } else {
-          console.warn("heroData manquant ou invalide :", data);
-        }
-      })
-      .catch((error) => console.error("Fetch error :", error));
-  }, []);
 
   // ------------------------
   // FUNCTION TO EDIT CONTENT
@@ -121,6 +131,9 @@ function Hero({ heroStyle }) {
       )
     );
   };
+
+  if (loading) return <div>Chargement du hero...</div>;
+  if (error) return <div>Erreur : {error}</div>;
 
   return (
     <div
