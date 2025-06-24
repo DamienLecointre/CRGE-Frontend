@@ -9,7 +9,7 @@ const initialState = {
     titleImg: "",
     titleImg: "",
     intro: "",
-    section: [],
+    sections: [],
   },
 };
 

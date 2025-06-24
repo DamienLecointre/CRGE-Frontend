@@ -1,5 +1,5 @@
 //REACT IMPORTS
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //NEXT IMPORTS
 import Link from "next/link";
@@ -9,21 +9,38 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { addactualiteDetailToStore } from "../../reducers/actualiteDetail";
 
-//DATAS IMPORTS
-import actuData from "../../data/actuData.json";
-
 //STYLES IMPORTS
 import styles from "../../styles/UIKit/ActualiteCards.module.css";
+
+const backendActualiteContent =
+  process.env.NEXT_PUBLIC_URL_BACKEND_ACTUALITE_CONTENT;
 
 function ActualiteCards({ pageLocation }) {
   // CONST REDIRECTION TO WEBSITE PAGE
   const router = useRouter();
 
-  // CONST KNOW WICH CARDS IS SELECTED
-  const [cardSelected, setCardSelected] = useState(null);
+  // CONST FOR SERVICECARDS CONTENT FIELD
+  const [actualityDataFromDb, setActualityDataFromDb] = useState([]);
 
-  // CONST ENTER OF DATA ACTU
-  const actualiteData = actuData.actualiteData;
+  // ------------------------------
+  // FUNCTION TO GET ACTUALITE DATA
+  // ------------------------------
+
+  useEffect(() => {
+    fetch(`${backendActualiteContent}`)
+      .then((response) => {
+        if (!response.ok) throw new Error("Serveur doesn't answer");
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        if (data && Array.isArray(data.actualiteData)) {
+          setActualityDataFromDb(data.actualiteData);
+        } else {
+          console.warn("heroData manquant ou invalide :", data);
+        }
+      });
+  }, []);
 
   // ------------------------------------------------------------
   // FUNCTION TO DISPATCH CARDS CONTENT & GO TO ACTU DETAILS PAGE
@@ -39,7 +56,7 @@ function ActualiteCards({ pageLocation }) {
     cardTitleImg,
     cardIntroImg,
     cardIntro,
-    section = []
+    sections = []
   ) => {
     dispatch(
       addactualiteDetailToStore({
@@ -50,7 +67,7 @@ function ActualiteCards({ pageLocation }) {
         titleImg: cardTitleImg,
         introImg: cardIntroImg,
         intro: cardIntro,
-        section,
+        sections,
       })
     );
     router.push("/actualiteDetail");
@@ -63,7 +80,7 @@ function ActualiteCards({ pageLocation }) {
   // AJOUTER .sort() pour le tri par date de publication des actus
 
   const actuCards = (nbr) => {
-    return actualiteData.slice(0, nbr).map((data, i) => (
+    return actualityDataFromDb.slice(0, nbr).map((data, i) => (
       <div
         key={i}
         id={data.title}
@@ -77,10 +94,9 @@ function ActualiteCards({ pageLocation }) {
             data.titleImg,
             data.introImg,
             data.intro,
-            data.section
+            data.sections
           )
         }
-        // onClick={() => handleClickViewMoreDetails()}
       >
         <h5 className={styles.categoryTitle}>{data.category}</h5>
         <div className={styles.cardsContent}>

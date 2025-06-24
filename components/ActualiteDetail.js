@@ -78,7 +78,7 @@ function ActualiteDetail() {
   // FUNCTION TO DISPLAY SECTIONS DETAILS
   // ------------------------------------
 
-  const sectionDetail = actuContent.section.map((data, i) => (
+  const sectionDetail = actuContent.sections.map((data, i) => (
     <div key={i} className={styles.sectionWrapper}>
       <h4 className={styles.sectionTitle}>{data.title}</h4>
       <p className={styles.text}>{data.content}</p>
