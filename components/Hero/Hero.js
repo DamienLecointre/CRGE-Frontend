@@ -57,10 +57,16 @@ function Hero({ heroStyle }) {
 
   useEffect(() => {
     fetch(`${backendHeroContent}`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) throw new Error("Réponse serveur non OK");
+        return response.json();
+      })
       .then((data) => {
-        // console.log("Résultat du fetch heroComponent : ", data.heroData);
-        setHeroHomeData(data.heroData);
+        if (data && Array.isArray(data.heroData)) {
+          setHeroHomeData(data.heroData);
+        } else {
+          console.warn("heroData manquant ou invalide :", data);
+        }
       })
       .catch((error) => console.error("Erreur lors du fetch :", error));
   }, []);
