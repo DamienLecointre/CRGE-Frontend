@@ -3,6 +3,7 @@ import React from "react";
 
 //NEXT IMPORTS
 import Image from "next/image";
+import Link from "next/link";
 
 //COMPONENTS IMPORTS
 import Nav from "./Nav";
@@ -14,14 +15,16 @@ function Header() {
   return (
     <header className={`paddingInline`}>
       <div className={`sectionWrapper ${styles.headerContainer}`}>
-        <Image
-          className={styles.imgContainer}
-          src="/logo_icons/logoTxt.svg"
-          alt="logo CRGE avec texte"
-          height={100}
-          width={200}
-          style={{ objectFit: "contain" }}
-        />
+        <Link href={"/"}>
+          <Image
+            className={styles.imgContainer}
+            src="/logo_icons/logoTxt.svg"
+            alt="logo CRGE avec texte"
+            height={100}
+            width={200}
+            style={{ objectFit: "contain" }}
+          />
+        </Link>
         <Nav />
       </div>
     </header>

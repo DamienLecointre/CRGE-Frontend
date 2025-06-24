@@ -1,22 +1,44 @@
 //REACT IMPORTS
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+//NEXT IMPORTS
+import Link from "next/link";
 
 //COMPONENTS IMPORTS
 import AdherentBtn from "../UIKit/AdherentBtn";
 import BurgerMenu from "../UIKit/BurgerMenu";
 
-//DATAS IMPORTS
-import navData from "../../data/navData.json";
-
 //STYLES IMPORTS
 import styles from "../../styles/Header/Nav.module.css";
 
+const backendNavContent = process.env.NEXT_PUBLIC_URL_BACKEND_NAV_CONTENT;
+
 function Nav() {
-  // -----
-  // DATA
-  // -----
-  const { listData, crgeSubListdata, geSubListdata, servicesSubListdata } =
-    navData;
+  // CONST TO SAVE NAV DATA
+  const [listData, setListData] = useState([]);
+  const [crgeSubListdata, setCrgeSubListdata] = useState([]);
+  const [geSubListdata, setGeSubListdata] = useState([]);
+  const [servicesSubListdata, setServicesSubListdata] = useState([]);
+
+  // -------------------------------
+  // USEEFFECT TO GET NAV DATA FILES
+  // -------------------------------
+
+  useEffect(() => {
+    fetch(`${backendNavContent}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(
+          "Résultat du fetch navComponent : ",
+          data.navData[0].listData
+        );
+        setListData(data.navData[0].listData);
+        setCrgeSubListdata(data.navData[0].crgeSubListdata);
+        setGeSubListdata(data.navData[0].geSubListdata);
+        setServicesSubListdata(data.navData[0].servicesSubListdata);
+      })
+      .catch((error) => console.error("Erreur lors du fetch :", error));
+  }, []);
 
   // ----------
   // CONSTANTS
