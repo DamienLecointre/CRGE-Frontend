@@ -27,7 +27,7 @@ function Nav() {
   useEffect(() => {
     fetch(`${backendNavContent}`)
       .then((response) => {
-        if (!response.ok) throw new Error("Réponse serveur non OK");
+        if (!response.ok) throw new Error("Serveur doesn't answer");
         return response.json();
       })
       .then((data) => {
@@ -44,7 +44,7 @@ function Nav() {
           console.warn("navData manquant ou invalide :", data);
         }
       })
-      .catch((error) => console.error("Erreur lors du fetch :", error));
+      .catch((error) => console.error("Fetch error :", error));
   }, []);
 
   // ----------

@@ -4,17 +4,21 @@ import React, { useState, useEffect } from "react";
 //NEXT IMPORTS
 import Image from "next/image";
 
-//DATAS IMPORTS
-import serviceCardsData from "../../data/serviceCardsData.json";
-
 //STYLES IMPORTS
 import styles from "../../styles/UIKit/serviceCard.module.css";
 
+const backendServiceCardsContent =
+  process.env.NEXT_PUBLIC_URL_BACKEND_SERVICECARDS_CONTENT;
+
 function ServiceCards() {
+  // CONST FOR SERVICECARDS CONTENT FIELD
+  const [serviceCardsDataFromDb, setServiceCardsDataFromDb] = useState([]);
+
+  // CONST FOR CARROUSSEL
   const [activeIndex, setActiveIndex] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(3);
 
-  const totalCards = serviceCardsData.cardsData.length;
+  const totalCards = serviceCardsDataFromDb.length;
 
   const maxIndex = Math.max(totalCards - cardsPerPage, 0);
   const handleSpanClick = (index) => {
@@ -66,6 +70,26 @@ function ServiceCards() {
     }
   };
 
+  // -------------------------------------
+  // USEEFFECT TO GET SERVICECARDS CONTENT
+  // -------------------------------------
+
+  useEffect(() => {
+    fetch(`${backendServiceCardsContent}`)
+      .then((response) => {
+        if (!response.ok) throw new Error("Serveur doesn't answer");
+        return response.json();
+      })
+      .then((data) => {
+        if (data && Array.isArray(data.serviceCardsData)) {
+          // console.log(data.serviceCardsData[0].cardsData);
+          setServiceCardsDataFromDb(data.serviceCardsData[0].cardsData);
+        } else {
+          console.warn("heroData manquant ou invalide :", data);
+        }
+      });
+  }, []);
+
   return (
     <div className={styles.cardsContainer}>
       <div
@@ -81,7 +105,7 @@ function ServiceCards() {
             width: `${(100 / cardsPerPage) * totalCards}%`,
           }}
         >
-          {serviceCardsData.cardsData.map((data, i) => (
+          {serviceCardsDataFromDb.map((data, i) => (
             <div
               key={i}
               className={styles.cardWrapper}

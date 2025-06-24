@@ -58,7 +58,7 @@ function Hero({ heroStyle }) {
   useEffect(() => {
     fetch(`${backendHeroContent}`)
       .then((response) => {
-        if (!response.ok) throw new Error("Réponse serveur non OK");
+        if (!response.ok) throw new Error("Serveur doesn't answer");
         return response.json();
       })
       .then((data) => {
@@ -68,7 +68,7 @@ function Hero({ heroStyle }) {
           console.warn("heroData manquant ou invalide :", data);
         }
       })
-      .catch((error) => console.error("Erreur lors du fetch :", error));
+      .catch((error) => console.error("Fetch error :", error));
   }, []);
 
   // ------------------------

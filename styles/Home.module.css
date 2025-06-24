@@ -54,6 +54,7 @@ ACTU TAGS STYLE
 
 .actualiteTitle {
   position: relative;
+  height: fit-content;
   font-size: var(--fontSize1250);
   font-weight: var(--fontWeightMedium);
   line-height: var(--lineHeight224);
