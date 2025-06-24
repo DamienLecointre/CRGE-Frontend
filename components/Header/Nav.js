@@ -35,13 +35,13 @@ function Nav() {
         //   "Résultat du fetch navComponent : ",
         //   data.navData[0].listData
         // );
-        if (data && Array.isArray(data.heroData)) {
+        if (data && Array.isArray(data.navData)) {
           setListData(data.navData[0].listData);
           setCrgeSubListdata(data.navData[0].crgeSubListdata);
           setGeSubListdata(data.navData[0].geSubListdata);
           setServicesSubListdata(data.navData[0].servicesSubListdata);
         } else {
-          console.warn("heroData manquant ou invalide :", data);
+          console.warn("navData manquant ou invalide :", data);
         }
       })
       .catch((error) => console.error("Erreur lors du fetch :", error));
