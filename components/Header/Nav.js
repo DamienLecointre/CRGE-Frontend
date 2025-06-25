@@ -1,8 +1,11 @@
 //REACT IMPORTS
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 //NEXT IMPORTS
 import Link from "next/link";
+
+// REDUX IMPORTS
+import { useSelector } from "react-redux";
 
 //COMPONENTS IMPORTS
 import AdherentBtn from "../UIKit/AdherentBtn";
@@ -14,57 +17,20 @@ import styles from "../../styles/Header/Nav.module.css";
 const backendNavContent = process.env.NEXT_PUBLIC_URL_BACKEND_NAV_CONTENT;
 
 function Nav() {
+  // DATA GET FROM REDUX
+  const navData = useSelector((state) => state.homepage.navData);
   // STATE pour toutes les données de navigation regroupées
-  const [navData, setNavData] = useState({
-    listData: [],
-    crgeSubListdata: [],
-    geSubListdata: [],
-    servicesSubListdata: [],
-  });
+  const {
+    listData = [],
+    crgeSubListdata = [],
+    geSubListdata = [],
+    servicesSubListdata = [],
+  } = navData?.[0] || {}; // accès sécurisé au premier objet
 
-  // Etats pour loading et erreur
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetchNav() {
-      setLoading(true);
-      try {
-        const response = await fetch(`${backendNavContent}`);
-        if (!response.ok) throw new Error("Serveur ne répond pas");
-        const data = await response.json();
-        if (data && Array.isArray(data.navData)) {
-          setNavData({
-            listData: data.navData[0].listData,
-            crgeSubListdata: data.navData[0].crgeSubListdata,
-            geSubListdata: data.navData[0].geSubListdata,
-            servicesSubListdata: data.navData[0].servicesSubListdata,
-          });
-          setError(null);
-        } else {
-          setError("Données navData manquantes ou invalides");
-        }
-      } catch (err) {
-        setError(err.message);
-        console.error("Fetch error :", err);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchNav();
-  }, []);
-
-  // Etats pour hover menu
+  // HOVER STATE MENU
   const [hoveredId, setHoveredId] = useState(null);
   const handleMouseEnter = (id) => setHoveredId(id);
   const handleMouseLeave = () => setHoveredId(null);
-
-  // Extraction pour lisibilité
-  const { listData, crgeSubListdata, geSubListdata, servicesSubListdata } =
-    navData;
-
-  if (loading) return <div>Chargement...</div>;
-  if (error) return <div>Erreur : {error}</div>;
 
   const crgeSubList = crgeSubListdata.map((item, i) => (
     <li key={i} className={`${styles.navContent} ${styles.subNavContent}`}>
