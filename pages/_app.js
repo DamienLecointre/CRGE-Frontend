@@ -9,6 +9,7 @@ import heros from "../reducers/heros";
 import burgerMenu from "../reducers/burgerMenu";
 import connection from "../reducers/isConnected";
 import actualiteDetail from "../reducers/actualiteDetail";
+import homepageReducer from "../reducers/homepageSlice";
 
 //STYLES IMPORTS
 import "../styles/globals.css";
@@ -16,7 +17,14 @@ import "../styles/Variables.css";
 
 //STORE CONFIG
 const store = configureStore({
-  reducer: { buttons, heros, burgerMenu, connection, actualiteDetail },
+  reducer: {
+    homepage: homepageReducer,
+    buttons,
+    heros,
+    burgerMenu,
+    connection,
+    actualiteDetail,
+  },
 });
 
 function App({ Component, pageProps }) {

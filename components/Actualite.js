@@ -5,9 +5,8 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
 //REDUX IMPORTS
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addContentToHero } from "../reducers/heros";
-import { useSelector } from "react-redux";
 
 //COMPONENTS IMPORTS
 import Header from "./Header/Header";
@@ -23,22 +22,19 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles/Actualite.module.css";
 
 function Actualite() {
+  const dispatch = useDispatch();
   // CONST REDIRECTION TO WEBSITE PAGE
   const router = useRouter();
 
   // CONST DISPLAY PERMISSION TO UPDATE WEBSITE
   const allowToUpdateFile = useSelector((state) => state.connection.value);
+  const actualites = useSelector((state) => state.homepage.actualites);
 
   // ----------------------
   // DISPATCH HERO CONTENTS
   // ----------------------
-  const dispatch = useDispatch();
-  const updateHeroContent = (pageLocation) => {
-    dispatch(addContentToHero(pageLocation));
-  };
-
   useEffect(() => {
-    updateHeroContent("actualite");
+    dispatch(addContentToHero("actualite"));
   }, []);
 
   // ------------------------------
@@ -66,7 +62,7 @@ function Actualite() {
               />
             </span>
           )}
-          <ActualiteCards pageLocation="actualité" />
+          <ActualiteCards pageLocation="actualité" cardsData={actualites} />
           <div className={styles.btnContainer}>
             <Button btnLocation="actualité" />
           </div>

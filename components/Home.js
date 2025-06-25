@@ -6,8 +6,14 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 //REDUX IMPORTS
+import { useSelector } from "react-redux"; //
 import { useDispatch } from "react-redux";
 import { addContentToHero } from "../reducers/heros";
+import {
+  setHomepageData,
+  setLoading,
+  setError,
+} from "../reducers/homepageSlice";
 
 //COMPONENTS IMPORTS
 import Header from "./Header/Header";
@@ -20,21 +26,84 @@ import ActualiteCards from "./UIKit/ActualiteCards";
 //STYLES IMPORTS
 import styles from "../styles/Home.module.css";
 
+const backendHeroData = process.env.NEXT_PUBLIC_URL_BACKEND_HERO_CONTENT;
+const backendNavData = process.env.NEXT_PUBLIC_URL_BACKEND_NAV_CONTENT;
+const backendServiceCardsData =
+  process.env.NEXT_PUBLIC_URL_BACKEND_SERVICECARDS_CONTENT;
+const backendActualiteData =
+  process.env.NEXT_PUBLIC_URL_BACKEND_ACTUALITE_CONTENT;
+
 function Home() {
+  // CONST DISPATCH
+  const dispatch = useDispatch();
+
   // CONST REDIRECTION TO WEBSITE PAGE
   const router = useRouter();
+
+  // CONST TO SHOW LOADING OR ERROR
+  const { loading, error } = useSelector((state) => state.homepage);
+
+  // CONST TO GET SERVICECARDS DATA
+  const { serviceCards } = useSelector((state) => state.homepage);
+
+  // CONST TO GET ACTUCARDS DATA
+  const { actualites } = useSelector((state) => state.homepage);
 
   // ----------------------
   // DISPATCH HERO CONTENTS
   // ----------------------
-  const dispatch = useDispatch();
-  const updateHeroContent = (pageLocation) => {
-    dispatch(addContentToHero(pageLocation));
-  };
 
   useEffect(() => {
-    updateHeroContent("home");
+    dispatch(addContentToHero("home"));
   }, []);
+
+  // -----------------------------
+  // FUNCTION TO DISPLAY HOME DATA
+  // -----------------------------
+
+  useEffect(() => {
+    async function fetchHomepageData() {
+      setLoading(true);
+      try {
+        const [heroRes, navRes, serviceRes, actuRes] = await Promise.all([
+          fetch(`${backendHeroData}`),
+          fetch(`${backendNavData}`),
+          fetch(`${backendServiceCardsData}`),
+          fetch(`${backendActualiteData}`),
+        ]);
+
+        if (!heroRes.ok || !navRes.ok || !serviceRes.ok || !actuRes.ok) {
+          throw new Error("Erreur serveur");
+        }
+
+        const [heroData, navData, serviceData, actuData] = await Promise.all([
+          heroRes.json(),
+          navRes.json(),
+          serviceRes.json(),
+          actuRes.json(),
+        ]);
+
+        dispatch(
+          setHomepageData({
+            heroData: heroData.heroData,
+            navData: navData.navData,
+            serviceCards: serviceData.serviceCardsData[0].cardsData,
+            actualites: actuData.actualiteData,
+          })
+        );
+      } catch (err) {
+        console.error("Erreur fetch home :", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchHomepageData();
+  }, []);
+
+  if (loading) return <div className={styles.loading}>Chargement...</div>;
+  if (error) return <div className={styles.error}>Erreur : {error}</div>;
 
   // ----------------------------
   // FUNCTION TO GO TO EVENT PAGE
@@ -66,7 +135,7 @@ function Home() {
             <h2 className={styles.sectionTitle}>
               Des services sur mesure pour votre réussite
             </h2>
-            <ServiceCards />
+            <ServiceCards cardsData={serviceCards} />
           </div>
         </div>
         <div className={`paddingInline`}>
@@ -90,7 +159,7 @@ function Home() {
             width={400}
           />
           <h5 className={styles.actualiteTitle}>Restez informé</h5>
-          <ActualiteCards pageLocation="homeActualite" />
+          <ActualiteCards pageLocation="homeActualite" cardsData={actualites} />
         </div>
         <div className={styles.actualiteBtn}>
           <Button

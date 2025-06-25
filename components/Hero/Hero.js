@@ -1,13 +1,13 @@
 //REACT IMPORTS
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 //NEXT IMPORTS
-import Image from "next/image";
+import Image from "next/image"; //
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"; //
 
 //REDUX IMPORTS
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux"; //
 
 //ICONS IMPORTS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,7 +16,6 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 //STYLES IMPORTS
 import styles from "../../styles/Hero/Hero.module.css";
 
-const backendHeroContent = process.env.NEXT_PUBLIC_URL_BACKEND_HERO_CONTENT;
 function Hero({ heroStyle }) {
   // CONST URL CUSTOM DISPLAY
   const displayNames = {
@@ -27,45 +26,16 @@ function Hero({ heroStyle }) {
 
   // CONST FOR HERO CONTENT FIELD
   const herosContent = useSelector((state) => state.heros.value);
+  const heroHomeData = useSelector((state) => state.homepage.heroData);
 
   // CONST FOR HERO ACTUALITY CONTENT FIELD
   const actuContent = useSelector((state) => state.actualiteDetail.value);
-  // console.log(actuContent);
 
   // CONST DISPLAY PERMISSION TO UPDATE WEBSITE
   const allowToUpdateFile = useSelector((state) => state.connection.value);
 
   // CONST REDIRECTION TO WEBSITE PAGE
   const router = useRouter();
-
-  // CONST TO SAVE HERO DATA
-  const [heroHomeData, setHeroHomeData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetchHero() {
-      setLoading(true);
-      try {
-        const response = await fetch(backendHeroContent);
-        if (!response.ok) throw new Error("Serveur ne répond pas");
-        const data = await response.json();
-        if (data && Array.isArray(data.heroData)) {
-          setHeroHomeData(data.heroData);
-          setError(null);
-        } else {
-          setError("heroData manquant ou invalide");
-          console.warn("heroData manquant ou invalide :", data);
-        }
-      } catch (err) {
-        console.error("Fetch error :", err);
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchHero();
-  }, []);
 
   // -------------------------------------
   // FUNCTION TO FIND MATCHING HEROSCONTENT
@@ -131,9 +101,6 @@ function Hero({ heroStyle }) {
       )
     );
   };
-
-  if (loading) return <div>Chargement du hero...</div>;
-  if (error) return <div>Erreur : {error}</div>;
 
   return (
     <div
