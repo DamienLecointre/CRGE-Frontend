@@ -1,5 +1,5 @@
 //REACT IMPORTS
-import React from "react";
+import React, { useEffect } from "react";
 
 //NEXT IMPORTS
 import Image from "next/image";
@@ -7,7 +7,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 //REDUX IMPORTS
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addContentToHero } from "../reducers/heros";
 
 //COMPONENTS IMPORTS
 import Header from "./Header/Header";
@@ -17,6 +18,8 @@ import Hero from "./Hero/Hero";
 import styles from "../styles/ActualiteDetail.module.css";
 
 function ActualiteDetail() {
+  const dispatch = useDispatch();
+
   // CONST REDIRECTION TO WEBSITE PAGE
   const router = useRouter();
 
@@ -25,6 +28,13 @@ function ActualiteDetail() {
 
   // CONST TO DISPATCH ACTUALITY CONTENT
   const actuContent = useSelector((state) => state.actualiteDetail.value);
+
+  // ----------------------
+  // DISPATCH HERO CONTENTS
+  // ----------------------
+  useEffect(() => {
+    dispatch(addContentToHero("actualiteDetail"));
+  }, []);
 
   // CONST URL CUSTOM DISPLAY
   const displayNames = {

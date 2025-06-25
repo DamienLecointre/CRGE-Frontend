@@ -162,11 +162,11 @@ function Hero({ heroStyle }) {
                 {actuContent.date}
               </p>
             </div>
-            {imgSrc && imgAlt && (
+            {actuContent.titleImg && (
               <Image
                 className={styles.illustartionBlueBg}
                 src={actuContent.titleImg}
-                alt={actuContent.title}
+                alt={actuContent.title || "Image d'actualité"}
                 height={400}
                 width={400}
               />
