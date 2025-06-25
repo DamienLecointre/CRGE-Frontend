@@ -9,6 +9,7 @@ export const herosSlice = createSlice({
   initialState,
   reducers: {
     addContentToHero: (state, action) => {
+      // console.log("VALEURS RECU DANS REDUCER HERO :", action.payload);
       state.value = action.payload;
     },
   },

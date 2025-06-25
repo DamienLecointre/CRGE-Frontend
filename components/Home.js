@@ -63,7 +63,7 @@ function Home() {
 
   useEffect(() => {
     async function fetchHomepageData() {
-      setLoading(true);
+      dispatch(setLoading(true));
       try {
         const [heroRes, navRes, serviceRes, actuRes] = await Promise.all([
           fetch(`${backendHeroData}`),
@@ -82,6 +82,16 @@ function Home() {
           serviceRes.json(),
           actuRes.json(),
         ]);
+        // console.log(
+        //   "heroPromise :",
+        //   heroData,
+        //   "navPromise :",
+        //   navData,
+        //   "servicePromise :",
+        //   serviceData,
+        //   "actuPromise :",
+        //   actuData
+        // );
 
         dispatch(
           setHomepageData({
@@ -93,12 +103,11 @@ function Home() {
         );
       } catch (err) {
         console.error("Erreur fetch home :", err);
-        setError(err.message);
+        dispatch(setError(err.message));
       } finally {
-        setLoading(false);
+        dispatch(setLoading(false));
       }
     }
-
     fetchHomepageData();
   }, []);
 
