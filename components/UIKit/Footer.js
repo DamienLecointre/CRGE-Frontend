@@ -29,7 +29,9 @@ function Footer() {
             <h6 className={styles.text}>37 rue Carnot - 86000 POITIERS</h6>
             <div className={styles.contact}>
               <h6 className={styles.text}>05 49 88 25 57</h6>
-              <h6 className={styles.text}> Nous contacter par mail</h6>
+              <Link href={"/contactForm"} className={styles.text}>
+                Nous contacter par mail
+              </Link>
             </div>
           </div>
         </div>

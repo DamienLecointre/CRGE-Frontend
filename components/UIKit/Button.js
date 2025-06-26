@@ -12,6 +12,7 @@ function Button({
   onClickLogOut,
   onClickToActualite,
   onClickToLoadMoreActu,
+  onClickToSendContactForm,
 }) {
   const btnStyleVariant =
     btnStyle === "white" ? styles.btnWhite : styles.btnBlack;
@@ -31,6 +32,9 @@ function Button({
     if (btnLocation === "actualité" && onClickToLoadMoreActu) {
       onClickToLoadMoreActu();
     }
+    if (btnLocation === "contactForm" && onClickToSendContactForm) {
+      onClickToSendContactForm();
+    }
   };
   return (
     <button className={btnStyleVariant} onClick={handleClick}>
@@ -41,6 +45,7 @@ function Button({
         {btnLocation === "hero" ? "EN SAVOIR PLUS" : ""}
         {btnLocation === "homeActualite" ? "TOUTE L'ACTUALITÉ" : ""}
         {btnLocation === "actualité" ? "VOIR PLUS D'ACTUALITÉ" : ""}
+        {btnLocation === "contactForm" ? "ENVOYER LE MESSAGE" : ""}
       </span>
       <span className={styles.btnWhiteHover}></span>
     </button>

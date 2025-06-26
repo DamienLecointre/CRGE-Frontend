@@ -142,7 +142,9 @@ function Hero({ heroStyle }) {
         {heroStyle === "blueBg" && (
           <div className={styles.heroWrapperBlueBg}>
             <div className={styles.txtContainerBlueBg}>
-              <p className={styles.categoryTitle}>{actuContent.category}</p>
+              {herosContent === "actualite" && (
+                <p className={styles.categoryTitle}>{actuContent.category}</p>
+              )}
               <h1
                 className={
                   heroStyle === "blueBg"
@@ -150,23 +152,36 @@ function Hero({ heroStyle }) {
                     : ""
                 }
               >
-                {actuContent.title}
+                {herosContent === "actualite" ? actuContent.title : ""}
+                {herosContent === "contactForm" ? "Nous contacter" : ""}
               </h1>
-              <p
-                className={
-                  heroStyle === "blueBg"
-                    ? `${styles.paragraph} ${styles.whiteText}`
-                    : ""
-                }
-              >
-                {actuContent.date}
-              </p>
+              {herosContent === "actualite" && (
+                <p
+                  className={
+                    heroStyle === "blueBg"
+                      ? `${styles.paragraph} ${styles.whiteText}`
+                      : ""
+                  }
+                >
+                  {actuContent.date}
+                </p>
+              )}
             </div>
-            {actuContent.titleImg && (
+            {herosContent === "actualite" ? (
+              actuContent.titleImg && (
+                <Image
+                  className={styles.illustartionBlueBg}
+                  src={actuContent.titleImg}
+                  alt={actuContent.title || "Image d'actualité"}
+                  height={400}
+                  width={400}
+                />
+              )
+            ) : (
               <Image
                 className={styles.illustartionBlueBg}
-                src={actuContent.titleImg}
-                alt={actuContent.title || "Image d'actualité"}
+                src={"/illustrations/personnagedoigtenlair.svg"}
+                alt={"personnage doigt en l'air"}
                 height={400}
                 width={400}
               />
