@@ -1,5 +1,5 @@
 //REACT IMPORTS
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 //NEXT IMPORTS
 import { useRouter } from "next/router";
@@ -32,12 +32,26 @@ function Actualite() {
   const allowToUpdateFile = useSelector((state) => state.connection.value);
   const actualites = useSelector((state) => state.homepage.actualites);
 
+  // CONST TO KNOW HOW MUCH CARDS SHOWN
+  const [visibleCount, setVisibleCount] = useState(12);
+
   // ----------------------
   // DISPATCH HERO CONTENTS
   // ----------------------
+
   useEffect(() => {
     dispatch(addContentToHero("actualite"));
   }, []);
+
+  // -------------------------------
+  // HANDLE CLICK TO SHOW MORE CARDS
+  // -------------------------------
+
+  const handleClickToLoadMore = () => {
+    setVisibleCount((prev) => prev + 12);
+  };
+
+  const hasMoreCards = visibleCount < actualites.length;
 
   // ------------------------------
   // HANDLE CLICK TO UPDATE SECTION
@@ -65,10 +79,19 @@ function Actualite() {
                 />
               </span>
             )}
-            <ActualiteCards pageLocation="actualité" cardsData={actualites} />
-            <div className={styles.btnContainer}>
-              <Button btnLocation="actualité" />
-            </div>
+            <ActualiteCards
+              pageLocation="actualité"
+              cardsData={actualites}
+              visibleCount={visibleCount}
+            />
+            {hasMoreCards && (
+              <div className={styles.btnContainer}>
+                <Button
+                  btnLocation="actualité"
+                  onClickToLoadMoreActu={handleClickToLoadMore}
+                />
+              </div>
+            )}
           </div>
         </div>
       </main>

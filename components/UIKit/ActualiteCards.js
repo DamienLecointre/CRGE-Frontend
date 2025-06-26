@@ -12,7 +12,7 @@ import { addactualiteDetailToStore } from "../../reducers/actualiteDetail";
 //STYLES IMPORTS
 import styles from "../../styles/UIKit/ActualiteCards.module.css";
 
-function ActualiteCards({ pageLocation, cardsData = [] }) {
+function ActualiteCards({ pageLocation, cardsData = [], visibleCount }) {
   const dispatch = useDispatch();
   // CONST REDIRECTION TO WEBSITE PAGE
   const router = useRouter();
@@ -37,7 +37,7 @@ function ActualiteCards({ pageLocation, cardsData = [] }) {
     router.push("/actualiteDetail");
   };
 
-  const displayedCards = pageLocation === "actualité" ? 12 : 3;
+  const displayedCards = pageLocation === "actualité" ? visibleCount : 3;
 
   return (
     <div

@@ -176,7 +176,7 @@ function Home() {
           <Button
             btnStyle="black"
             btnLocation="homeActualite"
-            onClickToEvent={handleClickGoToActualite}
+            onClickToActualite={handleClickGoToActualite}
           />
         </div>
       </main>

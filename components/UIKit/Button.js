@@ -10,7 +10,8 @@ function Button({
   onClickSignup,
   onClickSignin,
   onClickLogOut,
-  onClickToEvent,
+  onClickToActualite,
+  onClickToLoadMoreActu,
 }) {
   const btnStyleVariant =
     btnStyle === "white" ? styles.btnWhite : styles.btnBlack;
@@ -24,8 +25,11 @@ function Button({
     if (btnLocation === "profil" && onClickLogOut) {
       onClickLogOut();
     }
-    if (btnLocation === "homeActualite" && onClickToEvent) {
-      onClickToEvent();
+    if (btnLocation === "homeActualite" && onClickToActualite) {
+      onClickToActualite();
+    }
+    if (btnLocation === "actualité" && onClickToLoadMoreActu) {
+      onClickToLoadMoreActu();
     }
   };
   return (
