@@ -51,27 +51,31 @@ function Actualite() {
   return (
     <div>
       <Header />
-      <Hero heroStyle={"whiteBg"} />
-      <div className={"paddingInline"}>
-        <div className={"sectionWrapper"}>
-          {allowToUpdateFile.isAdmin === true && (
-            <span className={styles.updateText}>
-              Modifier le contenu de cette section
-              <FontAwesomeIcon
-                icon={faPenToSquare}
-                className={styles.updateIcon}
-                // onClick={handleClickToCreateActu}
-              />
-            </span>
-          )}
-          <ActualiteCards pageLocation="actualité" cardsData={actualites} />
-          <div className={styles.btnContainer}>
-            <Button btnLocation="actualité" />
+      <main>
+        <Hero heroStyle={"whiteBg"} />
+        <div className={"paddingInline"}>
+          <div className={"sectionWrapper"}>
+            {allowToUpdateFile.isAdmin === true && (
+              <span className={styles.updateText}>
+                Modifier le contenu de cette section
+                <FontAwesomeIcon
+                  icon={faPenToSquare}
+                  className={styles.updateIcon}
+                  // onClick={handleClickToCreateActu}
+                />
+              </span>
+            )}
+            <ActualiteCards pageLocation="actualité" cardsData={actualites} />
+            <div className={styles.btnContainer}>
+              <Button btnLocation="actualité" />
+            </div>
           </div>
         </div>
-      </div>
-      <Footer />
-      <Mentions />
+      </main>
+      <footer>
+        <Footer />
+        <Mentions />
+      </footer>
     </div>
   );
 }

@@ -13,6 +13,8 @@ import { addContentToHero } from "../reducers/heros";
 //COMPONENTS IMPORTS
 import Header from "./Header/Header";
 import Hero from "./Hero/Hero";
+import Footer from "./UIKit/Footer";
+import Mentions from "./UIKit/Mentions";
 
 //STYLES IMPORTS
 import styles from "../styles/ActualiteDetail.module.css";
@@ -99,24 +101,30 @@ function ActualiteDetail() {
     <div>
       <Header />
       <Hero heroStyle={"blueBg"} />
-      <div className={`paddingInline`}>
-        <div className={`sectionWrapper`}>
-          {/* File d'ariane  */}
-          {breadcrumb()}
-          <div className={styles.introContainer}>
-            <div className={styles.illustartionContainer}>
-              <Image
-                className={styles.illustartion}
-                src={actuContent.introImg}
-                alt={actuContent.title}
-                fill={true}
-              />
+      <main>
+        <div className={`paddingInline`}>
+          <div className={`sectionWrapper`}>
+            {/* File d'ariane  */}
+            {breadcrumb()}
+            <div className={styles.introContainer}>
+              <div className={styles.illustartionContainer}>
+                <Image
+                  className={styles.illustartion}
+                  src={actuContent.introImg}
+                  alt={actuContent.title}
+                  fill={true}
+                />
+              </div>
+              <p className={styles.text}>{actuContent.intro}</p>
             </div>
-            <p className={styles.text}>{actuContent.intro}</p>
+            <div className={styles.sectionContainer}>{sectionDetail}</div>
           </div>
-          <div className={styles.sectionContainer}>{sectionDetail}</div>
         </div>
-      </div>
+      </main>
+      <footer>
+        <Footer />
+        <Mentions />
+      </footer>
     </div>
   );
 }

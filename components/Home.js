@@ -22,6 +22,8 @@ import NavBurgerMenu from "./Header/NavBurgerMenu";
 import ServiceCards from "./UIKit/ServiceCards";
 import Button from "../components/UIKit/Button";
 import ActualiteCards from "./UIKit/ActualiteCards";
+import Footer from "./UIKit/Footer";
+import Mentions from "./UIKit/Mentions";
 
 //STYLES IMPORTS
 import styles from "../styles/Home.module.css";
@@ -178,6 +180,10 @@ function Home() {
           />
         </div>
       </main>
+      <footer>
+        <Footer />
+        <Mentions />
+      </footer>
     </div>
   );
 }
