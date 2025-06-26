@@ -13,6 +13,8 @@ import Header from "./Header/Header";
 import Hero from "./Hero/Hero";
 import ActualiteCards from "./UIKit/ActualiteCards";
 import Button from "../components/UIKit/Button";
+import Footer from "./UIKit/Footer";
+import Mentions from "./UIKit/Mentions";
 
 //ICONS IMPORTS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -68,6 +70,8 @@ function Actualite() {
           </div>
         </div>
       </div>
+      <Footer />
+      <Mentions />
     </div>
   );
 }
