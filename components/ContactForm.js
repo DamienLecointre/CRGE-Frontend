@@ -1,5 +1,5 @@
 //REACT IMPORTS
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 //NEXT IMPORTS
 import Link from "next/link";
@@ -28,6 +28,14 @@ function ContactForm() {
 
   // CONST FOR HERO CONTENT FIELD
   const herosContent = useSelector((state) => state.heros.value);
+
+  // CONST INPUT VALUE
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [structure, setStructure] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
 
   // ----------------------
   // DISPATCH HERO CONTENTS
@@ -122,6 +130,8 @@ function ContactForm() {
                     <input
                       type="text"
                       name="firstName"
+                      onChange={(e) => setFirstName(e.target.value)}
+                      value={firstName}
                       className={styles.input}
                     />
                   </div>
@@ -132,6 +142,8 @@ function ContactForm() {
                     <input
                       type="text"
                       name="lastName"
+                      onChange={(e) => setLastName(e.target.value)}
+                      value={lastName}
                       className={styles.input}
                     />
                   </div>
@@ -143,6 +155,8 @@ function ContactForm() {
                   <input
                     type="text"
                     name="structureName"
+                    onChange={(e) => setStructure(e.target.value)}
+                    value={structure}
                     className={styles.input}
                   />
                 </div>
@@ -151,7 +165,13 @@ function ContactForm() {
                     <label htmlFor="email" className={styles.label}>
                       Adresse email <span className={styles.asterisk}>*</span>
                     </label>
-                    <input type="text" name="email" className={styles.input} />
+                    <input
+                      type="text"
+                      name="email"
+                      onChange={(e) => setEmail(e.target.value)}
+                      value={email}
+                      className={styles.input}
+                    />
                   </div>
                   <div className={styles.inputContainer}>
                     <label htmlFor="phoneNumber" className={styles.label}>
@@ -161,6 +181,8 @@ function ContactForm() {
                     <input
                       type="text"
                       name="phoneNumber"
+                      onChange={(e) => setPhone(e.target.value)}
+                      value={phone}
                       className={styles.input}
                     />
                   </div>
@@ -172,16 +194,30 @@ function ContactForm() {
                   </label>
                   <textarea
                     name="message"
+                    onChange={(e) => setMessage(e.target.value)}
+                    value={message}
+                    maxLength={180}
                     className={`${styles.input} ${styles.textarea}`}
                   ></textarea>
-                  <h6 className={styles.textAreaCounter}>0/180</h6>
-                  <input type="checkbox" name="" />
-                  <h6>
-                    Les champs avec un astérisque (
-                    <span className={styles.asterisk}>*</span>) sont
-                    obligatoires.
+                  <h6 className={styles.textAreaCounter}>
+                    {message.length}/180
                   </h6>
                 </div>
+                <div className={styles.inputContainer}>
+                  <label className={styles.checkboxWrapper}>
+                    <input type="checkbox" className={styles.input} />
+                    <span className={styles.customCheckbox}></span>
+                    En soumettant ce formulaire, j'accepte que les informations
+                    saisies soient exploitées par CRGE dans le cadre de la prise
+                    de contact et des échanges qui pourraient en découler.
+                    J'accepte la politique de confidentialité.
+                    <span className={styles.asterisk}>*</span>
+                  </label>
+                </div>
+                <h6 className={styles.textNota}>
+                  Les champs avec un astérisque (
+                  <span className={styles.asterisk}>*</span>) sont obligatoires.
+                </h6>
                 <Button
                   btnLocation="contactForm"
                   onClickToSendContactForm={handleSubmit}
