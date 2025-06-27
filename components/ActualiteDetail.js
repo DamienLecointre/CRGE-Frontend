@@ -102,7 +102,9 @@ function ActualiteDetail() {
       <Header />
       <Hero heroStyle={"blueBg"} />
       <main>
-        <div className={`paddingInline`}>
+        <div
+          className={`paddingInline ${styles.container} ${styles.responsivepaddingInline}`}
+        >
           <div className={`sectionWrapper`}>
             {/* File d'ariane  */}
             {breadcrumb()}

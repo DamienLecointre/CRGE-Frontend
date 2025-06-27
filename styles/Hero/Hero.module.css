@@ -167,27 +167,35 @@ MEDIA QUERIES
     flex-direction: column;
     align-items: center;
   }
-  .heroWrapper {
+  .heroWrapper,
+  .heroWrapperBlueBg {
     flex-direction: column-reverse;
   }
-  .txtContainer {
+  .txtContainer,
+  .txtContainerBlueBg {
     width: 100%;
   }
   .illustartion {
     height: 100%;
     width: 100%;
   }
+  .illustartionBlueBg {
+    height: 60%;
+    width: 60%;
+  }
 }
 
 @media (max-width: 760px) {
-  .title {
+  .title,
+  .titleBlueBg {
     font-size: var(--fontSize375);
     padding-top: 26px;
   }
 }
 
 @media (max-width: 630px) {
-  .title {
+  .title,
+  .titleBlueBg {
     font-size: var(--fontSize25);
     line-height: var(--lineHeight3);
     padding-top: 0;

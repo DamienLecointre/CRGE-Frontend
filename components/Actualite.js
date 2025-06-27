@@ -67,7 +67,7 @@ function Actualite() {
       <Header />
       <main>
         <Hero heroStyle={"whiteBg"} />
-        <div className={"paddingInline"}>
+        <div className={`paddingInline ${styles.responsivepaddingInline}`}>
           <div className={"sectionWrapper"}>
             {allowToUpdateFile.isAdmin === true && (
               <span className={styles.updateText}>

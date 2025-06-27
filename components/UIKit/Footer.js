@@ -14,13 +14,15 @@ function Footer() {
       <div className={`sectionWrapper ${styles.topFooterContainer}`}>
         <div className={styles.contactContainer}>
           <div className={styles.logoContainer}>
-            <Image
-              src={"/logo_icons/LogoWhite.svg"}
-              alt={"logo cgre"}
-              // fill={true}
-              height={80}
-              width={200}
-            />
+            <Link href={"/"}>
+              <Image
+                src={"/logo_icons/LogoWhite.svg"}
+                alt={"logo cgre"}
+                // fill={true}
+                height={80}
+                width={200}
+              />
+            </Link>
           </div>
           <div className={styles.contactTxtWrapper}>
             <h6 className={`${styles.contactTitle} ${styles.text}`}>

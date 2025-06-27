@@ -1,6 +1,9 @@
 /* -----------
 GENERAL TAG
 ----------- */
+.container {
+  overflow: hidden;
+}
 
 .introContainer {
   height: 100%;
@@ -59,6 +62,7 @@ BREADCRUMB
   font-weight: var(--fontWeightSemiBold);
   line-height: var(--lineHeight1);
   color: var(--colorSecondaryLight);
+  text-wrap: nowrap;
 }
 
 .linkBreadcrumb::after {
@@ -79,4 +83,33 @@ BREADCRUMB
 
 .lastBreadcrumb {
   color: var(--colorSecondaryMedium);
+}
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 1300px) {
+  .illustartionContainer {
+    height: 30vh;
+  }
+}
+
+@media (max-width: 890px) {
+  .illustartionContainer {
+    height: 20vh;
+  }
+  .sectionContainer {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .responsivepaddingInline {
+    padding-inline: 40px;
+  }
+  .illustartionContainer {
+    height: 10vh;
+  }
 }

@@ -17,3 +17,12 @@
   display: flex;
   justify-content: center;
 }
+
+/* -------------
+MEDIA QUERIES
+------------- */
+@media (max-width: 500px) {
+  .responsivepaddingInline {
+    padding-inline: 40px;
+  }
+}
