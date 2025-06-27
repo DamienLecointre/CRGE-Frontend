@@ -142,7 +142,7 @@ function Hero({ heroStyle }) {
         {heroStyle === "blueBg" && (
           <div className={styles.heroWrapperBlueBg}>
             <div className={styles.txtContainerBlueBg}>
-              {herosContent === "actualite" && (
+              {herosContent === "actualiteDetail" && (
                 <p className={styles.categoryTitle}>{actuContent.category}</p>
               )}
               <h1
@@ -152,10 +152,10 @@ function Hero({ heroStyle }) {
                     : ""
                 }
               >
-                {herosContent === "actualite" ? actuContent.title : ""}
+                {herosContent === "actualiteDetail" ? actuContent.title : ""}
                 {herosContent === "contactForm" ? "Nous contacter" : ""}
               </h1>
-              {herosContent === "actualite" && (
+              {herosContent === "actualiteDetail" && (
                 <p
                   className={
                     heroStyle === "blueBg"
@@ -167,7 +167,7 @@ function Hero({ heroStyle }) {
                 </p>
               )}
             </div>
-            {herosContent === "actualite" ? (
+            {herosContent === "actualiteDetail" ? (
               actuContent.titleImg && (
                 <Image
                   className={styles.illustartionBlueBg}
