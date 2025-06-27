@@ -84,7 +84,8 @@ GENERAL TAG
 }
 
 .textAreaCounter,
-.textNota {
+.textNota,
+.checkboxWrapper {
   font-family: var(--fontFamilyOpen);
   font-size: var(--fontSize1);
   font-weight: var(--fontWeightRegular);
@@ -237,4 +238,16 @@ BREADCRUMB
 
 .lastBreadcrumb {
   color: var(--colorSecondaryMedium);
+}
+
+/* -----------------
+ERROR MESSAGE TAG
+----------------- */
+
+.alertMessage {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fontSize125);
+  color: var(--colorAccent2);
+  padding-top: 20px;
 }

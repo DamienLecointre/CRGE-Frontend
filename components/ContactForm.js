@@ -34,8 +34,16 @@ function ContactForm() {
   const [lastName, setLastName] = useState("");
   const [structure, setStructure] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
+
+  // CONST To SHOW TEMPORARY MESSAGE
+  const [isEmptyField, setIsEmptyField] = useState(false);
+  const [isWrongEmail, setIsWrongEmail] = useState(false);
+  const [isWrongPhoneNumber, setIsWrongPhoneNumber] = useState(false);
+  const [isMessageSent, setIsMessageSent] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+  const [isCheckboxMissing, setIsCheckboxMissing] = useState(false);
 
   // ----------------------
   // DISPATCH HERO CONTENTS
@@ -93,12 +101,69 @@ function ContactForm() {
     );
   };
 
+  // --------------------------------------------
+  // FUNCTION TO HIDDEN ERROR MESSAGE TEMPORARILY
+  // --------------------------------------------
+
+  const showTemporaryError = (setErrorFunction, duration = 2000) => {
+    setErrorFunction(true);
+    setTimeout(() => {
+      setErrorFunction(false);
+    }, duration);
+  };
+
   // ---------------------
   // FUNCTION TO SEND FORM
   // ---------------------
 
   const handleSubmit = () => {
-    console.log("submit");
+    // console.log("submit");
+    if (
+      !firstName ||
+      !lastName ||
+      !structure ||
+      !email ||
+      !phoneNumber ||
+      !message ||
+      !isChecked
+    ) {
+      showTemporaryError(setIsEmptyField);
+      if (!isChecked) showTemporaryError(setIsCheckboxMissing);
+      return;
+    } else {
+      const newMessage = {
+        firstName,
+        lastName,
+        structure,
+        email,
+        phoneNumber,
+        message,
+      };
+      fetch("http://localhost:3000/contactForm", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newMessage),
+      })
+        .then((response) => response.json())
+        .then((newMessageData) => {
+          if (newMessageData.error === "Wrong email format") {
+            showTemporaryError(setIsWrongEmail);
+            return;
+          }
+          if (newMessageData.error === "Wrong phone number format") {
+            showTemporaryError(setIsWrongPhoneNumber);
+            return;
+          }
+          setFirstName("");
+          setLastName("");
+          setStructure("");
+          setEmail("");
+          setPhoneNumber("");
+          setMessage("");
+          setIsChecked(false);
+          showTemporaryError(setIsMessageSent);
+        });
+    }
   };
 
   return (
@@ -122,6 +187,11 @@ function ContactForm() {
                     Nous vous répondrons dans les meilleurs délais.
                   </p>
                 </div>
+                {isEmptyField && (
+                  <p className={styles.alertMessage}>
+                    Veuillez remplir tous les champs de saisie
+                  </p>
+                )}
                 <div className={styles.inputContainerSidebySide}>
                   <div className={styles.inputContainer}>
                     <label htmlFor="firstName" className={styles.label}>
@@ -181,12 +251,22 @@ function ContactForm() {
                     <input
                       type="text"
                       name="phoneNumber"
-                      onChange={(e) => setPhone(e.target.value)}
-                      value={phone}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                      value={phoneNumber}
                       className={styles.input}
                     />
                   </div>
                 </div>
+                {isWrongEmail && (
+                  <p className={styles.alertMessage}>
+                    Le format d'email est incorrect
+                  </p>
+                )}
+                {isWrongPhoneNumber && (
+                  <p className={styles.alertMessage}>
+                    Le format du numéro de téléphone est incorrect
+                  </p>
+                )}
                 <div className={styles.inputContainer}>
                   <label htmlFor="message" className={styles.label}>
                     Votre message
@@ -205,7 +285,12 @@ function ContactForm() {
                 </div>
                 <div className={styles.inputContainer}>
                   <label className={styles.checkboxWrapper}>
-                    <input type="checkbox" className={styles.input} />
+                    <input
+                      type="checkbox"
+                      checked={isChecked}
+                      onChange={(e) => setIsChecked(e.target.checked)}
+                      className={styles.input}
+                    />
                     <span className={styles.customCheckbox}></span>
                     En soumettant ce formulaire, j'accepte que les informations
                     saisies soient exploitées par CRGE dans le cadre de la prise
@@ -214,10 +299,21 @@ function ContactForm() {
                     <span className={styles.asterisk}>*</span>
                   </label>
                 </div>
+                {isCheckboxMissing && (
+                  <p className={styles.alertMessage}>
+                    Veuillez accepter les conditions de politique de
+                    confidentialité
+                  </p>
+                )}
                 <h6 className={styles.textNota}>
                   Les champs avec un astérisque (
                   <span className={styles.asterisk}>*</span>) sont obligatoires.
                 </h6>
+                {isMessageSent && (
+                  <p className={styles.alertMessage}>
+                    Votre message a été envoyé avec succès !
+                  </p>
+                )}
                 <Button
                   btnLocation="contactForm"
                   onClickToSendContactForm={handleSubmit}
