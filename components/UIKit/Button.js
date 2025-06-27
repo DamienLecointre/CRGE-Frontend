@@ -17,7 +17,10 @@ function Button({
   const btnStyleVariant =
     btnStyle === "white" ? styles.btnWhite : styles.btnBlack;
   const handleClick = () => {
-    if (btnLocation === "signup" && onClickSignup) {
+    if (
+      btnLocation === "signup" ||
+      (btnLocation === "joinUs" && onClickSignup)
+    ) {
       onClickSignup();
     }
     if (btnLocation === "signin" && onClickSignin) {
@@ -46,6 +49,7 @@ function Button({
         {btnLocation === "homeActualite" ? "TOUTE L'ACTUALITÉ" : ""}
         {btnLocation === "actualité" ? "VOIR PLUS D'ACTUALITÉ" : ""}
         {btnLocation === "contactForm" ? "ENVOYER LE MESSAGE" : ""}
+        {btnLocation === "joinUs" ? "J'ADHÈRE" : ""}
       </span>
       <span className={styles.btnWhiteHover}></span>
     </button>

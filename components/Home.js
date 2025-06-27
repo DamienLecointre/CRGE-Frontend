@@ -22,6 +22,7 @@ import NavBurgerMenu from "./Header/NavBurgerMenu";
 import ServiceCards from "./UIKit/ServiceCards";
 import Button from "../components/UIKit/Button";
 import ActualiteCards from "./UIKit/ActualiteCards";
+import JoinUs from "./JoinUs";
 import Footer from "./UIKit/Footer";
 import Mentions from "./UIKit/Mentions";
 
@@ -183,6 +184,7 @@ function Home() {
             />
           </div>
         </div>
+        <JoinUs />
       </main>
       <footer>
         <Footer />
