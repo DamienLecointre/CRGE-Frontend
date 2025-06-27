@@ -67,7 +67,8 @@ MEDIA QUERIES
   .btnBlack {
     font-size: var(--fontSize1);
   }
-  .btnWhite  {
+  .btnWhite,
+  .btnBlack  {
     width: 100%;
   }
 }

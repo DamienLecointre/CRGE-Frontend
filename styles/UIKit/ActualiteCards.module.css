@@ -18,6 +18,7 @@
 
 .actuCardswrapper {
   min-height: 380px;
+  min-width: 300px;
   flex: 1 1 20%;
   display: flex;
   flex-direction: column;
@@ -121,4 +122,19 @@
   top: 50%;
   transform: translateY(-50%);
   transition: all .3s ease-in-out;
+}
+
+/* -------------
+MEDIA QUERIES
+------------- */
+@media (max-width: 740px) {
+  .actuCardsHomeContainer {
+    left: 30%;
+  }
+}
+
+@media (max-width: 500px)  {
+  .actuCardsHomeContainer {
+    left: 10%;
+  }
 }

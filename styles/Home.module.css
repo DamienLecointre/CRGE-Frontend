@@ -2,7 +2,6 @@
   position: relative;
   height: 100%;
   width: 100%;
-  /* padding-inline: 80px; */
   overflow-x: hidden;
 }
 
@@ -62,8 +61,9 @@ ACTU TAGS STYLE
   color: var(--colorPrimary);
   writing-mode: vertical-rl;
   text-align: end;
-  right: 20%;
+  right: 10vw;
   transform: rotate(180deg);
+  /* margin-left: 100px; */
 }
 
 .actualiteBtn {
@@ -76,6 +76,27 @@ ACTU TAGS STYLE
 /* -------------
 MEDIA QUERIES
 ------------- */
+@media (max-width: 1350px) {
+  .actualiteContainer {
+    padding-inline: 80px;
+  }
+}
+@media (max-width: 1170px) {
+  .actualiteContainer {
+    margin-top: 300px;
+  }
+  .actualiteTitle {
+    font-size: 10rem;
+    line-height: 10rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .actualiteTitle {
+    font-size: 7rem;
+    line-height: 7rem;
+  }
+}
 
 @media (max-width: 740px) {
   .sectionTitleIllustration {
@@ -84,13 +105,25 @@ MEDIA QUERIES
     top: -20px;
   }
   .sectionTitle {
+    width: 100%;
     font-size: var(--fontSize25);
     line-height: var(--lineHeight3);
+    margin-inline: 0;
+    text-align: center;
+  }
+  .serviceLeafIllustration,
+  .actualiteLeafIllustration {
+    height: 70px;
+    width: 70px;
+  }
+  .actualiteTitle {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
 @media (max-width: 500px) {
-  .sectionContainer {
+  .responsivepaddingInline {
     padding-inline: 40px;
   }
   .sectionTitle {
@@ -100,5 +133,16 @@ MEDIA QUERIES
   .sectionTitleIllustration {
     height: 10%;
     width: 10%;
+  }
+  .actualiteContainer {
+    margin-top: 250px;
+  }
+  .actualiteTitle {
+    font-size: 5rem;
+  }
+  .actualiteIllustartion {
+    height: 250px;
+    width: 300px;
+    left: 0;
   }
 }

@@ -130,11 +130,13 @@ function Home() {
       <Header />
       <main>
         <Hero heroStyle={"whiteBg"} />
-        <div className={`sectionPaddingInline `}>
-          <Button btnStyle="black" btnLocation="hero" />
+        <div className={`paddingInline ${styles.responsivepaddingInline}`}>
+          <div class="sectionWrapper">
+            <Button btnStyle="black" btnLocation="hero" />
+          </div>
         </div>
         <NavBurgerMenu />
-        <div className={`paddingInline`}>
+        <div className={`paddingInline ${styles.responsivepaddingInline}`}>
           <div className={`sectionWrapper ${styles.sectionMarginTop}`}>
             <Image
               className={styles.serviceLeafIllustration}
@@ -149,7 +151,7 @@ function Home() {
             <ServiceCards cardsData={serviceCards} />
           </div>
         </div>
-        <div className={`paddingInline`}>
+        <div className={`paddingInline ${styles.responsivepaddingInline}`}>
           <div className={`sectionWrapper ${styles.sectionMarginTop}`}>
             <Image
               className={styles.actualiteLeafIllustration}
@@ -172,12 +174,14 @@ function Home() {
           <h5 className={styles.actualiteTitle}>Restez informé</h5>
           <ActualiteCards pageLocation="homeActualite" cardsData={actualites} />
         </div>
-        <div className={styles.actualiteBtn}>
-          <Button
-            btnStyle="black"
-            btnLocation="homeActualite"
-            onClickToActualite={handleClickGoToActualite}
-          />
+        <div className={`paddingInline ${styles.responsivepaddingInline}`}>
+          <div className={styles.actualiteBtn}>
+            <Button
+              btnStyle="black"
+              btnLocation="homeActualite"
+              onClickToActualite={handleClickGoToActualite}
+            />
+          </div>
         </div>
       </main>
       <footer>

@@ -10,14 +10,14 @@ import styles from "../../styles/UIKit/Footer.module.css";
 
 function Mentions() {
   return (
-    <div className={styles.mentionsContainer}>
+    <div className={`paddingInline ${styles.mentionsContainer}`}>
       <div className={styles.mentionsWrapper}>
         <h6 className={styles.text}>Mentions légales</h6>
         <h6 className={styles.text}>Politique de confidentialité</h6>
         <h6 className={styles.text}>Gestion des cookies</h6>
       </div>
       <div className={styles.madeContainer}>
-        <h6 className={styles.text}>
+        <h6 className={`${styles.text} ${styles.mention}`}>
           Mentions légales paticulière : Ce site est une reproduction non
           commerciale réalisée à des fins pédagogiques. Tous droits sur la
           maquette graphique appartiennent à l'

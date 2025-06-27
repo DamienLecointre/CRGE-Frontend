@@ -13,7 +13,7 @@ import styles from "../../styles/Header/Header.module.css";
 
 function Header() {
   return (
-    <header className={`paddingInline`}>
+    <header className={`paddingInline ${styles.responsivepaddingInline}`}>
       <div className={`sectionWrapper ${styles.headerContainer}`}>
         <Link href={"/"}>
           <Image

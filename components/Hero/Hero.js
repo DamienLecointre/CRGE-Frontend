@@ -104,7 +104,7 @@ function Hero({ heroStyle }) {
 
   return (
     <div
-      className={`paddingInline ${
+      className={`paddingInline ${styles.responsivepaddingInline} ${
         heroStyle === "blueBg" ? styles.heroBlueBgContainer : ""
       }`}
     >

@@ -25,6 +25,12 @@ MEDIA QUERIES
   }
 }
 
+@media (max-width: 500px) {
+  .responsivepaddingInline {
+    padding-inline: 40px;
+  }
+}
+
 @media (max-width: 360px) {
   .imgContainer {
     height: 40px;

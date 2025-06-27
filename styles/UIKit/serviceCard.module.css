@@ -103,8 +103,8 @@
 MEDIA QUERIES
 ------------- */
 
-/* @media (max-width: 740px) {
-  .cardWrapper {
-  flex: 0 0 calc(100% / 2);
+@media (max-width: 500px) {
+  .cardImg {
+    margin-bottom: 50px;
   }
-} */
+}

@@ -107,7 +107,8 @@ BOTTOM FOOTER
   justify-content: center;
   background: var(--bgSecondaryColor);
   border-top: 1px solid var(--bgPrimaryColor);
-  padding: 8px 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
   row-gap: 8px;
 }
 
@@ -159,6 +160,11 @@ BOTTOM FOOTER
   justify-content: center;
 }
 
+.mention {
+  max-width: 80%;
+  text-align: center;
+}
+
 .websitLink {
   position: relative;
   color: var(--colorAccent);
@@ -184,3 +190,39 @@ BOTTOM FOOTER
   opacity: 1;
   visibility: visible;
 }
+
+/* -------------
+MEDIA QUERIES
+------------- */
+@media (max-width: 1130px) {
+  .topFooterContainer {
+    flex-direction: column;
+    row-gap: 32px;
+  }
+}
+
+@media (max-width: 680px) {
+  .contactContainer {
+    flex-direction: column;
+  }
+  .logoContainer {
+    width: 100%;
+    margin-right: 0;
+  }
+  .mention {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .footerContainer,
+  .mentionsContainer {
+    padding-inline: 40px;
+  }
+  .text::after {
+    display: none;
+  }
+  .mentionsWrapper {
+    flex-direction: column;
+  }
+}  
