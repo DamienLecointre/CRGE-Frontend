@@ -20,11 +20,12 @@ import Header from "./Header/Header";
 import Hero from "./Hero/Hero";
 import NavBurgerMenu from "./Header/NavBurgerMenu";
 import ServiceCards from "./UIKit/ServiceCards";
-import Button from "../components/UIKit/Button";
 import ActualiteCards from "./UIKit/ActualiteCards";
+import EventCards from "./UIKit/EventCards";
 import JoinUs from "./JoinUs";
 import Footer from "./UIKit/Footer";
 import Mentions from "./UIKit/Mentions";
+import Button from "../components/UIKit/Button";
 
 //STYLES IMPORTS
 import styles from "../styles/Home.module.css";
@@ -35,6 +36,7 @@ const backendServiceCardsData =
   process.env.NEXT_PUBLIC_URL_BACKEND_SERVICECARDS_CONTENT;
 const backendActualiteData =
   process.env.NEXT_PUBLIC_URL_BACKEND_ACTUALITE_CONTENT;
+const backendEventData = process.env.NEXT_PUBLIC_URL_BACKEND_EVENT_CONTENT;
 
 function Home() {
   // CONST DISPATCH
@@ -52,6 +54,9 @@ function Home() {
   // CONST TO GET ACTUCARDS DATA
   const { actualites } = useSelector((state) => state.homepage);
 
+  // CONST TO GET ACTUCARDS DATA
+  const { events } = useSelector((state) => state.homepage);
+
   // ----------------------
   // DISPATCH HERO CONTENTS
   // ----------------------
@@ -68,23 +73,33 @@ function Home() {
     async function fetchHomepageData() {
       dispatch(setLoading(true));
       try {
-        const [heroRes, navRes, serviceRes, actuRes] = await Promise.all([
-          fetch(`${backendHeroData}`),
-          fetch(`${backendNavData}`),
-          fetch(`${backendServiceCardsData}`),
-          fetch(`${backendActualiteData}`),
-        ]);
+        const [heroRes, navRes, serviceRes, actuRes, eventRes] =
+          await Promise.all([
+            fetch(`${backendHeroData}`),
+            fetch(`${backendNavData}`),
+            fetch(`${backendServiceCardsData}`),
+            fetch(`${backendActualiteData}`),
+            fetch(`${backendEventData}`),
+          ]);
 
-        if (!heroRes.ok || !navRes.ok || !serviceRes.ok || !actuRes.ok) {
+        if (
+          !heroRes.ok ||
+          !navRes.ok ||
+          !serviceRes.ok ||
+          !actuRes.ok ||
+          !eventRes.ok
+        ) {
           throw new Error("Erreur serveur");
         }
 
-        const [heroData, navData, serviceData, actuData] = await Promise.all([
-          heroRes.json(),
-          navRes.json(),
-          serviceRes.json(),
-          actuRes.json(),
-        ]);
+        const [heroData, navData, serviceData, actuData, eventData] =
+          await Promise.all([
+            heroRes.json(),
+            navRes.json(),
+            serviceRes.json(),
+            actuRes.json(),
+            eventRes.json(),
+          ]);
         // console.log(
         //   "heroPromise :",
         //   heroData,
@@ -93,7 +108,9 @@ function Home() {
         //   "servicePromise :",
         //   serviceData,
         //   "actuPromise :",
-        //   actuData
+        //   actuData,
+        //   "eventPromise :",
+        //   eventData
         // );
 
         dispatch(
@@ -102,6 +119,7 @@ function Home() {
             navData: navData.navData,
             serviceCards: serviceData.serviceCardsData[0].cardsData,
             actualites: actuData.actualiteData,
+            events: eventData.eventData,
           })
         );
       } catch (err) {
@@ -146,7 +164,9 @@ function Home() {
               height={110}
               width={110}
             />
-            <h2 className={styles.sectionTitle}>
+            <h2
+              className={`${styles.sectionTitle} ${styles.sectionTitleMargin}`}
+            >
               Des services sur mesure pour votre réussite
             </h2>
             <ServiceCards cardsData={serviceCards} />
@@ -161,7 +181,11 @@ function Home() {
               height={110}
               width={110}
             />
-            <h2 className={styles.sectionTitle}>Actualité</h2>
+            <h2
+              className={`${styles.sectionTitle} ${styles.sectionTitleMargin}`}
+            >
+              Actualité
+            </h2>
           </div>
         </div>
         <div className={`sectionPaddingInline ${styles.actualiteContainer}`}>
@@ -182,6 +206,34 @@ function Home() {
               btnLocation="homeActualite"
               onClickToActualite={handleClickGoToActualite}
             />
+          </div>
+        </div>
+        <div
+          className={`sectionPaddingInline ${styles.eventsContainer} ${styles.sectionMarginTop}`}
+        >
+          <div className={styles.textContainer}>
+            <div className={styles.titleContainer}>
+              <Image
+                className={styles.eventLeafIllustration}
+                src="/illustrations/greenLeaf.svg"
+                alt="illustration feuille verte"
+                height={110}
+                width={110}
+              />
+              <h2 className={`${styles.sectionTitle} ${styles.eventTitle}`}>
+                Rejoignez-nous lors de nos formations & webinaires.
+              </h2>
+            </div>
+            <p>
+              Participez à nos événements professionnels pour élargir vos
+              connaissances et votre réseau. Consultez notre calendrier
+              d'événements pour trouver des opportunités de développement
+              professionnel passionnantes.
+            </p>
+            <Button btnStyle="black" btnLocation="homeEvents" />
+          </div>
+          <div className={styles.eventsCardsContainer}>
+            <EventCards pageLocation="homeEvents" cardsData={events} />
           </div>
         </div>
         <JoinUs />

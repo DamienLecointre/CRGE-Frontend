@@ -50,6 +50,7 @@ function Button({
         {btnLocation === "actualité" ? "VOIR PLUS D'ACTUALITÉ" : ""}
         {btnLocation === "contactForm" ? "ENVOYER LE MESSAGE" : ""}
         {btnLocation === "joinUs" ? "J'ADHÈRE" : ""}
+        {btnLocation === "homeEvents" ? "TOUS LES EVENEMENTS" : ""}
       </span>
       <span className={styles.btnWhiteHover}></span>
     </button>

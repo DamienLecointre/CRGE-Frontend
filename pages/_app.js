@@ -9,6 +9,7 @@ import heros from "../reducers/heros";
 import burgerMenu from "../reducers/burgerMenu";
 import connection from "../reducers/isConnected";
 import actualiteDetail from "../reducers/actualiteDetail";
+import eventDetail from "../reducers/eventDetail";
 import homepageReducer from "../reducers/homepageSlice";
 
 //STYLES IMPORTS
@@ -24,6 +25,7 @@ const store = configureStore({
     burgerMenu,
     connection,
     actualiteDetail,
+    eventDetail,
   },
 });
 

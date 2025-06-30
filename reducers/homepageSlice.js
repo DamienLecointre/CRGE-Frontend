@@ -28,6 +28,8 @@ const homepageSlice = createSlice({
       //   action.payload.actualites
       // );
       state.actualites = action.payload.actualites || [];
+      // console.log("VALEUR RECU DANS EVENTDATA REDUX :", action.payload.events);
+      state.events = action.payload.events || [];
     },
     setLoading(state, action) {
       state.loading = action.payload;

@@ -1,0 +1,483 @@
+{
+  "eventsData": [
+    {
+      "id": "communiquer-reseaux-sociaux-ge",
+      "category": "Formation",
+      "title": "Formation : Communiquer sur les réseaux sociaux pour faire connaître son GE",
+      "lieu": "Distanciel",
+      "speaker": {
+        "name": "Aurélie Edely",
+        "role": "chargée de communication à CRGE"
+      },
+      "audience": {
+        "description": "Salariés permanents d'un GE, en charge de la communication",
+        "prerequisites": "Aucun"
+      },
+      "objectives": [
+        "Comprendre les enjeux de la communication digitale pour un GE et identifier les bénéfices d'une présence active sur les réseaux sociaux",
+        "Appréhender les fondamentaux de la stratégie de communication et comprendre comment choisir les plateformes pertinentes en fonction des objectifs et des cibles du GE",
+        "Créer et diffuser du contenu engageant et cohérent avec les valeurs du GE, en maîtrisant les bonnes pratiques de rédaction et de conception visuelle",
+        "Gérer et animer une communauté en ligne en favorisant l'interaction avec les abonnés et en optimisant la fréquence des publications",
+        "Analyser et ajuster sa stratégie en exploitant les outils de mesure de performance des réseaux sociaux pour améliorer l'impact de la communication"
+      ],
+      "programme": [
+        {
+          "subtitle": "Définir sa stratégie de communication",
+          "points": [
+            "Pourquoi un GE doit-il être présent sur les réseaux sociaux ?",
+            "Définir ses objectifs",
+            "Identifier ses cibles et choisir les bons réseaux (Facebook, LinkedIn, …)",
+            "Structurer un message clair et cohérent avec les valeurs de son GE"
+          ]
+        },
+        {
+          "subtitle": "Créer du contenu impactant",
+          "points": [
+            "Les types de contenus qui fonctionnent",
+            "Rédiger des publications claires et attractives",
+            "L'importance des visuels : zoom sur des outils",
+            "Utiliser la vidéo pour renforcer l'engagement"
+          ]
+        },
+        {
+          "subtitle": "Animer et optimiser sa présence",
+          "points": [
+            "Fréquence et régularité des publications : construire un calendrier éditorial",
+            "Interagir avec la communauté",
+            "Analyser les performances : comprendre les statistiques de base pour s'améliorer"
+          ]
+        }
+      ],
+      "description": [
+        "Avec l'essor du digital, être visible en ligne est devenu incontournable pour un Groupement d'Employeurs.",
+        "Mais comment utiliser les réseaux sociaux efficacement pour faire connaître son GE, attirer des adhérents et recruter les bons talents ?",
+        "Cette formation vous donnera les clés pour construire une stratégie de communication adaptée, créer du contenu attractif et engager votre communauté.",
+        "À travers des conseils pratiques et des exercices concrets, vous apprendrez à structurer vos messages, à choisir les bons outils et à optimiser votre présence en ligne."
+      ],
+      "pricing": [
+        {
+          "adherent": true,
+          "date": "10 Juillet",
+          "time": "09:30 - 12:30",
+          "duration": "03:00",
+          "price": "175,00€"
+        },
+        {
+          "adherent": false,
+          "date": "10 Juillet",
+          "time": "09:30 - 12:30",
+          "duration": "03:00",
+          "price": "200,00€"
+        }
+      ],
+      "funding": "La formation répond aux dispositions de l'article L. 6313-2 du Code du travail et peut à ce titre être prise en charge par l’OPCO au titre du plan de développement des compétences."
+    },
+    {
+      "id": "Externalisation du CSE",
+      "category": "Webinaire",
+      "title": "Atelier pratique - Externalisation du CSE : Enjeux, modalités et bonnes pratiques",
+      "lieu": "Distanciel",
+      "speaker": {
+        "name": "Julie VANDÔME",
+        "role": "Directrice opérationnelle de CRGE"
+      },
+      "description": [
+        "Ces rendez-vous se déroulent 1 fois par mois, pendant 45 minutes avec nos experts et d’autres GE pour des échanges collaboratifs afin d’approfondir des problématiques concrètes rencontrées, de partager des expériences et des solutions."
+      ],
+      "pricing": [
+        { 
+          "adherent": true, 
+          "date": "07 Juillet",
+          "time": "10:30 - 11:15", 
+          "duration": "0:45"
+        }
+      ]
+    },
+    {
+      "id": "construire-strategie-rh-ge",
+      "category": "Formation",
+      "title": "Formation : Construire une stratégie RH adaptée au fonctionnement des GE",
+      "lieu": "Présentiel (Toulouse)",
+      "speaker": {
+        "name": "Hugo Lefèvre",
+        "role": "consultant RH spécialisé GE"
+      },
+      "audience": {
+        "description": "Dirigeants et DRH de GE",
+        "prerequisites": "Expérience RH recommandée"
+      },
+      "objectives": [
+        "Définir les enjeux RH spécifiques aux GE",
+        "Structurer une politique de recrutement, de mobilité et de fidélisation",
+        "Piloter les compétences et la GPEC en environnement mutualisé"
+      ],
+      "programme": [
+        {
+          "subtitle": "Diagnostic RH d’un GE",
+          "points": [
+            "Identifier les spécificités organisationnelles",
+            "Analyser les pratiques RH existantes"
+          ]
+        },
+        {
+          "subtitle": "Outils stratégiques RH",
+          "points": [
+            "Fiches de poste et cartographie des compétences",
+            "Plan de formation mutualisé",
+            "Politique de rémunération adaptée"
+          ]
+        }
+      ],
+      "description": [
+        "Le pilotage des ressources humaines dans un GE nécessite une approche spécifique, tenant compte de la mutualisation et de la diversité des besoins des structures adhérentes.",
+        "Cette formation vous accompagnera dans l’élaboration d’une stratégie RH efficace : du diagnostic des pratiques existantes à la mise en place d’outils RH structurants, en passant par la définition d’une politique adaptée de recrutement, de mobilité et de fidélisation.",
+        "Une journée pour acquérir une vision claire et opérationnelle des enjeux RH au sein des GE."
+      ],
+      "pricing": [
+        { 
+          "adherent": true, 
+          "date": "05 Octobre", 
+          "time": "09:00 - 17:00", 
+          "duration": "07:00", 
+          "price": "350,00€" 
+        },
+        { 
+          "adherent": false, 
+          "date": "05 Octobre", 
+          "time": "09:00 - 17:00", 
+          "duration": "07:00", 
+          "price": "420,00€" 
+        }
+      ],
+      "funding": "Finançable OPCO - Plan de développement des compétences"
+    },
+    {
+      "id": "formation-flash-dpae",
+      "category": "Formation flash",
+      "title": "Formation Flash : Réaliser une DPAE sans erreur",
+      "lieu": "Distanciel",
+      "speaker": {
+        "name": "Julie Mercier",
+        "role": "experte paie et déclarations sociales"
+      },
+      "audience": {
+        "description": "Chargés de paie et d’administration du personnel",
+        "prerequisites": "Aucun"
+      },
+      "objectives": [
+        "Comprendre le cadre réglementaire de la DPAE",
+        "Savoir quand et comment la déclarer",
+        "Éviter les erreurs fréquentes"
+      ],
+      "programme": [
+        {
+          "subtitle": "Les essentiels de la DPAE",
+          "points": [
+            "Délais et obligations",
+            "Données nécessaires",
+            "Transmission et archivage"
+          ]
+        }
+      ],
+      "description": [
+        "La Déclaration Préalable à l’Embauche (DPAE) est une formalité incontournable mais source fréquente d’erreurs.",
+        "En 1h30 seulement, cette formation flash vous permettra de comprendre les obligations légales autour de la DPAE, de maîtriser les bonnes pratiques de déclaration et d’éviter les pièges administratifs.",
+        "Parfait pour les professionnels en charge de la paie ou de l’administration du personnel souhaitant sécuriser cette étape clé du recrutement."
+      ],
+      "pricing": [
+        { 
+          "adherent": true, 
+          "date": "12 Juillet", 
+          "time": "14:00 - 15:30", 
+          "duration": "01:30", 
+          "price": "80,00€" 
+        },
+        { 
+          "adherent": false, 
+          "date": "12 Juillet", 
+          "time": "14:00 - 15:30", 
+          "duration": "01:30", 
+          "price": "110,00€" 
+        }
+      ],
+      "funding": "Éligible au plan OPCO"
+    },
+    {
+      "id": "juridique-mutualisation-salaries",
+      "category": "Webinaire",
+      "title": "Webinaire : Cadre juridique de la mutualisation des salariés",
+      "lieu": "Distanciel",
+      "speaker": {
+        "name": "Cyrielle BERGER",
+        "role": "Directrice de CRGE"
+      },
+      "description": [
+        "La mutualisation de salariés entre structures est au cœur du fonctionnement des GE, mais elle obéit à un cadre juridique précis.",
+        "Ce webinaire vous aidera à mieux comprendre les règles encadrant le prêt de main-d’œuvre, à rédiger une convention de mise à disposition en toute conformité, et à anticiper les responsabilités de l’employeur et de l’entreprise utilisatrice.",
+        "En 1h30, bénéficiez de l’expertise d’une juriste spécialisée pour sécuriser vos pratiques et éviter les contentieux."
+      ],
+      "pricing": [
+        { 
+          "adherent": true, 
+          "date": "01 Septembre", 
+          "time": "14:30 - 15:15", 
+          "duration": "0:45"
+        }
+      ]
+    },
+    {
+      "id": "accompagner-salaries-multisites",
+      "category": "Formation",
+      "title": "Formation : Accompagner les salariés multisites dans un GE",
+      "lieu": "Présentiel (Bordeaux)",
+      "speaker": {
+        "name": "Thomas Roussel",
+        "role": "psychologue du travail"
+      },
+      "audience": {
+        "description": "Encadrants et managers de GE",
+        "prerequisites": "Avoir un rôle managérial"
+      },
+      "objectives": [
+        "Identifier les enjeux psychosociaux liés à la mobilité multisite",
+        "Améliorer la qualité de vie au travail des salariés partagés",
+        "Mettre en place des outils de suivi et d’écoute"
+      ],
+      "programme": [
+        {
+          "subtitle": "Comprendre les besoins spécifiques",
+          "points": [
+            "Temps de trajet, isolement, stress",
+            "Coordination inter-sites"
+          ]
+        },
+        {
+          "subtitle": "Boîte à outils managériale",
+          "points": [
+            "Suivi RH à distance",
+            "Rituels d'équipe et points réguliers"
+          ]
+        }
+      ],
+      "description": [
+        "Travailler sur plusieurs sites peut générer fatigue, isolement ou désengagement chez les salariés d’un GE.",
+        "Cette formation s’adresse aux encadrants et managers soucieux d’améliorer la qualité de vie au travail des équipes mobiles.",
+        "À travers des apports théoriques et des outils concrets, vous apprendrez à identifier les enjeux psychosociaux, à mettre en place des rituels managériaux adaptés, et à instaurer un suivi RH efficace pour accompagner au mieux vos collaborateurs."
+      ],
+      "pricing": [
+        { 
+          "adherent": true, 
+          "date": "03 Octobre", 
+          "time": "09:00 - 16:30", 
+          "duration": "07:30", 
+          "price": "300,00€" 
+        },
+        { 
+          "adherent": false, 
+          "date": "03 Octobre", 
+          "time": "09:00 - 16:30", 
+          "duration": "07:30", 
+          "price": "370,00€" 
+        }
+      ],
+      "funding": "Éligible OPCO"
+    },
+    {
+      "id": "egalite-pro-hommes-femmes-ge",
+      "category": "Formation",
+      "title": "Formation : Intégrer l’égalité professionnelle dans les pratiques RH d’un GE",
+      "lieu": "Distanciel",
+      "speaker": {
+        "name": "Isabelle Moreau",
+        "role": "consultante en égalité professionnelle"
+      },
+      "audience": {
+        "description": "Responsables RH, dirigeants de GE",
+        "prerequisites": "Connaissances de base en gestion RH"
+      },
+      "objectives": [
+        "Comprendre les enjeux de l’égalité professionnelle dans les GE",
+        "Identifier les obligations légales et les leviers d’action",
+        "Mettre en place des outils concrets pour promouvoir l’égalité femmes-hommes"
+      ],
+      "programme": [
+        {
+          "subtitle": "Cadre réglementaire et enjeux",
+          "points": [
+            "État des lieux de l’égalité professionnelle",
+            "Obligations des GE en matière d’égalité"
+          ]
+        },
+        {
+          "subtitle": "Mettre en œuvre une politique d’égalité",
+          "points": [
+            "Analyse des écarts et indicateurs",
+            "Plan d’action et bonnes pratiques RH",
+            "Sensibilisation des équipes"
+          ]
+        }
+      ],
+      "description": [
+        "L’égalité professionnelle entre les femmes et les hommes est un enjeu central pour les GE, tant sur le plan légal que managérial.",
+        "Cette formation vous permettra d’identifier les leviers d’action concrets pour favoriser l’équité au sein de vos équipes, tout en respectant les obligations réglementaires.",
+        "Vous repartirez avec une méthodologie applicable et des outils pratiques à mettre en œuvre dans votre structure."
+      ],
+      "pricing": [
+        { 
+          "adherent": true, 
+          "date": "24 Septembre", 
+          "time": "09:00 - 12:30", 
+          "duration": "03:30", 
+          "price": "185,00€" 
+        },
+        { 
+          "adherent": false, 
+          "date": "24 Septembre", 
+          "time": "09:00 - 12:30", 
+          "duration": "03:30", 
+          "price": "215,00€" 
+        }
+      ],
+      "funding": "Finançable OPCO – Plan de développement des compétences"
+    },
+    {
+      "id": "flash-risques-psychosociaux",
+      "category": "Formation flash",
+      "title": "Formation Flash : Prévenir les risques psychosociaux dans les GE",
+      "lieu": "Distanciel",
+      "speaker": {
+        "name": "Laurent Petit",
+        "role": "psychologue du travail"
+      },
+      "audience": {
+        "description": "Managers, référents QVT, RH de GE",
+        "prerequisites": "Aucun"
+      },
+      "objectives": [
+        "Identifier les principales sources de RPS dans les GE",
+        "Connaître les signes d’alerte et les obligations de l’employeur",
+        "Mettre en place une démarche de prévention efficace"
+      ],
+      "programme": [
+        {
+          "subtitle": "Comprendre les RPS",
+          "points": [
+            "Stress, surcharge, isolement : les facteurs clés",
+            "Rôle des encadrants dans la prévention"
+          ]
+        },
+        {
+          "subtitle": "Passer à l’action",
+          "points": [
+            "Repérer les signaux faibles",
+            "Mettre en place des actions de prévention",
+            "Impliquer les équipes"
+          ]
+        }
+      ],
+      "description": [
+        "Les GE sont confrontés à des situations spécifiques pouvant générer des risques psychosociaux (RPS).",
+        "Cette formation flash propose une approche concrète pour comprendre les enjeux, repérer les signaux d’alerte et adopter les bons réflexes en matière de prévention.",
+        "Un format court et efficace pour renforcer la qualité de vie au travail dans votre GE."
+      ],
+      "pricing": [
+        { 
+          "adherent": true, 
+          "date": "19 Septembre", 
+          "time": "14:00 - 15:30", 
+          "duration": "01:30", 
+          "price": "90,00€" 
+        },
+        { 
+          "adherent": false, 
+          "date": "19 Septembre", 
+          "time": "14:00 - 15:30", 
+          "duration": "01:30", 
+          "price": "120,00€" 
+        }
+      ],
+      "funding": "Éligible au plan OPCO"
+    },
+    {
+      "id": "webinaire-integration-salaries-ge",
+      "category": "Webinaire",
+      "title": "Webinaire : Réussir l’intégration des nouveaux salariés dans un GE",
+      "lieu": "Distanciel",
+      "speaker": {
+        "name": "Marc Villeneuve",
+        "role": "expert en management RH"
+      },
+      "description": [
+        "L’accueil des nouveaux collaborateurs est une étape essentielle pour favoriser leur engagement et leur fidélisation.",
+        "Ce webinaire vous donnera des outils concrets pour structurer un parcours d’intégration efficace, en tenant compte des spécificités des GE comme le multisite ou le temps partagé.",
+        "Une session courte pour repartir avec des idées immédiatement applicables."
+      ],
+      "pricing": [
+        { 
+          "adherent": true, 
+          "date": "26 Août", 
+          "time": "11:00 - 12:30", 
+          "duration": "01:30"
+        }
+      ]
+    },
+    {
+      "id": "securiser-contrats-travail-ge",
+      "category": "Formation",
+      "title": "Formation : Sécuriser les contrats de travail dans un GE",
+      "lieu": "Présentiel (Lyon)",
+      "speaker": {
+        "name": "Chloé Garnier",
+        "role": "avocate en droit social"
+      },
+      "audience": {
+        "description": "Chargés de missions RH, responsables juridiques, gestionnaires de GE",
+        "prerequisites": "Notions en droit du travail"
+      },
+      "objectives": [
+        "Choisir le bon type de contrat selon le besoin (CDI, CDD, temps partagé)",
+        "Identifier les clauses essentielles et à risque",
+        "Sécuriser la rédaction et la signature des contrats"
+      ],
+      "programme": [
+        {
+          "subtitle": "Typologies et usages des contrats dans un GE",
+          "points": [
+            "Contrat temps plein, temps partiel, multi-employeurs",
+            "Cas des contrats spécifiques : accroissement temporaire, remplacement"
+          ]
+        },
+        {
+          "subtitle": "Rédiger un contrat sécurisé",
+          "points": [
+            "Mentions obligatoires",
+            "Clauses sensibles : mobilité, non-concurrence, rémunération",
+            "Éviter les contentieux : exemples concrets"
+          ]
+        }
+      ],
+      "description": [
+        "La rédaction des contrats de travail dans un GE demande une attention particulière pour sécuriser la relation employeur-employé.",
+        "Cette formation vous propose une approche juridique et opérationnelle pour choisir le bon contrat, rédiger les clauses adaptées et limiter les risques de litiges.",
+        "À travers des cas pratiques et des conseils d’experts, vous repartirez avec les bons réflexes à adopter."
+      ],
+      "pricing": [
+        { 
+          "adherent": true, 
+          "date": "17 Octobre", 
+          "time": "09:00 - 17:00", 
+          "duration": "07:00", 
+          "price": "360,00€" 
+        },
+        { 
+          "adherent": false, 
+          "date": "17 Octobre", 
+          "time": "09:00 - 17:00", 
+          "duration": "07:00", 
+          "price": "430,00€" 
+        }
+      ],
+      "funding": "Finançable OPCO – Plan de développement des compétences"
+    }
+  ]
+}

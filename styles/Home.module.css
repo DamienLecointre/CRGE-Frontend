@@ -24,8 +24,11 @@
   color: var(--colorSecondary);
   line-height: var(--lineHeight80);
   text-align: center;
-  margin-inline: auto;
   margin-bottom: 72px;
+}
+
+.sectionTitleMargin {
+  margin-inline: auto;
 }
 
 /* -------------
@@ -71,6 +74,59 @@ ACTU TAGS STYLE
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* -----------------
+EVENTS TAGS STYLE
+----------------- */
+
+.eventsContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  background: linear-gradient(90deg, var(--bgPrimaryColor) 0%,var(--bgPrimaryColor) 80% ,var(--bgSecondaryColor) 20% ,var(--bgSecondaryColor) 100%);
+}
+
+.eventsContainer::after,
+.eventsContainer::before {
+  content: "";
+  position: absolute;
+  height: 62px;
+  width: 100%;
+  background: var(--bgPrimaryColor);
+}
+
+.eventsContainer::before {
+  bottom: 0;
+}
+
+.eventsContainer::after {
+  top: 0;
+}
+
+
+.textContainer {
+  /* width: 70%; */
+  z-index: 5;
+}
+
+.titleContainer {
+  position: relative;
+}
+
+.eventLeafIllustration {
+  position: absolute;
+}
+
+.eventTitle {
+  width: 100%;
+}
+
+.eventsCardsContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  z-index: 1;
 }
 
 /* -------------
