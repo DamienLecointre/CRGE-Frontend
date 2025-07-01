@@ -136,12 +136,21 @@ function Home() {
   if (error) return <div className={styles.error}>Erreur : {error}</div>;
 
   // ----------------------------
-  // FUNCTION TO GO TO EVENT PAGE
+  // FUNCTION TO GO TO ACTUALITE PAGE
   // ----------------------------
 
   const handleClickGoToActualite = () => {
     // console.log("event page");
     router.push("/actualite");
+  };
+
+  // ----------------------------
+  // FUNCTION TO GO TO EVENT PAGE
+  // ----------------------------
+
+  const handleClickGoToEvents = () => {
+    // console.log("event page");
+    router.push("/events");
   };
 
   return (
@@ -224,13 +233,17 @@ function Home() {
                 Rejoignez-nous lors de nos formations & webinaires.
               </h2>
             </div>
-            <p>
+            <p className={styles.eventParagraph}>
               Participez à nos événements professionnels pour élargir vos
               connaissances et votre réseau. Consultez notre calendrier
               d'événements pour trouver des opportunités de développement
               professionnel passionnantes.
             </p>
-            <Button btnStyle="black" btnLocation="homeEvents" />
+            <Button
+              btnStyle="black"
+              btnLocation="homeEvents"
+              onClickToEvents={handleClickGoToEvents}
+            />
           </div>
           <div className={styles.eventsCardsContainer}>
             <EventCards pageLocation="homeEvents" cardsData={events} />

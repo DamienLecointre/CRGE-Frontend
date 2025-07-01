@@ -13,6 +13,7 @@ function Button({
   onClickToActualite,
   onClickToLoadMoreActu,
   onClickToSendContactForm,
+  onClickToEvents,
 }) {
   const btnStyleVariant =
     btnStyle === "white" ? styles.btnWhite : styles.btnBlack;
@@ -37,6 +38,9 @@ function Button({
     }
     if (btnLocation === "contactForm" && onClickToSendContactForm) {
       onClickToSendContactForm();
+    }
+    if (btnLocation === "homeEvents" && onClickToEvents) {
+      onClickToEvents();
     }
   };
   return (

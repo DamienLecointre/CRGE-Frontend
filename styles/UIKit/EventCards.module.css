@@ -1,5 +1,11 @@
 .cardsContainer {
   position: relative;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.cardsContainer:hover {
+  transform: translateX(10px);
 }
 
 .textContainer {
@@ -12,6 +18,14 @@
   padding: 24px 24px 24px 80px;
   border-radius: 10px;
   row-gap: 16px;
+  transition: all .3s ease-in-out;
+}
+
+.textContainer:hover {
+  box-shadow: 0px 4px 6px -4px rgba(7, 7, 9, .1), 0px 10px 15px -3px rgba(7, 7, 9, .1);
+  -webkit-box-shadow:0px 4px 6px -4px rgba(7, 7, 9, .1), 0px 10px 15px -3px rgba(7, 7, 9, .1);
+  -moz-box-shadow:0px 4px 6px -4px rgba(7, 7, 9, .1), 0px 10px 15px -3px rgba(7, 7, 9, .1);
+  background: var(--bgAccentColorHoverCards);
 }
 
 .category {
@@ -44,12 +58,13 @@
 }
 
 .link {
+  width: fit-content;
   position: relative;
   font-size: var(--fontSize08);
   font-weight: var(--fontWeightRegular);
   line-height: var(--lineHeight1);
   color: var(--colorLink);
-  padding-left: 24px;
+  padding-inline: 24px;
 }
 
 .link::before {
@@ -61,13 +76,19 @@
   left: 0;
   top: 50%;
   transform: translateY(50%);
+  transition: all .3s ease-in-out;
+}
+
+.cardsContainer:hover .link::before {
+  width: 100%;
 }
 
 .dateContainer {
   position: absolute;
-  top: 50%;
   background: var(--bgAccentColor2);
   transform: translate(0 ,-50%);
+  left: -30px;
+  top: 50%;
   padding: 16px;
 }
 
@@ -75,5 +96,11 @@
   font-size: var(--fontSize25);
   font-weight: var(--fontWeightBold);
   line-height: var(--lineHeight2);
+  color: var(--colorSecondary);
+}
+
+.datetext {
+  font-size: var(--fontSize08);
+  font-weight: var(--fontWeightLight);
   color: var(--colorSecondary);
 }

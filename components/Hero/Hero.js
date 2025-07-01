@@ -22,13 +22,14 @@ function Hero({ heroStyle }) {
     accueil: "Accueil",
     actualite: ["CRGE", "Notre actualité"],
     actualiteDetail: ["Notre actualité", "TITRE DE L'ACTUALITE"],
+    events: ["Nos évènements"],
   };
 
   // CONST FOR HERO CONTENT FIELD
   const herosContent = useSelector((state) => state.heros.value);
   const heroHomeData = useSelector((state) => state.homepage.heroData);
 
-  // CONST FOR HERO ACTUALITY CONTENT FIELD
+  // CONST FOR HERO ACTUALITY DETAILS CONTENT FIELD
   const actuContent = useSelector((state) => state.actualiteDetail.value);
 
   // CONST DISPLAY PERMISSION TO UPDATE WEBSITE
@@ -56,7 +57,7 @@ function Hero({ heroStyle }) {
   // ------------------------
 
   const handleClickToEdit = () => {
-    console.log("edit");
+    // console.log("edit");
   };
 
   // CONST TO CUT URL IN DIFFERENTS PARTS
