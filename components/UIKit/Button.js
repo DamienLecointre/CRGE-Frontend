@@ -36,6 +36,9 @@ function Button({
     if (btnLocation === "actualité" && onClickToLoadMoreActu) {
       onClickToLoadMoreActu();
     }
+    if (btnLocation === "events" && onClickToLoadMoreActu) {
+      onClickToLoadMoreActu();
+    }
     if (btnLocation === "contactForm" && onClickToSendContactForm) {
       onClickToSendContactForm();
     }
@@ -54,7 +57,8 @@ function Button({
         {btnLocation === "actualité" ? "VOIR PLUS D'ACTUALITÉ" : ""}
         {btnLocation === "contactForm" ? "ENVOYER LE MESSAGE" : ""}
         {btnLocation === "joinUs" ? "J'ADHÈRE" : ""}
-        {btnLocation === "homeEvents" ? "TOUS LES EVENEMENTS" : ""}
+        {btnLocation === "homeEvents" ? "TOUS LES ÉVENEMENTS" : ""}
+        {btnLocation === "events" ? "VOIR PLUS D'ÉVÈNEMENTS" : ""}
       </span>
       <span className={styles.btnWhiteHover}></span>
     </button>

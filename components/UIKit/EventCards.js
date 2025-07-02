@@ -35,7 +35,9 @@ function EventCards({ pageLocation, cardsData = [], visibleCount }) {
             <h6 className={styles.dateNumber}>
               {data.pricing[0].date.slice(0, 2)}
             </h6>
-            <h6 className={styles.datetext}>{data.pricing[0].date.slice(2)}</h6>
+            <h6 className={styles.datetext}>
+              {`${data.pricing[0].date.slice(3, 7)}.`}
+            </h6>
           </div>
         </div>
       ))}

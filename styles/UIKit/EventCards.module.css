@@ -1,5 +1,7 @@
 .cardsContainer {
+  height: 100%;
   position: relative;
+  flex: 1 1 40%;
   cursor: pointer;
   transition: all .3s ease-in-out;
 }
@@ -51,6 +53,12 @@
 }
 
 .title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: var(--fontSize15);
   font-weight: var(--fontWeightMedium);
   line-height: var(--lineHeight2);
