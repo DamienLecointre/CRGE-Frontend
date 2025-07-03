@@ -18,3 +18,15 @@
 MEDIA QUERIES
 ------------- */
 
+@media (max-width: 1350px) {
+  .eventsWrapper {
+      row-gap: 53px;
+    }
+}
+
+@media (max-width: 500px) {
+  .eventsContainer {
+    padding-inline: 40px;
+  }
+}
+
