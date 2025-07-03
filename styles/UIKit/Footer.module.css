@@ -224,5 +224,6 @@ MEDIA QUERIES
   }
   .mentionsWrapper {
     flex-direction: column;
+    align-items: center;
   }
 }  

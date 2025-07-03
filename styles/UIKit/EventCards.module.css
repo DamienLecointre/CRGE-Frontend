@@ -112,3 +112,18 @@
   font-weight: var(--fontWeightLight);
   color: var(--colorSecondary);
 }
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 1350px) {
+  .textContainer {
+    padding: 80px 24px 24px 80px;
+  }
+  .dateContainer {
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+  }
+}

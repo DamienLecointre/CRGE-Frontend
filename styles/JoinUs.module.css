@@ -63,3 +63,26 @@
   right: -65%;
   bottom: -10%;
 }
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 1100px) {
+  .joinUsWrapper {
+    flex-direction: column-reverse;
+  }
+  .imgContainer {
+    min-height: 300px;
+    width: 100%;
+  }
+  .illustartion {
+    right: -75%;
+  }
+}
+
+@media (max-width: 500px) {
+  .joinUsContainer {
+    padding-inline: 40px;
+  }
+}

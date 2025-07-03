@@ -197,7 +197,9 @@ function Home() {
             </h2>
           </div>
         </div>
-        <div className={`sectionPaddingInline ${styles.actualiteContainer}`}>
+        <div
+          className={`sectionPaddingInline ${styles.actualiteContainer} ${styles.responsivepaddingInline}`}
+        >
           <Image
             className={styles.actualiteIllustartion}
             src="/illustrations/actualite.svg"
@@ -218,35 +220,37 @@ function Home() {
           </div>
         </div>
         <div
-          className={`sectionPaddingInline ${styles.eventsContainer} ${styles.sectionMarginTop}`}
+          className={`paddingInline ${styles.eventsContainer} ${styles.sectionMarginTop} ${styles.responsivepaddingInline}`}
         >
-          <div className={styles.textContainer}>
-            <div className={styles.titleContainer}>
-              <Image
-                className={styles.eventLeafIllustration}
-                src="/illustrations/greenLeaf.svg"
-                alt="illustration feuille verte"
-                height={110}
-                width={110}
+          <div className={`sectionWrapper ${styles.eventsContainer}`}>
+            <div className={styles.textContainer}>
+              <div className={styles.titleContainer}>
+                <Image
+                  className={styles.eventLeafIllustration}
+                  src="/illustrations/greenLeaf.svg"
+                  alt="illustration feuille verte"
+                  height={110}
+                  width={110}
+                />
+                <h2 className={`${styles.sectionTitle} ${styles.eventTitle}`}>
+                  Rejoignez-nous lors de nos formations & webinaires.
+                </h2>
+              </div>
+              <p className={styles.eventParagraph}>
+                Participez à nos événements professionnels pour élargir vos
+                connaissances et votre réseau. Consultez notre calendrier
+                d'événements pour trouver des opportunités de développement
+                professionnel passionnantes.
+              </p>
+              <Button
+                btnStyle="black"
+                btnLocation="homeEvents"
+                onClickToEvents={handleClickGoToEvents}
               />
-              <h2 className={`${styles.sectionTitle} ${styles.eventTitle}`}>
-                Rejoignez-nous lors de nos formations & webinaires.
-              </h2>
             </div>
-            <p className={styles.eventParagraph}>
-              Participez à nos événements professionnels pour élargir vos
-              connaissances et votre réseau. Consultez notre calendrier
-              d'événements pour trouver des opportunités de développement
-              professionnel passionnantes.
-            </p>
-            <Button
-              btnStyle="black"
-              btnLocation="homeEvents"
-              onClickToEvents={handleClickGoToEvents}
-            />
-          </div>
-          <div className={styles.eventsCardsContainer}>
-            <EventCards pageLocation="homeEvents" cardsData={events} />
+            <div className={styles.eventsCardsContainer}>
+              <EventCards pageLocation="homeEvents" cardsData={events} />
+            </div>
           </div>
         </div>
         <JoinUs />
