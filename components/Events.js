@@ -40,37 +40,39 @@ function Events() {
     setVisibleCount((prev) => prev + 12);
   };
 
-  const hasMoreCards = visibleCount < events.length;
+  const hasMoreCards = Array.isArray(events) && visibleCount < events.length;
 
-  return (
-    <div>
-      <Header />
-      <main>
-        <Hero heroStyle={"whiteBg"} />
-        <div className={`paddingInline ${styles.eventsContainer}`}>
-          <div className={`sectionWrapper ${styles.eventsWrapper}`}>
-            <EventCards
-              pageLocation="events"
-              cardsData={events}
-              visibleCount={visibleCount}
-            />
-            {hasMoreCards && (
-              <div className={styles.btnContainer}>
-                <Button
-                  btnLocation="events"
-                  onClickToLoadMoreActu={handleClickToLoadMore}
-                />
-              </div>
-            )}
+  if (!Array.isArray(events)) {
+    return (
+      <div>
+        <Header />
+        <main>
+          <Hero heroStyle={"whiteBg"} />
+          <div className={`paddingInline ${styles.eventsContainer}`}>
+            <div className={`sectionWrapper ${styles.eventsWrapper}`}>
+              <EventCards
+                pageLocation="events"
+                cardsData={events}
+                visibleCount={visibleCount}
+              />
+              {hasMoreCards && (
+                <div className={styles.btnContainer}>
+                  <Button
+                    btnLocation="events"
+                    onClickToLoadMoreActu={handleClickToLoadMore}
+                  />
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      </main>
-      <footer>
-        <Footer />
-        <Mentions />
-      </footer>
-    </div>
-  );
+        </main>
+        <footer>
+          <Footer />
+          <Mentions />
+        </footer>
+      </div>
+    );
+  }
 }
 
 export default Events;
