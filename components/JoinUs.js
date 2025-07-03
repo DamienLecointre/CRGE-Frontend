@@ -20,9 +20,7 @@ function JoinUs() {
   };
 
   return (
-    <div
-      className={`paddingInline ${styles.joinUsContainer} ${styles.responsivepaddingInline}`}
-    >
+    <div className={`paddingInline ${styles.joinUsContainer}`}>
       <div className={`sectionWrapper ${styles.joinUsWrapper}`}>
         <div className={styles.textContainer}>
           <div className={styles.titleContainer}>

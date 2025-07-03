@@ -23,6 +23,7 @@ import ServiceCards from "./UIKit/ServiceCards";
 import ActualiteCards from "./UIKit/ActualiteCards";
 import EventCards from "./UIKit/EventCards";
 import JoinUs from "./JoinUs";
+import SocialNetworks from "./SocialNetworks";
 import Footer from "./UIKit/Footer";
 import Mentions from "./UIKit/Mentions";
 import Button from "../components/UIKit/Button";
@@ -254,6 +255,7 @@ function Home() {
           </div>
         </div>
         <JoinUs />
+        <SocialNetworks />
       </main>
       <footer>
         <Footer />

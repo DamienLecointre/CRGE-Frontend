@@ -1,0 +1,210 @@
+.socialWrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.textContainer {
+  height: 100%;
+  width: 100%;
+  padding-top: 195px;
+  padding-bottom: 140px;
+}
+
+.title {
+  font-size: var(--fontSize25);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--lineHeight35);
+  color: var(--colorSecondary);
+}
+
+.paragraph {
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize125);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--lineHeight2);
+  color: var(--colorSecondary);
+  padding-top: 16px;
+}
+
+.iconContainer {
+  display: flex;
+  column-gap: 32px;
+  padding-top: 32px;
+}
+
+.icon {
+  font-size: var(--fontSize25);
+  color: var(--colorSecondary);
+  line-height: 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon:hover {
+  color: var(--colorAccent);
+}
+
+.illustartionContainer {
+  padding-bottom: 140px;
+}
+
+.illustartionWrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: linear-gradient(90deg, var(--bgPrimaryColor) 0%,var(--bgPrimaryColor) 25% ,var(--bgSecondaryColor) 25% ,var(--bgSecondaryColor) 95%, var(--bgPrimaryColor) 95%, var(--bgPrimaryColor) 100%);
+}
+
+.newsletterContainer {
+  padding-top: 210px;
+  padding-left: 52px;
+}
+
+.newsletterWrapper {
+  position: relative;
+  height: 100%;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--bgAccentColor2);
+  padding: 40px;
+}
+
+.newsletterIllustration {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.newsletterTitle {
+  font-size: var(--fontSize2);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--lineHeight25);
+  color: var(--colorSecondary);
+  padding-bottom: 24px;
+  z-index: 5;
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  position: relative;
+  width: 100%;
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightRegular);
+  line-height: var(--lineHeight15);
+  color: var(--colorSecondary);
+  padding: 12px;
+  color: var(--colorSecondary);
+  border: 1px solid var(--bgBlack);
+  border-radius: 4px;
+  z-index: 5;
+}
+
+.input::placeholder {
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightRegular);
+  line-height: var(--lineHeight15);
+  color: var(--InputColorGreyMedium);
+}
+
+.inputIconWrapper {
+  position: absolute;
+  height: 80%;
+  aspect-ratio: 1;
+  color: var(--colorPrimary);
+  background: var(--bgBlack);
+  transform: translateY(-50%);
+  border-radius: 4px;
+  top: 50%;
+  right: 4px;
+  padding: 4px;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.inputIconWrapper:hover {
+  background: var(--bgAccentColor2);
+}
+
+.inputIcon {
+  height: 100%;
+  width: 100%;
+}
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 1280px) {
+  .socialWrapper {
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "IC"
+    "TC"
+    "NC";
+  }
+  .textContainer {
+    grid-area: TC;
+    padding-top: 0;
+  }
+  .iconContainer {
+    justify-content: center;
+  }
+  .illustartionContainer {
+    grid-area: IC;
+    padding-bottom: 0;
+  }
+  .illustartionWrapper {
+    justify-content: flex-end;
+    background: linear-gradient(90deg, var(--bgPrimaryColor) 0%, var(--bgPrimaryColor) 70%, var(--bgSecondaryColor) 70%, var(--bgSecondaryColor) 100px);
+  }
+  .newsletterContainer {
+    grid-area: NC;
+    padding-top: 0;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 950px) {
+  .illustartionWrapper {
+    justify-content: flex-end;
+    background: linear-gradient(90deg, var(--bgPrimaryColor) 0%, var(--bgPrimaryColor) 60%, var(--bgSecondaryColor) 60%, var(--bgSecondaryColor) 100px);
+  }
+}
+
+@media (max-width: 500px) {
+  .socialContainer {
+    padding-inline: 40px;
+  }
+  .textContainer {
+    padding-top: 72px;
+    padding-bottom: 0;
+  }
+   .socialIllustration {
+    width: 90%;
+  }
+  .newsletterWrapper {
+    padding: 24px;
+  }
+  .illustartionWrapper {
+    justify-content: flex-end;
+    background: linear-gradient(90deg, var(--bgPrimaryColor) 0%, var(--bgPrimaryColor) 40%, var(--bgSecondaryColor) 40%, var(--bgSecondaryColor) 100px);
+  }
+  .newsletterContainer {
+    padding-top: 55px;
+  }
+}
