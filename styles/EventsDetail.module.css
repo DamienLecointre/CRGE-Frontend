@@ -1,0 +1,248 @@
+/* ----------
+HIDDEN NAV
+---------- */
+.hiddenNavContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transform: translateY(-100%);
+  opacity: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.s ease-in-out;
+}
+
+.hiddenNavContainer.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hiddenNavTopContainer {
+  background: var(--bgSecondaryColor);
+}
+
+.hiddenNavTopWrapper {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.hiddenNavTitle {
+  font-size: var(--fontSize15);
+  font-weight: var(--fontWeightMedium);
+  line-height: var(--lineHeight2);
+  color: var(--colorPrimary);
+}
+
+.hiddenNavBottomContainer {
+  background: var(--bgWhite);
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.hiddenNavLinkContainer {
+  display: flex;
+  column-gap: 16px;
+}
+
+.hiddenNavLink {
+  position: relative;
+  width: fit-content;
+  font-size: var(--fontSize125);
+  font-weight: var(--fontWeightMedium);
+  line-height: var(--lineHeight1);
+  color: var(--colorSecondary);
+  padding-inline: 4px;
+  z-index: 5;
+}
+
+.hiddenNavLink::after {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 100%;
+  background: var(--bgAccentColorLow);
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: all .2s ease-in-out;
+}
+
+.hiddenNavLink:hover::after {
+  height: 6px;
+} 
+
+/* -----------
+GENERAL TAG
+----------- */
+
+.textContainer {
+  width: 60%;
+}
+
+.sectionTitle {
+  position: relative;
+  width: fit-content;
+  font-size: var(--fontSize2);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--lineHeight25);
+  color: var(--colorSecondary);
+  padding-inline: 4px;
+  z-index: 5;
+}
+
+.sectionTitle::after {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 100%;
+  background: var(--bgAccentColorLow);
+  left: 0;
+  bottom: 5px;
+  z-index: -1;
+}
+
+.sectionParagraph {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  margin-top: 24px;
+}
+
+.paragraph {
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightRegular);
+  line-height: var(--lineHeight15);
+  color: var(--colorSecondary);
+}
+
+.sectionSubTitle,
+.speakerName {
+  font-weight: var(--fontWeightBold);
+}
+
+.sectionSubTitle {
+  margin-top: 24px;
+}
+
+.sectionContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  margin-top: 24px;
+}
+
+.sectionMagin {
+  margin-top: 48px;
+}
+
+.objectifContainer {
+  background: var(--bgSecondaryColor);
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.paragraphWhite {
+  color: var(--colorPrimary);
+}
+
+.programmeContainer {
+  position: relative;
+}
+
+.programmeTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bgSecondaryColor);
+  margin-top: 24px;
+  padding: 10px 21px;
+}
+
+.sectionTitleWhite {
+  font-size: var(--fontSize166);
+  font-weight: var(--fontWeightSemiBold);
+  line-height: var(--lineHeight25);
+  color: var(--colorPrimary);
+}
+
+.programmeTitleIcon {
+  font-size: var(--fontSize15);
+  color: var(--colorPrimary);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.programmeTitleIconOpen {
+  transform: rotate(180deg);
+}
+
+.programmeWrapper{
+  display: flex;
+  flex-direction: column;
+  background: var(--bgWhite);
+  row-gap: 24px;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+  max-height: 0;
+  opacity: 0;
+}
+
+.programmeWrapperOpen {
+  max-height: 1000px;
+  opacity: 1;
+  padding: 24px;
+}
+
+.programme {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.paragraphFinance {
+  margin-top: 24px;
+}
+
+
+/* ----------
+BREADCRUMB
+---------- */
+
+.breadcrumb {
+  display: flex;
+  column-gap: 20px;
+  padding-top: 16px;
+  padding-bottom: 40px;
+}
+
+.linkBreadcrumb {
+  position: relative;
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize08);
+  font-weight: var(--fontWeightSemiBold);
+  line-height: var(--lineHeight1);
+  color: var(--colorSecondaryLight);
+  text-wrap: nowrap;
+}
+
+.linkBreadcrumb::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: var(--bgAccentColor2);
+  top: 50%;
+  right: 0;
+  transform: translate(10px,-50%);
+}
+
+.linkBreadcrumb:last-child::after {
+  content: none;
+}
+
+.lastBreadcrumb {
+  color: var(--colorSecondaryMedium);
+}

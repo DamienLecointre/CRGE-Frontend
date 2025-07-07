@@ -27,7 +27,7 @@ export const eventDetailSlice = createSlice({
   initialState,
   reducers: {
     addeventDetailToStore: (state, action) => {
-      console.log("VALEUR RECU DANS REDUCER EVENT DETAIL :", action.payload);
+      // console.log("VALEUR RECU DANS REDUCER EVENT DETAIL :", action.payload);
       state.value = action.payload;
     },
   },

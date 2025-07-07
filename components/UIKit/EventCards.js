@@ -3,6 +3,7 @@ import React from "react";
 
 //NEXT IMPORTS
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 //REDUX IMPORTS
 import { useDispatch } from "react-redux";
@@ -15,19 +16,45 @@ import styles from "../../styles/UIKit/EventCards.module.css";
 
 function EventCards({ pageLocation, cardsData = [], visibleCount }) {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const displayedCards = pageLocation === "events" ? visibleCount : 3;
 
-  // console.log(cardsData);
+  // ------------------------------------------------------------
+  // FUNCTION TO DISPATCH CARDS CONTENT & GO TO ACTU DETAILS PAGE
+  // ------------------------------------------------------------
+
+  const handleCardClick = (data) => {
+    dispatch(
+      addeventDetailToStore({
+        id: data.title,
+        category: data.category || "",
+        title: data.title || "",
+        lieu: data.lieu || "",
+        description: data.description || [],
+        speaker: data.speaker || { name: "", role: "" },
+        audience: data.audience || { description: "", prerequisites: "" },
+        objectives: data.objectives || [],
+        programme: data.programme || [],
+        funding: data.funding || "",
+        pricing: data.pricing || [],
+      })
+    );
+    router.push("/eventsDetail");
+  };
 
   return (
     <>
       {cardsData.slice(0, displayedCards).map((data, i) => (
-        <div key={i} className={styles.cardsContainer}>
+        <div
+          key={i}
+          className={styles.cardsContainer}
+          onClick={() => handleCardClick(data)}
+        >
           <div className={styles.textContainer}>
             <h5 className={styles.category}>{data.category}</h5>
             <h3 className={styles.title}>{data.title}</h3>
-            <Link href={"/"} className={styles.link}>
+            <Link href={"/eventsDetail"} className={styles.link}>
               EN SAVOIR PLUS
             </Link>
           </div>

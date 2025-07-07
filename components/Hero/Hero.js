@@ -1,13 +1,13 @@
 //REACT IMPORTS
-import React from "react";
+import React, { forwardRef } from "react";
 
 //NEXT IMPORTS
-import Image from "next/image"; //
+import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router"; //
+import { useRouter } from "next/router";
 
 //REDUX IMPORTS
-import { useSelector } from "react-redux"; //
+import { useSelector } from "react-redux";
 
 //ICONS IMPORTS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,8 +16,7 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 //STYLES IMPORTS
 import styles from "../../styles/Hero/Hero.module.css";
 
-function Hero({ heroStyle }) {
-  // CONST URL CUSTOM DISPLAY
+const Hero = forwardRef(({ heroStyle }, ref) => {
   const displayNames = {
     accueil: "Accueil",
     actualite: ["CRGE", "Notre actualité"],
@@ -25,42 +24,27 @@ function Hero({ heroStyle }) {
     events: ["Nos évènements"],
   };
 
-  // CONST FOR HERO CONTENT FIELD
   const herosContent = useSelector((state) => state.heros.value);
   const heroHomeData = useSelector((state) => state.homepage.heroData);
-
-  // CONST FOR HERO ACTUALITY DETAILS CONTENT FIELD
   const actuContent = useSelector((state) => state.actualiteDetail.value);
-
-  // CONST DISPLAY PERMISSION TO UPDATE WEBSITE
+  const eventsContent = useSelector((state) => state.eventDetail.value);
   const allowToUpdateFile = useSelector((state) => state.connection.value);
 
-  // CONST REDIRECTION TO WEBSITE PAGE
   const router = useRouter();
-
-  // -------------------------------------
-  // FUNCTION TO FIND MATCHING HEROSCONTENT
-  // -------------------------------------
 
   const currentSectionData = heroHomeData.find(
     (item) => item.section === herosContent
   );
 
-  // CONST TO DATA CONTENT
   const title = currentSectionData?.title || "";
   const paragraph = currentSectionData?.paragraph || "";
   const imgSrc = currentSectionData?.imgSrc || "";
   const imgAlt = currentSectionData?.imgAlt || "";
 
-  // ------------------------
-  // FUNCTION TO EDIT CONTENT
-  // ------------------------
-
   const handleClickToEdit = () => {
     // console.log("edit");
   };
 
-  // CONST TO CUT URL IN DIFFERENTS PARTS
   const rawSegments =
     router.pathname === "/"
       ? ["Accueil"]
@@ -70,10 +54,6 @@ function Hero({ heroStyle }) {
     const value = displayNames[segment];
     return Array.isArray(value) ? value : value || segment;
   });
-
-  // ------------------------------
-  // FUNCTION TO DISPLAY BREADCRUMB
-  // ------------------------------
 
   const breadcrumb = () => {
     return (
@@ -105,12 +85,12 @@ function Hero({ heroStyle }) {
 
   return (
     <div
+      ref={ref}
       className={`paddingInline ${styles.responsivepaddingInline} ${
         heroStyle === "blueBg" ? styles.heroBlueBgContainer : ""
       }`}
     >
       <div className={`sectionWrapper`}>
-        {/* Span pour modifier contenu */}
         {allowToUpdateFile.isAdmin === true && (
           <span className={styles.updateText}>
             Modifier le contenu de cette section
@@ -121,11 +101,11 @@ function Hero({ heroStyle }) {
             />
           </span>
         )}
+
         {heroStyle === "whiteBg" && (
           <div className={styles.heroWrapper}>
             <div className={styles.txtContainer}>
               <h1 className={styles.title}>{title}</h1>
-              {/* File d'ariane  */}
               {breadcrumb()}
               <p className={styles.paragraph}>{paragraph}</p>
             </div>
@@ -140,11 +120,15 @@ function Hero({ heroStyle }) {
             )}
           </div>
         )}
+
         {heroStyle === "blueBg" && (
           <div className={styles.heroWrapperBlueBg}>
             <div className={styles.txtContainerBlueBg}>
               {herosContent === "actualiteDetail" && (
                 <p className={styles.categoryTitle}>{actuContent.category}</p>
+              )}
+              {herosContent === "eventsDetail" && (
+                <p className={styles.categoryTitle}>{eventsContent.category}</p>
               )}
               <h1
                 className={
@@ -154,19 +138,19 @@ function Hero({ heroStyle }) {
                 }
               >
                 {herosContent === "actualiteDetail" ? actuContent.title : ""}
+                {herosContent === "eventsDetail" ? eventsContent.title : ""}
                 {herosContent === "contactForm" ? "Nous contacter" : ""}
               </h1>
-              {herosContent === "actualiteDetail" && (
-                <p
-                  className={
-                    heroStyle === "blueBg"
-                      ? `${styles.paragraph} ${styles.whiteText}`
-                      : ""
-                  }
-                >
-                  {actuContent.date}
-                </p>
-              )}
+              <p
+                className={
+                  heroStyle === "blueBg"
+                    ? `${styles.paragraph} ${styles.whiteText}`
+                    : ""
+                }
+              >
+                {herosContent === "actualiteDetail" ? actuContent.date : ""}
+                {herosContent === "eventsDetail" ? eventsContent.lieu : ""}
+              </p>
             </div>
             {herosContent === "actualiteDetail" ? (
               actuContent.titleImg && (
@@ -183,8 +167,8 @@ function Hero({ heroStyle }) {
                 className={styles.illustartionBlueBg}
                 src={"/illustrations/personnagedoigtenlair.svg"}
                 alt={"personnage doigt en l'air"}
-                height={400}
-                width={400}
+                height={600}
+                width={600}
               />
             )}
           </div>
@@ -192,6 +176,6 @@ function Hero({ heroStyle }) {
       </div>
     </div>
   );
-}
+});
 
 export default Hero;
