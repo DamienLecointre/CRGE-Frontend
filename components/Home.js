@@ -160,7 +160,7 @@ function Home() {
       <main>
         <Hero heroStyle={"whiteBg"} />
         <div className={`paddingInline ${styles.responsivepaddingInline}`}>
-          <div class="sectionWrapper">
+          <div className="sectionWrapper">
             <Button btnStyle="black" btnLocation="hero" />
           </div>
         </div>

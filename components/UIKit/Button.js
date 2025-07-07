@@ -19,30 +19,23 @@ function Button({
     btnStyle === "white" ? styles.btnWhite : styles.btnBlack;
   const handleClick = () => {
     if (
-      btnLocation === "signup" ||
-      (btnLocation === "joinUs" && onClickSignup)
+      (btnLocation === "signup" || btnLocation === "joinUs") &&
+      onClickSignup
     ) {
       onClickSignup();
-    }
-    if (btnLocation === "signin" && onClickSignin) {
+    } else if (btnLocation === "signin" && onClickSignin) {
       onClickSignin();
-    }
-    if (btnLocation === "profil" && onClickLogOut) {
+    } else if (btnLocation === "profil" && onClickLogOut) {
       onClickLogOut();
-    }
-    if (btnLocation === "homeActualite" && onClickToActualite) {
+    } else if (btnLocation === "homeActualite" && onClickToActualite) {
       onClickToActualite();
-    }
-    if (btnLocation === "actualité" && onClickToLoadMoreActu) {
+    } else if (btnLocation === "actualité" && onClickToLoadMoreActu) {
       onClickToLoadMoreActu();
-    }
-    if (btnLocation === "events" && onClickToLoadMoreActu) {
+    } else if (btnLocation === "events" && onClickToLoadMoreActu) {
       onClickToLoadMoreActu();
-    }
-    if (btnLocation === "contactForm" && onClickToSendContactForm) {
+    } else if (btnLocation === "contactForm" && onClickToSendContactForm) {
       onClickToSendContactForm();
-    }
-    if (btnLocation === "homeEvents" && onClickToEvents) {
+    } else if (btnLocation === "homeEvents" && onClickToEvents) {
       onClickToEvents();
     }
   };

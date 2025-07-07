@@ -44,35 +44,41 @@ function Events() {
 
   if (!Array.isArray(events)) {
     return (
-      <div>
-        <Header />
-        <main>
-          <Hero heroStyle={"whiteBg"} />
-          <div className={`paddingInline ${styles.eventsContainer}`}>
-            <div className={`sectionWrapper ${styles.eventsWrapper}`}>
-              <EventCards
-                pageLocation="events"
-                cardsData={events}
-                visibleCount={visibleCount}
-              />
-              {hasMoreCards && (
-                <div className={styles.btnContainer}>
-                  <Button
-                    btnLocation="events"
-                    onClickToLoadMoreActu={handleClickToLoadMore}
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        </main>
-        <footer>
-          <Footer />
-          <Mentions />
-        </footer>
+      <div style={{ padding: "100px", fontSize: "24px" }}>
+        Chargement des événements...
       </div>
     );
   }
+
+  return (
+    <div>
+      <Header />
+      <main>
+        <Hero heroStyle={"whiteBg"} />
+        <div className={`paddingInline ${styles.eventsContainer}`}>
+          <div className={`sectionWrapper ${styles.eventsWrapper}`}>
+            <EventCards
+              pageLocation="events"
+              cardsData={events}
+              visibleCount={visibleCount}
+            />
+            {hasMoreCards && (
+              <div className={styles.btnContainer}>
+                <Button
+                  btnLocation="events"
+                  onClickToLoadMoreActu={handleClickToLoadMore}
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      </main>
+      <footer>
+        <Footer />
+        <Mentions />
+      </footer>
+    </div>
+  );
 }
 
 export default Events;
