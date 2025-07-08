@@ -1,0 +1,140 @@
+/* -----------
+GENERAL TAG
+----------- */
+
+.introContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+}
+
+.paragraph {
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightRegular);
+  line-height: var(--lineHeight15);
+  color: var(--colorSecondary);
+}
+
+.paragraphMaginBot {
+  margin-bottom: 24px;
+}
+
+.paragraphBold {
+  font-weight: var(--fontWeightBold);
+}
+
+.paragraphLight {
+  font-size: var(--fontSize08);
+  color: var(--colorSecondaryMedium);
+}
+
+.sectionContainer {
+  margin-top: 48px;
+}
+
+.sectionTitle {
+  font-size: var(--fontSize25);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--lineHeight25);
+  color: var(--colorSecondary);
+  padding-inline: 4px;
+  margin-bottom: 32px;
+  text-decoration: underline;
+  text-underline-offset: -.15em;
+  text-decoration-thickness: .6rem;
+  text-decoration-color: var(--bgAccentColorLow);
+  text-decoration-skip-ink: none;
+}
+
+.paragraphContainer {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 12px;
+  margin-bottom: 24px;
+}
+
+.subSectionContainer {
+  display: flex;
+}
+
+.subSectionWrapper {
+  width: 50%;
+}
+
+.subSectionTitle {
+  font-size: var(--fontSize2);
+  font-weight: var(--fontWeightSemiBold);
+  line-height: var(--lineHeight2);
+  color: var(--colorAccent2);
+  margin-bottom: 24px;
+}
+
+.illustartionContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.publishContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.publishTextContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+}
+
+/* ----------
+BREADCRUMB
+---------- */
+
+.breadcrumb {
+  display: flex;
+  column-gap: 20px;
+  padding-top: 16px;
+  padding-bottom: 40px;
+}
+
+.linkBreadcrumb {
+  position: relative;
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize08);
+  font-weight: var(--fontWeightSemiBold);
+  line-height: var(--lineHeight1);
+  color: var(--colorSecondaryLight);
+  text-wrap: nowrap;
+  transition: all .2s ease-in-out;
+}
+
+.linkBreadcrumb:first-child:hover {
+  transform: scale(1.1);
+}
+
+.linkBreadcrumb::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: var(--bgAccentColor2);
+  top: 50%;
+  right: 0;
+  transform: translate(10px,-50%);
+}
+
+.linkBreadcrumb:last-child::after {
+  content: none;
+}
+
+.lastBreadcrumb {
+  color: var(--colorSecondaryMedium);
+}

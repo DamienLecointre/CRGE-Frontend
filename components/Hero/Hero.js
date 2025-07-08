@@ -140,6 +140,7 @@ const Hero = forwardRef(({ heroStyle }, ref) => {
                 {herosContent === "actualiteDetail" ? actuContent.title : ""}
                 {herosContent === "eventsDetail" ? eventsContent.title : ""}
                 {herosContent === "contactForm" ? "Nous contacter" : ""}
+                {herosContent === "about" ? "Qui sommes-nous ?" : ""}
               </h1>
               <p
                 className={

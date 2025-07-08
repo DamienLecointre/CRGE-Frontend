@@ -14,6 +14,8 @@ import Header from "./Header/Header";
 import Hero from "./Hero/Hero";
 import Footer from "./UIKit/Footer";
 import Mentions from "./UIKit/Mentions";
+import BookingCard from "./UIKit/BookingCard";
+import NavBurgerMenu from "./Header/NavBurgerMenu";
 
 //ICONS IMPORTS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,8 +23,6 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 //STYLES IMPORTS
 import styles from "../styles/EventsDetail.module.css";
-import BookingCard from "./UIKit/BookingCard";
-import NavBurgerMenu from "./Header/NavBurgerMenu";
 
 function EventsDetail() {
   const dispatch = useDispatch();

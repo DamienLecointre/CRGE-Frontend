@@ -137,11 +137,18 @@ function Home() {
   if (error) return <div className={styles.error}>Erreur : {error}</div>;
 
   // ----------------------------
-  // FUNCTION TO GO TO ACTUALITE PAGE
+  // FUNCTION TO GO TO ABOUT PAGE
   // ----------------------------
 
+  const handleClickGoToAbout = () => {
+    router.push("/about");
+  };
+
+  // --------------------------------
+  // FUNCTION TO GO TO ACTUALITE PAGE
+  // --------------------------------
+
   const handleClickGoToActualite = () => {
-    // console.log("event page");
     router.push("/actualite");
   };
 
@@ -150,7 +157,6 @@ function Home() {
   // ----------------------------
 
   const handleClickGoToEvents = () => {
-    // console.log("event page");
     router.push("/events");
   };
 
@@ -161,7 +167,11 @@ function Home() {
         <Hero heroStyle={"whiteBg"} />
         <div className={`paddingInline ${styles.responsivepaddingInline}`}>
           <div className="sectionWrapper">
-            <Button btnStyle="black" btnLocation="hero" />
+            <Button
+              btnStyle="black"
+              btnLocation="hero"
+              onClickToAbout={handleClickGoToAbout}
+            />
           </div>
         </div>
         <NavBurgerMenu />

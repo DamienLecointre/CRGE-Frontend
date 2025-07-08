@@ -17,6 +17,7 @@ function Button({
   onClickToLoadMoreActu,
   onClickToSendContactForm,
   onClickToEvents,
+  onClickToAbout,
 }) {
   // CONST TO DISPATCH EVENTS CONTENT
   const eventContent = useSelector((state) => state.eventDetail.value);
@@ -42,6 +43,8 @@ function Button({
       onClickToSendContactForm();
     } else if (btnLocation === "homeEvents" && onClickToEvents) {
       onClickToEvents();
+    } else if (btnLocation === "hero" && onClickToAbout) {
+      onClickToAbout();
     }
   };
   return (
@@ -65,6 +68,7 @@ function Button({
         {btnLocation === "bookingCard" && eventContent.category === "Webinaire"
           ? "S'INSCRIRE AU WEBINAIRE"
           : ""}
+        {btnLocation === "about" ? "CONSULTER" : ""}
       </span>
       <span className={styles.btnWhiteHover}></span>
     </button>
