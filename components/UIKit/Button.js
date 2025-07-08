@@ -57,11 +57,14 @@ function Button({
         {btnLocation === "joinUs" ? "J'ADHÈRE" : ""}
         {btnLocation === "homeEvents" ? "TOUS LES ÉVENEMENTS" : ""}
         {btnLocation === "events" ? "VOIR PLUS D'ÉVÈNEMENTS" : ""}
-        {eventContent.category === "Formation" ||
+        {(btnLocation === "bookingCard" &&
+          eventContent.category === "Formation") ||
         eventContent.category === "Formation flash"
           ? "S'INSCRIRE À LA FORMATION"
           : ""}
-        {eventContent.category === "Webinaire" ? "S'INSCRIRE AU WEBINAIRE" : ""}
+        {btnLocation === "bookingCard" && eventContent.category === "Webinaire"
+          ? "S'INSCRIRE AU WEBINAIRE"
+          : ""}
       </span>
       <span className={styles.btnWhiteHover}></span>
     </button>

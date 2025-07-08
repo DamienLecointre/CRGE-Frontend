@@ -40,9 +40,13 @@ function BookingCard() {
     }
   };
 
+  if (!eventContent || !eventContent.pricing) {
+    return <p>Chargement des données...</p>;
+  }
+
   return (
     <div className={styles.cardContainer}>
-      {eventContent.category !== "Webinaire" ? (
+      {eventContent.category !== "Webinaire" && (
         <div className={styles.btnContainer}>
           <button
             className={`${styles.btn} ${isAdherent ? styles.active : ""}`}
@@ -57,8 +61,6 @@ function BookingCard() {
             Non adhérent
           </button>
         </div>
-      ) : (
-        ""
       )}
 
       {isAdherent === true && (
@@ -70,10 +72,10 @@ function BookingCard() {
             </div>
             <div className={styles.infoWrapper}>
               <span className={`${styles.text} ${styles.textStrong}`}>
-                {eventContent.pricing[0].date} |{" "}
+                {eventContent.pricing?.[0]?.date} |{" "}
               </span>
               <span className={`${styles.text} ${styles.textStrong}`}>
-                {eventContent.pricing[0].time}
+                {eventContent.pricing?.[0]?.time}
               </span>
             </div>
           </div>
@@ -84,7 +86,7 @@ function BookingCard() {
             </div>
             <div className={styles.infoWrapper}>
               <span className={`${styles.text} ${styles.textStrong}`}>
-                {eventContent.pricing[0].duration}
+                {eventContent.pricing?.[0]?.duration}
               </span>
             </div>
           </div>
@@ -98,7 +100,7 @@ function BookingCard() {
                 </div>
                 <div className={styles.infoWrapper}>
                   <span className={`${styles.text} ${styles.textPrice}`}>
-                    {eventContent.pricing[0].price}
+                    {eventContent.pricing?.[0]?.price}
                   </span>
                   <span className={`${styles.text} ${styles.textNota}`}>
                     Net de TVA par participant
@@ -110,11 +112,11 @@ function BookingCard() {
             ""
           )}
           <div className={styles.btnUiContainer}>
-            <Button />
+            <Button btnLocation="bookingCard" />
           </div>
         </div>
       )}
-      {isNotAdherent === true && (
+      {isNotAdherent && eventContent.pricing?.[1] && (
         <div className={styles.textContainer}>
           <div className={styles.infoContainer}>
             <div className={styles.titleInfoWrapper}>
@@ -123,10 +125,10 @@ function BookingCard() {
             </div>
             <div className={styles.infoWrapper}>
               <span className={`${styles.text} ${styles.textStrong}`}>
-                {eventContent.pricing[1].date} |{" "}
+                {eventContent.pricing?.[1]?.date} |{" "}
               </span>
               <span className={`${styles.text} ${styles.textStrong}`}>
-                {eventContent.pricing[1].time}
+                {eventContent.pricing?.[1]?.time}
               </span>
             </div>
           </div>
@@ -137,7 +139,7 @@ function BookingCard() {
             </div>
             <div className={styles.infoWrapper}>
               <span className={`${styles.text} ${styles.textStrong}`}>
-                {eventContent.pricing[1].duration}
+                {eventContent.pricing?.[1]?.duration}
               </span>
             </div>
           </div>
@@ -148,7 +150,7 @@ function BookingCard() {
             </div>
             <div className={styles.infoWrapper}>
               <span className={`${styles.text} ${styles.textPrice}`}>
-                {eventContent.pricing[1].price}
+                {eventContent.pricing?.[1]?.price}
               </span>
               <span className={`${styles.text} ${styles.textNota}`}>
                 Net de TVA par participant
@@ -156,7 +158,7 @@ function BookingCard() {
             </div>
           </div>
           <div className={styles.btnUiContainer}>
-            <Button />
+            <Button btnLocation="bookingCard" />
           </div>
         </div>
       )}
