@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from "react";
 //NEXT IMPORTS
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 //REDUX IMPORTS
 import { useDispatch, useSelector } from "react-redux";
@@ -33,7 +32,6 @@ function EventsDetail() {
 
   // CONST TO DISPATCH EVENTS CONTENT
   const eventContent = useSelector((state) => state.eventDetail.value);
-  // console.log("VALEUR RECU SUR LA PAGE EVENT DETAIL :", eventContent);
 
   // CONST TO SHOW PROGRAMME MENU
   const [selectedMenu, setSelectedMenu] = useState();
@@ -247,10 +245,10 @@ function EventsDetail() {
                     width={20}
                   />
                   <h5 className={`${styles.paragraph} ${styles.speakerName}`}>
-                    {eventContent.speaker.name},
-                  </h5>
-                  <h5 className={styles.paragraph}>
-                    {eventContent.speaker.role}
+                    {eventContent.speaker.name},{" "}
+                    <span className={styles.paragraph}>
+                      {eventContent.speaker.role}
+                    </span>
                   </h5>
                 </div>
                 {eventContent.category !== "Webinaire" && (

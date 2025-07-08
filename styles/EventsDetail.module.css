@@ -257,3 +257,32 @@ BREADCRUMB
 .lastBreadcrumb {
   color: var(--colorSecondaryMedium);
 }
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 1200px) {
+  .textContainer {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+  .textContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px)  {
+  
+}
+
+@media (max-width: 500px) {
+  .responsivepaddingInline {
+    padding-inline: 40px;
+  }
+}

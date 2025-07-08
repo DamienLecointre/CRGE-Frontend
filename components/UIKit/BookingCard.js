@@ -21,10 +21,6 @@ import styles from "../../styles/UIKit/BookingCard.module.css";
 function BookingCard() {
   // CONST TO DISPATCH EVENTS CONTENT
   const eventContent = useSelector((state) => state.eventDetail.value);
-  console.log(
-    "VALEUR RECU SUR LA PAGE EVENT DETAIL POUR BOOKING CARD :",
-    eventContent
-  );
 
   // CONST TO CHECK IF ADHERENT IS TRUE OR NOT
   const [isAdherent, setIsAdherent] = useState(true);
