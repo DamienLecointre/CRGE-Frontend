@@ -7,6 +7,7 @@ import { addContentToHero } from "../reducers/heros";
 
 //COMPONENTS IMPORTS
 import Header from "./Header/Header";
+import NavBurgerMenu from "./Header/NavBurgerMenu";
 import Hero from "./Hero/Hero";
 import EventCards from "./UIKit/EventCards";
 import Button from "./UIKit/Button";
@@ -56,6 +57,7 @@ function Events() {
       <main>
         <Hero heroStyle={"whiteBg"} />
         <div className={`paddingInline ${styles.eventsContainer}`}>
+          <NavBurgerMenu />
           <div className={`sectionWrapper ${styles.eventsWrapper}`}>
             <EventCards
               pageLocation="events"

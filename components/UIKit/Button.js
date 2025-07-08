@@ -1,6 +1,9 @@
 //REACT IMPORTS
 import React from "react";
 
+//REDUX IMPORTS
+import { useSelector } from "react-redux";
+
 //STYLES IMPORTS
 import styles from "../../styles/UIKit/Button.module.css";
 
@@ -15,6 +18,8 @@ function Button({
   onClickToSendContactForm,
   onClickToEvents,
 }) {
+  // CONST TO DISPATCH EVENTS CONTENT
+  const eventContent = useSelector((state) => state.eventDetail.value);
   const btnStyleVariant =
     btnStyle === "white" ? styles.btnWhite : styles.btnBlack;
   const handleClick = () => {
@@ -52,6 +57,11 @@ function Button({
         {btnLocation === "joinUs" ? "J'ADHÈRE" : ""}
         {btnLocation === "homeEvents" ? "TOUS LES ÉVENEMENTS" : ""}
         {btnLocation === "events" ? "VOIR PLUS D'ÉVÈNEMENTS" : ""}
+        {eventContent.category === "Formation" ||
+        eventContent.category === "Formation flash"
+          ? "S'INSCRIRE À LA FORMATION"
+          : ""}
+        {eventContent.category === "Webinaire" ? "S'INSCRIRE AU WEBINAIRE" : ""}
       </span>
       <span className={styles.btnWhiteHover}></span>
     </button>

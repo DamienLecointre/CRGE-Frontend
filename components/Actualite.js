@@ -10,6 +10,7 @@ import { addContentToHero } from "../reducers/heros";
 
 //COMPONENTS IMPORTS
 import Header from "./Header/Header";
+import NavBurgerMenu from "./Header/NavBurgerMenu";
 import Hero from "./Hero/Hero";
 import ActualiteCards from "./UIKit/ActualiteCards";
 import Button from "../components/UIKit/Button";
@@ -68,6 +69,7 @@ function Actualite() {
       <main>
         <Hero heroStyle={"whiteBg"} />
         <div className={`paddingInline ${styles.responsivepaddingInline}`}>
+          <NavBurgerMenu />
           <div className={"sectionWrapper"}>
             {allowToUpdateFile.isAdmin === true && (
               <span className={styles.updateText}>

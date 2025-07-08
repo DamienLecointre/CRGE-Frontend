@@ -1,0 +1,113 @@
+.cardContainer {
+  position: sticky;
+  height: fit-content;
+  width: 35%;
+  background: var(--bgBlackLight);
+  top: 150px;
+  right: 0;
+}
+
+.btnContainer {
+  width: 100%;
+}
+
+.btn {
+  position: relative;
+  outline: none;
+  border: none;
+  width: 50%;
+  font-size: var(--fontSize125);
+  font-weight: var(--fontWeightSemiBold);
+  line-height: var(--lineHeight2);
+  text-align: center;
+  color: var(--colorSecondary);
+  background: transparent;
+  padding: 7px 0;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.btn:hover {
+  background: var(--bgSecondaryLight);
+}
+
+.btn.active {
+  color: var(--colorPrimary);
+  background: var(--bgSecondaryColor);
+}
+
+.btn.active::after {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  background: var(--bgSecondaryColor);
+  transform: translateX(-50%) rotate(45deg);
+  left: 50%;
+  bottom: -20%;
+}
+
+.textContainer {
+  padding: 40px;
+}
+
+.infoContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+}
+
+.infoContainer:not(:first-child) {
+  padding-top: 24px;
+}
+
+.infoContainer:not(:nth-child(3))::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: var(--colorSecondaryMedium);
+  left: 0;
+  bottom: 0;
+}
+
+.titleInfoWrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.icon,
+.text {
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightRegular);
+  line-height: var(--lineHeight15);
+  color: var(--colorSecondary);
+}
+
+.textStrong {
+  font-family: "outfit", sans-serif;
+  font-size: var(--fontSize125);
+  font-weight: var(--fontWeightMedium);
+}
+
+.textPrice {
+  display: block;
+  font-size: var(--fontSize2);
+  font-weight: var(--fontWeightBold);
+  text-align: right;
+}
+
+.textNota {
+  font-size: var(--fontSize08);
+}
+
+.btnUiContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

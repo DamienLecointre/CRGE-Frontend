@@ -22,6 +22,8 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 //STYLES IMPORTS
 import styles from "../styles/EventsDetail.module.css";
+import BookingCard from "./UIKit/BookingCard";
+import NavBurgerMenu from "./Header/NavBurgerMenu";
 
 function EventsDetail() {
   const dispatch = useDispatch();
@@ -224,93 +226,95 @@ function EventsDetail() {
           </nav>
         )}
       <main>
-        <div
-          className={`paddingInline ${styles.container} ${styles.responsivepaddingInline}`}
-        >
+        <div className={`paddingInline ${styles.responsivepaddingInline}`}>
+          <NavBurgerMenu />
           <div className={`sectionWrapper`}>
             {/* File d'ariane  */}
             {breadcrumb()}
-            <div className={styles.textContainer}>
-              <h2 id="description" className={styles.sectionTitle}>
-                Description
-              </h2>
-              <div className={styles.sectionParagraph}>{description}</div>
-              <h3 className={styles.sectionSubTitle}>Formateur</h3>
-              <div className={styles.sectionContainer}>
-                <Image
-                  className={styles.illustartion}
-                  src={"/illustrations/greenLeaf.svg"}
-                  alt={"feuille verte"}
-                  height={20}
-                  width={20}
-                />
-                <h5 className={`${styles.paragraph} ${styles.speakerName}`}>
-                  {eventContent.speaker.name},
-                </h5>
-                <h5 className={styles.paragraph}>
-                  {eventContent.speaker.role}
-                </h5>
+            <div className={styles.container}>
+              <div className={styles.textContainer}>
+                <h2 id="description" className={styles.sectionTitle}>
+                  Description
+                </h2>
+                <div className={styles.sectionParagraph}>{description}</div>
+                <h3 className={styles.sectionSubTitle}>Formateur</h3>
+                <div className={styles.sectionContainer}>
+                  <Image
+                    className={styles.illustartion}
+                    src={"/illustrations/greenLeaf.svg"}
+                    alt={"feuille verte"}
+                    height={20}
+                    width={20}
+                  />
+                  <h5 className={`${styles.paragraph} ${styles.speakerName}`}>
+                    {eventContent.speaker.name},
+                  </h5>
+                  <h5 className={styles.paragraph}>
+                    {eventContent.speaker.role}
+                  </h5>
+                </div>
+                {eventContent.category !== "Webinaire" && (
+                  <>
+                    <h2
+                      id="pour"
+                      className={`${styles.sectionTitle} ${styles.sectionMagin}`}
+                    >
+                      Pour qui ?
+                    </h2>
+                    <div className={styles.sectionContainer}>
+                      <Image
+                        className={styles.illustartion}
+                        src={"/illustrations/greenLeaf.svg"}
+                        alt={"feuille verte"}
+                        height={20}
+                        width={20}
+                      />
+                      <p className={styles.paragraph}>
+                        {eventContent.audience.description}
+                      </p>
+                    </div>
+                    <h3 className={styles.sectionSubTitle}>Prérequis :</h3>
+                    <div className={styles.sectionContainer}>
+                      <Image
+                        className={styles.illustartion}
+                        src={"/illustrations/greenLeaf.svg"}
+                        alt={"feuille verte"}
+                        height={20}
+                        width={20}
+                      />
+                      <p className={styles.paragraph}>
+                        {eventContent.audience.prerequisites}
+                      </p>
+                    </div>
+                    <h2
+                      id="objectifs"
+                      className={`${styles.sectionTitle} ${styles.sectionMagin}`}
+                    >
+                      Objectifs
+                    </h2>
+                    <div className={styles.objectifContainer}>{objectif}</div>
+                    <h2
+                      id="programme"
+                      className={`${styles.sectionTitle} ${styles.sectionMagin}`}
+                    >
+                      Programme
+                    </h2>
+                    {programme}
+                    <h2
+                      id="financement"
+                      className={`${styles.sectionTitle} ${styles.sectionMagin}`}
+                    >
+                      Solutions de financement
+                    </h2>
+                    <p
+                      className={`${styles.paragraph} ${styles.paragraphFinance}`}
+                    >
+                      {eventContent.funding}
+                    </p>
+                  </>
+                )}
               </div>
-              {eventContent.category !== "Webinaire" && (
-                <>
-                  <h2
-                    id="pour"
-                    className={`${styles.sectionTitle} ${styles.sectionMagin}`}
-                  >
-                    Pour qui ?
-                  </h2>
-                  <div className={styles.sectionContainer}>
-                    <Image
-                      className={styles.illustartion}
-                      src={"/illustrations/greenLeaf.svg"}
-                      alt={"feuille verte"}
-                      height={20}
-                      width={20}
-                    />
-                    <p className={styles.paragraph}>
-                      {eventContent.audience.description}
-                    </p>
-                  </div>
-                  <h3 className={styles.sectionSubTitle}>Prérequis :</h3>
-                  <div className={styles.sectionContainer}>
-                    <Image
-                      className={styles.illustartion}
-                      src={"/illustrations/greenLeaf.svg"}
-                      alt={"feuille verte"}
-                      height={20}
-                      width={20}
-                    />
-                    <p className={styles.paragraph}>
-                      {eventContent.audience.prerequisites}
-                    </p>
-                  </div>
-                  <h2
-                    id="objectifs"
-                    className={`${styles.sectionTitle} ${styles.sectionMagin}`}
-                  >
-                    Objectifs
-                  </h2>
-                  <div className={styles.objectifContainer}>{objectif}</div>
-                  <h2
-                    id="programme"
-                    className={`${styles.sectionTitle} ${styles.sectionMagin}`}
-                  >
-                    Programme
-                  </h2>
-                  {programme}
-                  <h2
-                    id="financement"
-                    className={`${styles.sectionTitle} ${styles.sectionMagin}`}
-                  >
-                    Solutions de financement
-                  </h2>
-                  <p
-                    className={`${styles.paragraph} ${styles.paragraphFinance}`}
-                  >
-                    {eventContent.funding}
-                  </p>
-                </>
-              )}
+              <BookingCard />
             </div>
           </div>
         </div>

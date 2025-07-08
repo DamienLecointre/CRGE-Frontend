@@ -10,7 +10,7 @@ HIDDEN NAV
   transform: translateY(-100%);
   opacity: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .hiddenNavContainer.visible {
@@ -75,6 +75,13 @@ HIDDEN NAV
 /* -----------
 GENERAL TAG
 ----------- */
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
 
 .textContainer {
   width: 60%;

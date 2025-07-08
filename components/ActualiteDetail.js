@@ -12,6 +12,7 @@ import { addContentToHero } from "../reducers/heros";
 
 //COMPONENTS IMPORTS
 import Header from "./Header/Header";
+import NavBurgerMenu from "./Header/NavBurgerMenu";
 import Hero from "./Hero/Hero";
 import Footer from "./UIKit/Footer";
 import Mentions from "./UIKit/Mentions";
@@ -107,6 +108,7 @@ function ActualiteDetail() {
         <div
           className={`paddingInline ${styles.container} ${styles.responsivepaddingInline}`}
         >
+          <NavBurgerMenu />
           <div className={`sectionWrapper`}>
             {/* File d'ariane  */}
             {breadcrumb()}
