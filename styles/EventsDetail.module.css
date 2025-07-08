@@ -205,7 +205,6 @@ GENERAL TAG
   margin-top: 24px;
 }
 
-
 /* ----------
 BREADCRUMB
 ---------- */
@@ -225,6 +224,11 @@ BREADCRUMB
   line-height: var(--lineHeight1);
   color: var(--colorSecondaryLight);
   text-wrap: nowrap;
+  transition: all .2s ease-in-out;
+}
+
+.linkBreadcrumb:hover:not(:last-child) {
+  transform: scale(1.1);
 }
 
 .linkBreadcrumb::after {

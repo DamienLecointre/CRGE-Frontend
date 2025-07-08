@@ -64,6 +64,8 @@ function ActualiteDetail() {
         <ul className={styles.breadcrumb}>
           {displaySegments.map((segment, index) => {
             const isLast = index === displaySegments.length - 1;
+            let href = "/";
+            if (index === 1) href = "/actualite";
             return (
               <li
                 key={index}
@@ -71,8 +73,8 @@ function ActualiteDetail() {
                   isLast ? styles.lastBreadcrumb : ""
                 }`}
               >
-                {index === 0 && index !== isLast ? (
-                  <Link href="/" className={styles.linkBreadcrumb}>
+                {!isLast && index < 2 ? (
+                  <Link href={href} className={styles.linkBreadcrumb}>
                     {segment}
                   </Link>
                 ) : (
