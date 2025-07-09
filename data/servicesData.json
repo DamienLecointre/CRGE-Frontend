@@ -1,0 +1,387 @@
+{
+  "serviceData": [
+    {
+      "slug": "juridique",
+      "title": "Juridique",
+      "sections": [
+        {
+          "type": "intro",
+          "content": "Bénéficiez de conseils spécialisés de la part de nos juristes pour sécuriser votre association et la gestion de vos ressources humaines."
+        },
+        {
+          "type": "team",
+          "members": [
+            {
+              "name": "Charlène MARTIN",
+              "role": "Conseillère juridique (salariée CRGE)",
+              "picture":"/ressources/JuridiqueCharlene.png"
+            },
+            {
+              "name": "Pierre FADEUILHE",
+              "role": "Avocat à la Cour et Maître de conférences à l'Université de Toulouse spécialisé dans les aspects stratégiques et juridiques des Groupements d'Employeurs",
+              "picture":"/ressources/JuridiquePierre.png"
+            },
+            {
+              "name": "Pierre Fadeuilhe Avocat",
+              "role": "Cabinet spécialisé en droit associatif, droit fiscal, droit des sociétés et droit du travail"
+            },
+            {
+              "name": "Ellipse Avocats",
+              "role": "Cabinet spécialisé en droit du travail et droit de la sécurité sociale"
+            },
+            {
+              "name": "Arnaud Pilloix",
+              "role": "Avocat associé - Spécialiste en droit du travail"
+            },
+            {
+              "name": "Laurène Deschet",
+              "role": "Avocat associé - Responsable du pôle formation"
+            }
+          ]
+        },
+        {
+          "type": "offers",
+          "items": [
+            {
+              "title": "Un accès privilégié à des ressources spécialisées",
+              "details": [
+                "Une newsletter mensuelle",
+                "Des informations spéciales régulières",
+                "Un espace adhérent fourni : modèles de documents, notes juridiques, fiches pratiques, etc."
+              ]
+            },
+            {
+              "title": "Le bénéfice de conseils personnalisés",
+              "details": [
+                "Solliciter des entretiens-conseils individuels par téléphone ou visioconférence (sur devis)",
+                "Disposer de réponses écrites via abonnement forfait questions"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "offer_scope",
+          "content": "Toute question d'ordre juridique, pour laquelle la réponse trouve son fondement dans un recueil de lois, de règles juridiques, dans la jurisprudence ou bien dans les usages et pratiques des GE capitalisés par CRGE, et formulée par écrit (juridique@crge.com).",
+          "exclusions": [
+            "La demande de relecture, de commentaire, d'aide à la rédaction ou d'analyse d'un acte juridique (contrat, statuts, convention, accord)",
+            "Toute demande faisant l'objet d'une prestation de service dédiée"
+          ],
+          "access": "En adhérant à CRGE et en souscrivant un abonnement annuel et forfaitaire. Son tarif, dégressif, varie selon le volume de questions :"
+        },
+        {
+          "type": "custom_support",
+          "topics": [
+            "Fonctionnement et droit associatif : statuts, règlement intérieur, instances de gouvernance",
+            "Organisation et droit des sociétés : convention de mise à disposition, création de structures, structuration mère/filles",
+            "Droit du travail et droit social : contrats de travail, élections professionnelles, partage de la valeur",
+            "Fiscalité : impôt sur les sociétés, TVA, taxe sur les salaires, mixité TVA"
+          ]
+        },
+        {
+          "type": "resources",
+          "items": [
+            {
+              "label": "Offre de service Juridique 2025",
+              "published": "20 mars 2025",
+              "format": "pdf",
+              "size": "714 Ko"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "paye",
+      "title": "Paye",
+      "sections": [
+        {
+          "type": "intro",
+          "content": "Simplifiez la gestion des payes de vos salariés à temps partagé grâce à notre expertise en matière de rémunération et de déclarations sociales."
+        },
+        {
+          "type": "team",
+          "members": [
+            {
+              "name": "Marjorie MAILLET",
+              "role": "Responsable service paye",
+              "picture":"/ressources/PayeMarjorie.png"
+            },
+            {
+              "name": "Céline GUIGNARD",
+              "role": "Chargée de mission RH",
+              "picture":"/ressources/PayeCeline.png"
+            }
+          ]
+        },
+        {
+          "type": "offers",
+          "items": [
+            {
+              "title": "Un accès privilégié à des ressources spécialisées",
+              "details": [
+                "Une newsletter mensuelle",
+                "Des informations spéciales régulières",
+                "Un espace adhérent fourni : modèles de documents, notes juridiques, fiches pratiques, etc."
+              ]
+            },
+            {
+              "title": "L'appui à la gestion de vos payes en interne",
+              "details": [
+                "Réalisation d'audit paye sur la conformité :", 
+                "Des variables", 
+                "Des cotisations", 
+                "Des déclarations sociales",
+                "Mise à disposition du logiciel Silaexpert"
+              ],
+              "resource": {
+                "label": "Offre de service Paye - appui et outillage à la gestion par le GE",
+                "published": "20 mai 2025",
+                "format": "pdf",
+                "size": "353 Ko"
+              }
+            },
+            {
+              "title": "La réalisation intégrale de vos payes",
+              "details": [
+                "Gestion sociale des payes en tant que tiers déclarant :", 
+                "Réalisation des bulletins", 
+                "Échange avec les organismes", 
+                "Réalisation des déclarations sociales",
+                "Création d'outils sur mesure :", 
+                "Contrôle spécifique (TODE, indemnisation maladie, TS…)", 
+                "Suivi spécifique (forfait jour, …)"
+              ],
+              "resource": {
+                "label": "Offre de service Paye - réalisation de la paye par CRGE",
+                "published": "7 avril 2025",
+                "format": "pdf",
+                "size": "312 Ko"
+              }
+            }
+          ]
+        },
+        {
+          "type": "additional_resources",
+          "items": [
+            {
+              "label": "Offre de service - PAYE",
+              "published": "20 mai 2025",
+              "format": "pdf",
+              "size": "406 Ko"
+            }
+          ]
+        },
+        {
+          "type": "access",
+          "content": "En adhérant à CRGE et en prenant rendez-vous pour exposer votre besoin. Consultez notre page Nous rejoindre ou contactez-nous."
+        }
+      ]
+    },
+    {
+      "slug": "formation",
+      "title": "Formation",
+      "sections": [
+        {
+          "type": "intro",
+          "content": "Professionnalisez votre GE et votre équipe de gestion avec nos programmes de formation adaptés à vos besoins."
+        },
+        {
+          "type": "modalities",
+          "items": [
+            {
+              "name": "Formations « catalogue »",
+              "description": "Ces formations, proposées à distance ou en présentiel, réunissent plusieurs Groupements d'Employeurs autour de thématiques clés liées à leur fonctionnement. Elles permettent de renforcer les compétences des dirigeants, administrateurs et salariés permanents, tout en favorisant les échanges entre pairs.",
+              "themes": [
+                "Gérer et sécuriser votre GE exonéré de TVA",
+                "Maîtriser les différents types de recouvrement dune créance",
+                "Connaître les documents de fonctionnement indispensables pour un GE",
+                "Les conditions de mise en œuvre de la mixité TVA",
+                "Définir et maîtriser le taux de facturation dans son GE"
+              ],
+              "note": "Toutes ces formations peuvent également être personnalisées et organisées à la demande, pour un GE ou un groupe de GE, afin de s'adapter au plus près des besoins du terrain."
+            },
+            {
+              "name": "Formations « sur-mesure »",
+              "description": "Construites à partir d'un recueil précis de vos besoins, ces formations sont entièrement personnalisées pour s'adapter aux spécificités de votre GE. Le contenu, le format et le rythme sont définis avec vous. Elles peuvent être animées en présentiel ou à distance.",
+              "themes": [
+                "Faire évoluer son activité de mise à disposition de personnel vers un GE",
+                "Comprendre les bases de la comptabilité dans un GE",
+                "Maitriser la gestion de la paye dans un GE utilisant la CCN ECLAT",
+                "Sécuriser le fonctionnement du GE au regard de sa situation fiscale",
+                "Appréhender la préparation de la paye et de la facturation dans un GE"
+              ]
+            },
+            {
+              "name": "Formations flash",
+              "description": "Séquences courtes et régulières, réunissant plusieurs GE, animées par visioconférence.",
+              "themes": [
+                "Connaître les documents de fonctionnement indispensables pour un GE",
+                "Appréhender le changement du calcul des effectifs dans un GE",
+                "Maîtriser les différents types de recouvrement d'une créance",
+                "Gérer et sécuriser votre GE exonéré de TVA",
+                "Les mesures phares de la Loi Marché du travail et de la LFSS"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "commitments",
+          "content": [
+            "Cette certification a été délivrée au titre des catégories d'actions suivantes : actions de formation.",
+            "La marque Qualiopi a pour objectif d'attester du processus mis en œuvre par les prestataires d'actions concourant au développement des compétences, qu'il s'agisse d'actions de formation, de bilans de compétences, d'actions permettant de faire valider les acquis de l'expérience ou d'actions de formation par apprentissage."
+          ],
+          "certification": [
+            "/ressources/FormationQualiopi_Phrase_Centre_Noir.png",
+            "/ressources/FormationLogoCRGE.png"
+          ]
+        },
+        {
+          "type": "benefits",
+          "items": [
+            "Se tourner vers un organisme de formation reconnu pour sa qualité",
+            "Bénéficier des fonds mutualisés pour la prise en charge de vos actions de formation",
+            "S'assurer d'une offre de formation adaptée à vos besoins"
+          ]
+        },
+        {
+          "type": "resources",
+          "items": [
+            {"label":"Certificat Qualiopi - CRGE","published":"13 décembre 2024","format":"pdf","size":"148 Ko"},
+            {"label":"Charte Qualité - CRGE","published":"13 décembre 2024","format":"pdf","size":"621 Ko"},
+            {"label":"Indicateurs Formation - CRGE","published":"25 avril 2025","format":"pdf","size":"1 Mo"}
+          ]
+        },
+        {
+          "type": "complaints",
+          "action":"Vous souhaitez faire une réclamation ? Cliquez sur le bouton ci-dessous."
+        }
+      ]
+    },
+    {
+      "slug": "gestion",
+      "title": "Gestion",
+      "section": [
+        {
+          "type": "intro",
+          "content": "Améliorez le fonctionnement de votre Groupement d'Employeurs en prenant appui sur nos compétences en matière stratégique, économique et financière."
+        },
+        {
+          "type": "team",
+          "members": [
+            {
+              "name": "Julie VANDÔME",
+              "role": "Directrice opérationnelle",
+              "picture":"/ressources/GestionJulie.png"
+            },
+            {
+              "name": "Pierre FADEUILHE",
+              "role": "Avocat à la Cour et Maître de conférences à l'Université de Toulouse spécialisé dans les aspects stratégiques et juridiques des Groupements d'Employeurs",
+              "picture":"/ressources/JuridiquePierre.png"
+            }
+          ]
+        },
+        {
+          "type": "offers",
+          "items": [
+            {
+              "title": "Le bénéfice de conseils personnalisés",
+              "details": [
+                "Un premier niveau de réponse à toute question relative à la gestion d'entreprise applicable au GE : stratégie, gouvernance, finance…"
+              ]
+            },
+            {
+              "title": "Des accompagnements sur-mesure",
+              "details": [
+                "Modélisation économique et gestion financière : détermination du prix de vente, modalités de facturation, recouvrement de créances…",
+                "Gestion des Ressources Humaines : fiche de poste, offre d'emploi, recrutement, conduite des entretiens professionnels…"
+              ]
+            },
+            {
+              "title": "Des outils référencés",
+              "details": [
+                {
+                  "picture": "/ressources/Logo_Legalyspace.png",
+                  "content":[
+                    "La plateforme pour dématérialiser vos documents qui permet de simplifier et sécuriser la relation salariés-GE-adhérents.",
+                    "Tarifs exclusifs pour les adhérents de CRGE."
+                  ]
+                },
+                {
+                  "picture": "/ressources/Logo-Legavote-1.png",
+                  "content":[
+                    "Solution de vote électronique simple, fiable et sécurisée pour organiser les votes relatifs aux élections professionnelles, aux accords d'entreprises et aux réunions de la gouvernance (Conseil d'Administration, Assemblée Générale…)",
+                    "Tarifs exclusifs pour les adhérents de CRGE."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "appui-a-la-creation",
+      "title": "Appui à la création",
+      "sections": [
+        {
+          "type": "intro",
+          "content": "Transformez sereinement votre idée de partage d'emploi en projet de GE solide et structuré en vous faisant accompagner par nos experts du sujet."
+        },
+        {
+          "type": "team",
+          "members": [
+            {
+              "name":"Cyrielle BERGER",
+              "role":"Directrice",
+              "picture":"/ressources/CreationCyrielle.png"
+            },
+            {
+              "name":"Pierre FADEUILHE",
+              "role":"Avocat à la Cour et Maître de conférences à l'Université de Toulouse spécialisé dans les aspects stratégiques et juridiques des Groupements d'Employeurs",
+              "picture":"/ressources/JuridiquePierre.png"
+            },
+            {
+              "name":"Jean DALICHOUX",
+              "role":"Consultant sénior spécialisé dans les Groupements d'Employeurs et fondateur du cabinet ASPARAGUS",
+              "picture":"/ressources/CreationJeanDalichoux.png"
+            }
+          ]
+        },
+        {
+          "type": "funding",
+          "content": [
+            "CRGE dispose de financements de la DREETS et de la Région pour accueillir et accompagner, chaque année, un certain nombre de porteurs de projets de Groupement d'Employeurs basés en Nouvelle-Aquitaine.",
+            "Tout accompagnement de porteur de projet situé dans une autre région fait l'objet d'une facturation de prestation de service par CRGE. Le porteur peut rechercher des financements, notamment auprès des services de l'Etat et des collectivités territoriales de sa région, ainsi qu'auprès de son OPCO, pour financer au moins une partie de l'appui à la création de son GE."
+          ]
+        },
+        {
+          "type": "offer_stages",
+          "stages": [
+            {
+              "name": "Modéliser son GE",
+              "subtopics": {
+                "associatif": ["Pourquoi créer un GE ?", "Quel plan d'action mettre en place pour atteindre les objectifs fixés ?"],
+                "fonctionnelle": ["Savoir créer de l'emploi à temps partagé", "Collecter et qualifier les besoins des entreprises", "Dessiner les premiers emplois mutualisés", "Se constituer un volume d'activité pour démarrer", "Partager les premiers salariés"],
+                "organisationnelle": ["Structurer le GE en matière de gouvernance et de répartition des rôles et des responsabilités entre l'équipe d'animation et le Conseil d'Administration."],
+                "économique": ["Analyser la situation fiscale du GE et faire des préconisations", "Établir le budget prévisionnel du GE :", "Aide à la détermination des coûts de mise à disposition des salariés du GE", "Aide à la détermination des frais de fonctionnement du GE", "Conseil en matière de sécurisation économique du GE", "Appui à la construction du prévisionnel de gestion et de trésorerie du GE et à l'évaluation des besoins financiers au démarrage"],
+                "juridique": ["Accompagner dans le choix de la forme juridique", "Accompagner dans le choix de la convention collective", "Accompagner à la rédaction des documents constitutifs (statuts, convention de mise à disposition, règlement intérieur adhérents)"]
+              }
+            },
+            {
+              "name": "Démarrer son GE",
+              "subtopics": [
+                "Rechercher des aides financières au démarrage",
+                "Préparer le recrutement du premier salarié de l'équipe d'animation (profil, fiche de poste…)",
+                "Organiser l'embauche des premiers salariés (contrat de travail, fiche de mise à disposition…)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "resource",
+          "item": {"label":"Offre de service - Porteurs de projet","published":"10 janvier 2025","format":"pdf","size":"550 Ko"}
+        }
+      ]
+    }
+  ]
+}

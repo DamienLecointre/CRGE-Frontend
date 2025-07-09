@@ -38,6 +38,8 @@ const backendServiceCardsData =
 const backendActualiteData =
   process.env.NEXT_PUBLIC_URL_BACKEND_ACTUALITE_CONTENT;
 const backendEventData = process.env.NEXT_PUBLIC_URL_BACKEND_EVENT_CONTENT;
+const backendServicesData =
+  process.env.NEXT_PUBLIC_URL_BACKEND_SERVICES_CONTENT;
 
 function Home() {
   // CONST DISPATCH
@@ -74,7 +76,7 @@ function Home() {
     async function fetchHomepageData() {
       dispatch(setLoading(true));
       try {
-        const [heroRes, navRes, serviceRes, actuRes, eventRes] =
+        const [heroRes, navRes, serviceCardsRes, actuRes, eventRes] =
           await Promise.all([
             fetch(`${backendHeroData}`),
             fetch(`${backendNavData}`),
@@ -86,18 +88,18 @@ function Home() {
         if (
           !heroRes.ok ||
           !navRes.ok ||
-          !serviceRes.ok ||
+          !serviceCardsRes.ok ||
           !actuRes.ok ||
           !eventRes.ok
         ) {
           throw new Error("Erreur serveur");
         }
 
-        const [heroData, navData, serviceData, actuData, eventData] =
+        const [heroData, navData, serviceCardsData, actuData, eventData] =
           await Promise.all([
             heroRes.json(),
             navRes.json(),
-            serviceRes.json(),
+            serviceCardsRes.json(),
             actuRes.json(),
             eventRes.json(),
           ]);
@@ -106,19 +108,37 @@ function Home() {
         //   heroData,
         //   "navPromise :",
         //   navData,
-        //   "servicePromise :",
-        //   serviceData,
+        //   "serviceCardsPromise :",
+        //   serviceCardsData,
         //   "actuPromise :",
         //   actuData,
         //   "eventPromise :",
         //   eventData
         // );
+        const serviceSlugs = [
+          "juridique",
+          "paye",
+          "formation",
+          "gestion",
+          "appui-a-la-creation",
+        ];
+        const servicePromises = serviceSlugs.map((slug) =>
+          fetch(`${backendServicesData}/${slug}`).then((res) => {
+            if (!res.ok) {
+              throw new Error(`Erreur lors du fetch du service ${slug}`);
+            }
+            return res.json();
+          })
+        );
+        const servicesData = await Promise.all(servicePromises);
+        console.log("servicePromises", servicesData);
 
         dispatch(
           setHomepageData({
             heroData: heroData.heroData,
             navData: navData.navData,
-            serviceCards: serviceData.serviceCardsData[0].cardsData,
+            serviceCards: serviceCardsData.serviceCardsData[0].cardsData,
+            services: servicesData,
             actualites: actuData.actualiteData,
             events: eventData.eventData,
           })

@@ -14,15 +14,20 @@ const homepageSlice = createSlice({
   initialState,
   reducers: {
     setHomepageData(state, action) {
-      // console.log("VALEUR RECU DANS NAVDATA REDUX :", action.payload.navData);
-      state.navData = action.payload.navData || [];
       // console.log("VALEUR RECU DANS HERODATA REDUX :", action.payload.heroData);
       state.heroData = action.payload.heroData || [];
+      // console.log("VALEUR RECU DANS NAVDATA REDUX :", action.payload.navData);
+      state.navData = action.payload.navData || [];
       // console.log(
       //   "VALEUR RECU DANS SERVICECARDSDATA REDUX :",
       //   action.payload.serviceCards
       // );
       state.serviceCards = action.payload.serviceCards || [];
+      // console.log(
+      //   "VALEUR RECU DANS ACTUALITEDATA REDUX :",
+      //   action.payload.actualites
+      // );
+      state.services = action.payload.services || [];
       // console.log(
       //   "VALEUR RECU DANS ACTUALITEDATA REDUX :",
       //   action.payload.actualites
