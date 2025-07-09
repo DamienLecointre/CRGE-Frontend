@@ -104,7 +104,7 @@ function About() {
               <h2 className={styles.sectionTitle}>Nos valeurs</h2>
               <div className={styles.paragraphContainer}>
                 <Image
-                  className={styles.illustartion}
+                  className={styles.illustartionValeur}
                   src={"/illustrations/Schema_Nos-Valeurs.png"}
                   alt={"schéma valeur crge"}
                   height={200}

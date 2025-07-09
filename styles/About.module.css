@@ -138,3 +138,36 @@ BREADCRUMB
 .lastBreadcrumb {
   color: var(--colorSecondaryMedium);
 }
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 1200px) {
+  .publishContainer {
+    flex-direction: column;
+    align-items: start;
+  }
+  .publishTextContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .illustartionValeur {
+    height: 90%;
+    width: 90%;
+  }
+  .subSectionContainer {
+    flex-direction: column;
+  }
+  .subSectionWrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .responsivepaddingInline {
+    padding-inline: 40px;
+  }
+}
