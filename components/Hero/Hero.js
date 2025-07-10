@@ -17,6 +17,7 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../styles/Hero/Hero.module.css";
 
 const Hero = forwardRef(({ heroStyle }, ref) => {
+  // CONST TO DISPLAY BREADCRUMB NAME
   const displayNames = {
     accueil: "Accueil",
     actualite: ["CRGE", "Notre actualité"],
@@ -26,6 +27,7 @@ const Hero = forwardRef(({ heroStyle }, ref) => {
 
   const herosContent = useSelector((state) => state.heros.value);
   const heroHomeData = useSelector((state) => state.homepage.heroData);
+  const serviceCardsTitle = useSelector((state) => state.services.value);
   const actuContent = useSelector((state) => state.actualiteDetail.value);
   const eventsContent = useSelector((state) => state.eventDetail.value);
   const allowToUpdateFile = useSelector((state) => state.connection.value);
@@ -41,9 +43,9 @@ const Hero = forwardRef(({ heroStyle }, ref) => {
   const imgSrc = currentSectionData?.imgSrc || "";
   const imgAlt = currentSectionData?.imgAlt || "";
 
-  const handleClickToEdit = () => {
-    // console.log("edit");
-  };
+  // ------------------------------
+  // FUNCTION TO DISPLAY BREADCRUMB
+  // ------------------------------
 
   const rawSegments =
     router.pathname === "/"
@@ -81,6 +83,10 @@ const Hero = forwardRef(({ heroStyle }, ref) => {
         </ul>
       )
     );
+  };
+
+  const handleClickToEdit = () => {
+    // console.log("edit");
   };
 
   return (
@@ -141,6 +147,7 @@ const Hero = forwardRef(({ heroStyle }, ref) => {
                 {herosContent === "eventsDetail" ? eventsContent.title : ""}
                 {herosContent === "contactForm" ? "Nous contacter" : ""}
                 {herosContent === "about" ? "Qui sommes-nous ?" : ""}
+                {herosContent === "services" ? `${serviceCardsTitle}` : ""}
               </h1>
               <p
                 className={

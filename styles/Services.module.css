@@ -1,0 +1,54 @@
+/* -----------
+GENERAL TAG
+----------- */
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ----------
+BREADCRUMB
+---------- */
+
+.breadcrumb {
+  display: flex;
+  column-gap: 20px;
+  padding-top: 16px;
+  padding-bottom: 40px;
+}
+
+.linkBreadcrumb {
+  position: relative;
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize08);
+  font-weight: var(--fontWeightSemiBold);
+  line-height: var(--lineHeight1);
+  color: var(--colorSecondaryLight);
+  text-wrap: nowrap;
+  transition: all .2s ease-in-out;
+}
+
+.linkBreadcrumb:hover:not(:last-child) {
+  transform: scale(1.1);
+}
+
+.linkBreadcrumb::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background: var(--bgAccentColor2);
+  top: 50%;
+  right: 0;
+  transform: translate(10px,-50%);
+}
+
+.linkBreadcrumb:last-child::after {
+  content: none;
+}
+
+.lastBreadcrumb {
+  color: var(--colorSecondaryMedium);
+}

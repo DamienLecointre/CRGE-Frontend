@@ -1,0 +1,46 @@
+/* -----------
+GENERAL TAG
+----------- */
+
+.introContainer {
+  width: 60%;
+}
+
+.text {
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightSemiBold);
+  line-height: var(--lineHeight15);
+  color: var(--colorSecondary);
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.textLight{
+  font-weight: var(--fontWeightRegular);
+}
+
+.sectionTitle {
+  font-size: var(--fontSize25);
+  font-weight: var(--fontWeightBold);
+  color: var(--colorBlue);
+  text-decoration: underline;
+  text-decoration-color: var(--bgAccentColorLow);
+  text-decoration-thickness: 8px;
+  text-underline-offset: -4px;
+  text-decoration-skip-ink: none;
+  margin: 48px 0 32px;
+}
+
+.sectionSubtitle {
+  font-size: var(--fontSize2);
+  font-weight: var(--fontWeightSemiBold);
+  line-height: var();
+  color: var(--colorAccent2);
+  margin: 40px 0 24px;
+}
+
+.teamDetailsTextContent {
+  display: flex;
+  align-items: center;
+}

@@ -3,11 +3,20 @@ import React, { useState, useEffect } from "react";
 
 //NEXT IMPORTS
 import Image from "next/image";
+import { useRouter } from "next/router";
+
+//REDUX IMPORTS
+import { useDispatch } from "react-redux";
+import { addServicesCardTitle } from "../../reducers/services";
 
 //STYLES IMPORTS
 import styles from "../../styles/UIKit/serviceCard.module.css";
 
 function ServiceCards({ cardsData = [] }) {
+  const dispatch = useDispatch();
+  // CONST REDIRECTION TO WEBSITE PAGE
+  const router = useRouter();
+
   // CONST FOR CARROUSSEL
   const [activeIndex, setActiveIndex] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(3);
@@ -18,6 +27,10 @@ function ServiceCards({ cardsData = [] }) {
   const handleSpanClick = (index) => {
     setActiveIndex(index);
   };
+
+  // ------------------------------
+  // FUNCTION TO DISPLAY CARROUSSEL
+  // ------------------------------
 
   useEffect(() => {
     const handleResize = () => {
@@ -64,6 +77,15 @@ function ServiceCards({ cardsData = [] }) {
     }
   };
 
+  // ------------------------------
+  // FUNCTION TO GO TO SERVICE PAGE
+  // ------------------------------
+
+  const handleClickGoToServicePage = (cardTitle) => {
+    router.push("/services");
+    dispatch(addServicesCardTitle(cardTitle));
+  };
+
   return (
     <div className={styles.cardsContainer}>
       <div
@@ -84,6 +106,7 @@ function ServiceCards({ cardsData = [] }) {
               key={i}
               className={styles.cardWrapper}
               style={{ width: `${100 / totalCards}%` }}
+              onClick={() => handleClickGoToServicePage(data.title)}
             >
               <Image
                 className={styles.cardImg}

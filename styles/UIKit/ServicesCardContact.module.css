@@ -1,0 +1,20 @@
+.cardContainer {
+  position: sticky;
+  top: 50px;
+  height: fit-content;
+  width: 30%;
+  background: var(--bgBlackLight);
+  padding: 40px;
+}
+
+.cardtext {
+  font-size: var(--fontSize2);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--lineHeight25);
+  color: var(--colorSecondary);
+  text-decoration: underline;
+  text-decoration-color: var(--bgAccentColorLow);
+  text-decoration-thickness: 8px;
+  text-underline-offset: -4px;
+  text-decoration-skip-ink: none;
+}

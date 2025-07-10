@@ -93,7 +93,7 @@ GENERAL TAG
   font-size: var(--fontSize2);
   font-weight: var(--fontWeightBold);
   line-height: var(--lineHeight25);
-  color: var(--colorSecondary);
+  color: var(--colorBlue);
   padding-inline: 4px;
   z-index: 5;
 }

@@ -18,6 +18,7 @@ function Button({
   onClickToSendContactForm,
   onClickToEvents,
   onClickToAbout,
+  onClickToFormContact,
 }) {
   // CONST TO DISPATCH EVENTS CONTENT
   const eventContent = useSelector((state) => state.eventDetail.value);
@@ -45,6 +46,8 @@ function Button({
       onClickToEvents();
     } else if (btnLocation === "hero" && onClickToAbout) {
       onClickToAbout();
+    } else if (btnLocation === "servicesCardContact" && onClickToFormContact) {
+      onClickToFormContact();
     }
   };
   return (
@@ -69,6 +72,7 @@ function Button({
           ? "S'INSCRIRE AU WEBINAIRE"
           : ""}
         {btnLocation === "about" ? "CONSULTER" : ""}
+        {btnLocation === "servicesCardContact" ? "CONTACTEZ-NOUS" : ""}
       </span>
       <span className={styles.btnWhiteHover}></span>
     </button>

@@ -8,6 +8,7 @@ import buttons from "../reducers/buttons";
 import heros from "../reducers/heros";
 import burgerMenu from "../reducers/burgerMenu";
 import connection from "../reducers/isConnected";
+import services from "../reducers/services";
 import actualiteDetail from "../reducers/actualiteDetail";
 import eventDetail from "../reducers/eventDetail";
 import homepageReducer from "../reducers/homepageSlice";
@@ -24,6 +25,7 @@ const store = configureStore({
     heros,
     burgerMenu,
     connection,
+    services,
     actualiteDetail,
     eventDetail,
   },

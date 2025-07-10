@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  navData: [],
   heroData: [],
+  navData: [],
   serviceCards: [],
+  services: [],
   actualites: [],
+  events: [],
   loading: false,
   error: null,
 };
@@ -29,8 +31,8 @@ const homepageSlice = createSlice({
       // );
       state.services = action.payload.services || [];
       // console.log(
-      //   "VALEUR RECU DANS ACTUALITEDATA REDUX :",
-      //   action.payload.actualites
+      //   "VALEUR RECU DANS SERVICESDATA REDUX :",
+      //   action.payload.services
       // );
       state.actualites = action.payload.actualites || [];
       // console.log("VALEUR RECU DANS EVENTDATA REDUX :", action.payload.events);
