@@ -2,24 +2,6 @@
 GENERAL TAG
 ----------- */
 
-.introContainer {
-  width: 100%;
-}
-
-.text {
-  font-family: var(--fontFamilyOpen);
-  font-size: var(--fontSize1);
-  font-weight: var(--fontWeightSemiBold);
-  line-height: var(--lineHeight15);
-  color: var(--colorSecondary);
-  margin-top: 18px;
-  margin-bottom: 18px;
-}
-
-.textLight{
-  font-weight: var(--fontWeightRegular);
-}
-
 .sectionTitle {
   font-size: var(--fontSize25);
   font-weight: var(--fontWeightBold);
@@ -40,7 +22,29 @@ GENERAL TAG
   margin: 40px 0 24px;
 }
 
-.teamDetailsTextContent {
+.paragraphTitle {
+  font-size: var(--fontSize166);
+  font-weight: var(--fontWeightSemiBold);
+  color: var(--colorAccent);
+  margin: 28px 0 20px;
+}
+
+.sectionDetailContainer {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.serviceLeafIllustration {
+  margin-top: 5px;
+}
+
+.sectionDetail {
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightRegular);
+  line-height: var(--lineHeight15);
+  color: var(--colorSecondary);
+  padding-left: 8px;
 }

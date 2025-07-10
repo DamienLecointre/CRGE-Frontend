@@ -131,7 +131,7 @@ function Home() {
           })
         );
         const servicesData = await Promise.all(servicePromises);
-        console.log("servicePromises", servicesData);
+        // console.log("servicePromises", servicesData);
 
         dispatch(
           setHomepageData({

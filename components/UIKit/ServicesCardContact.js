@@ -1,6 +1,9 @@
 //REACT IMPORTS
 import React, { useEffect } from "react";
 
+//NEXT IMPORTS
+import { useRouter } from "next/router";
+
 //REDUX IMPORTS
 import { useDispatch } from "react-redux";
 import { addContentToHero } from "../../reducers/heros";
@@ -13,6 +16,9 @@ import styles from "../../styles/UIKit/ServicesCardContact.module.css";
 
 function ServicesCardContact() {
   const dispatch = useDispatch();
+
+  // CONST REDIRECTION TO WEBSITE PAGE
+  const router = useRouter();
 
   // ----------------------
   // DISPATCH HERO CONTENTS
@@ -27,7 +33,7 @@ function ServicesCardContact() {
   // ------------------------------
 
   const handleClickGoToContactForm = () => {
-    console.log("GOOOOOOO");
+    router.push("/contactForm");
   };
 
   return (

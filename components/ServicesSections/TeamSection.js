@@ -20,9 +20,9 @@ function TeamSection() {
   // SÉCURISATION : IF DATA NOT FOUND
   if (!servicesData || !servicesContent) return null;
 
-  // ----------------------------------------
-  // FUNCTION TO SELECT MATCHING SERVICE DATA
-  // ----------------------------------------
+  // -------------------------------------
+  // FUNCTION TO SELECT MATCHING TEAM DATA
+  // -------------------------------------
 
   const findServicesData = servicesData.find(
     (data) => data.serviceData.title === servicesContent
@@ -56,20 +56,26 @@ function TeamSection() {
           if (showAvocatTitle) {
             hasShownAvocatTitle = true;
           }
-          const ShownSubTitle =
+          const ShownSubTitleExpert =
             data.name === "Pierre FADEUILHE" ||
             (data.name === "Jean DALICHOUX" && !hasShownSubTitle);
-          if (ShownSubTitle) {
+          if (ShownSubTitleExpert) {
+            hasShownSubTitle = true;
+          }
+          const ShownSubTitleSalarie =
+            !data.name.endsWith("Avocat") &&
+            data.name !== "Pierre FADEUILHE" &&
+            data.name !== "Jean DALICHOUX" &&
+            !hasShownSubTitle;
+          if (ShownSubTitleSalarie) {
             hasShownSubTitle = true;
           }
           return (
             <div key={i} className={styles.teamDetailsWrapper}>
-              {!data.name.endsWith("Avocat") &&
-              data.name !== "Pierre FADEUILHE" &&
-              data.name !== "Jean DALICHOUX" ? (
+              {ShownSubTitleSalarie ? (
                 <h3 className={styles.sectionSubtitle}>Salariée de CRGE</h3>
               ) : null}
-              {ShownSubTitle ? (
+              {ShownSubTitleExpert ? (
                 <h3 className={styles.sectionSubtitle}>Expert associé</h3>
               ) : null}
               {showAvocatTitle ? (
@@ -92,7 +98,6 @@ function TeamSection() {
                     alt={`${data.name} ${data.role}`}
                     height={180}
                     width={170}
-                    // fill={"auto"}
                   />
                 </div>
               ) : null}

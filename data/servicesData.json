@@ -44,6 +44,7 @@
           "items": [
             {
               "title": "Un accès privilégié à des ressources spécialisées",
+              "subtitle": "Quelles ressources ?",
               "details": [
                 "Une newsletter mensuelle",
                 "Des informations spéciales régulières",
@@ -52,6 +53,7 @@
             },
             {
               "title": "Le bénéfice de conseils personnalisés",
+              "subtitle": "Quels types de questions ?",
               "details": [
                 "Solliciter des entretiens-conseils individuels par téléphone ou visioconférence (sur devis)",
                 "Disposer de réponses écrites via abonnement forfait questions"
@@ -118,6 +120,7 @@
           "items": [
             {
               "title": "Un accès privilégié à des ressources spécialisées",
+              "subtitle": "Quelles ressources ?",
               "details": [
                 "Une newsletter mensuelle",
                 "Des informations spéciales régulières",
@@ -126,10 +129,11 @@
             },
             {
               "title": "L'appui à la gestion de vos payes en interne",
+              "subtitle": "Quels appuis ?",
               "details": [
-                "Réalisation d'audit paye sur la conformité :", 
-                "Des variables", 
-                "Des cotisations", 
+                "Réalisation d'audit paye sur la conformité :",
+                "Des variables",
+                "Des cotisations",
                 "Des déclarations sociales",
                 "Mise à disposition du logiciel Silaexpert"
               ],
@@ -142,13 +146,14 @@
             },
             {
               "title": "La réalisation intégrale de vos payes",
+              "subtitle": "Quelles prestations ?",
               "details": [
-                "Gestion sociale des payes en tant que tiers déclarant :", 
-                "Réalisation des bulletins", 
-                "Échange avec les organismes", 
+                "Gestion sociale des payes en tant que tiers déclarant :",
+                "Réalisation des bulletins",
+                "Échange avec les organismes",
                 "Réalisation des déclarations sociales",
-                "Création d'outils sur mesure :", 
-                "Contrôle spécifique (TODE, indemnisation maladie, TS…)", 
+                "Création d'outils sur mesure :",
+                "Contrôle spécifique (TODE, indemnisation maladie, TS…)",
                 "Suivi spécifique (forfait jour, …)"
               ],
               "resource": {
@@ -260,7 +265,7 @@
     {
       "slug": "gestion",
       "title": "Gestion",
-      "section": [
+      "sections": [
         {
           "type": "intro",
           "content": "Améliorez le fonctionnement de votre Groupement d'Employeurs en prenant appui sur nos compétences en matière stratégique, économique et financière."
@@ -285,12 +290,14 @@
           "items": [
             {
               "title": "Le bénéfice de conseils personnalisés",
+              "subtitle": "Quels types de questions ?",
               "details": [
                 "Un premier niveau de réponse à toute question relative à la gestion d'entreprise applicable au GE : stratégie, gouvernance, finance…"
               ]
             },
             {
               "title": "Des accompagnements sur-mesure",
+              "subtitle": "Quelles sont les thématiques ?",
               "details": [
                 "Modélisation économique et gestion financière : détermination du prix de vente, modalités de facturation, recouvrement de créances…",
                 "Gestion des Ressources Humaines : fiche de poste, offre d'emploi, recrutement, conduite des entretiens professionnels…"
@@ -298,23 +305,19 @@
             },
             {
               "title": "Des outils référencés",
-              "details": [
-                {
-                  "picture": "/ressources/Logo_Legalyspace.png",
-                  "content":[
+              "picture": "/ressources/Logo_Legalyspace.png",
+              "details":[
                     "La plateforme pour dématérialiser vos documents qui permet de simplifier et sécuriser la relation salariés-GE-adhérents.",
                     "Tarifs exclusifs pour les adhérents de CRGE."
-                  ]
-                },
-                {
-                  "picture": "/ressources/Logo-Legavote-1.png",
-                  "content":[
-                    "Solution de vote électronique simple, fiable et sécurisée pour organiser les votes relatifs aux élections professionnelles, aux accords d'entreprises et aux réunions de la gouvernance (Conseil d'Administration, Assemblée Générale…)",
-                    "Tarifs exclusifs pour les adhérents de CRGE."
-                  ]
-                }
+                ]
+            },
+            {
+              "picture": "/ressources/Logo-Legavote-1.png",
+              "details": [
+                "Solution de vote électronique simple, fiable et sécurisée pour organiser les votes relatifs aux élections professionnelles, aux accords d'entreprises et aux réunions de la gouvernance (Conseil d'Administration, Assemblée Générale…)",
+                "Tarifs exclusifs pour les adhérents de CRGE."
               ]
-            }
+            }   
           ]
         }
       ]
@@ -355,21 +358,54 @@
           ]
         },
         {
-          "type": "offer_stages",
-          "stages": [
+          "type": "offers",
+          "items": [
             {
-              "name": "Modéliser son GE",
-              "subtopics": {
-                "associatif": ["Pourquoi créer un GE ?", "Quel plan d'action mettre en place pour atteindre les objectifs fixés ?"],
-                "fonctionnelle": ["Savoir créer de l'emploi à temps partagé", "Collecter et qualifier les besoins des entreprises", "Dessiner les premiers emplois mutualisés", "Se constituer un volume d'activité pour démarrer", "Partager les premiers salariés"],
-                "organisationnelle": ["Structurer le GE en matière de gouvernance et de répartition des rôles et des responsabilités entre l'équipe d'animation et le Conseil d'Administration."],
-                "économique": ["Analyser la situation fiscale du GE et faire des préconisations", "Établir le budget prévisionnel du GE :", "Aide à la détermination des coûts de mise à disposition des salariés du GE", "Aide à la détermination des frais de fonctionnement du GE", "Conseil en matière de sécurisation économique du GE", "Appui à la construction du prévisionnel de gestion et de trésorerie du GE et à l'évaluation des besoins financiers au démarrage"],
-                "juridique": ["Accompagner dans le choix de la forme juridique", "Accompagner dans le choix de la convention collective", "Accompagner à la rédaction des documents constitutifs (statuts, convention de mise à disposition, règlement intérieur adhérents)"]
-              }
+              "title": "Modéliser son GE",
+              "subtitle": "Modélisation du projet associatif et stratégique",
+              "details": [
+                "Pourquoi créer un GE ?",
+                "Quel plan d'action mettre en place pour atteindre les objectifs fixés ?"
+              ]
             },
             {
-              "name": "Démarrer son GE",
-              "subtopics": [
+              "subtitle": "Modélisation fonctionnelle",
+              "details": [
+                "Savoir créer de l'emploi à temps partagé",
+                "Collecter et qualifier les besoins des entreprises",
+                "Dessiner les premiers emplois mutualisés",
+                "Se constituer un volume d'activité pour démarrer",
+                "Partager les premiers salariés"
+              ]
+            },
+            {
+              "subtitle": "Modélisation organisationnelle",
+              "details": [
+                "Structurer le GE en matière de gouvernance et de répartition des rôles et des responsabilités entre l'équipe d'animation et le Conseil d'Administration."
+              ]
+            },
+            {
+              "subtitle": "Modélisation économique",
+              "details": [
+                "Analyser la situation fiscale du GE et faire des préconisations",
+                "Établir le budget prévisionnel du GE :",
+                "Aide à la détermination des coûts de mise à disposition des salariés du GE",
+                "Aide à la détermination des frais de fonctionnement du GE",
+                "Conseil en matière de sécurisation économique du GE",
+                "Appui à la construction du prévisionnel de gestion et de trésorerie du GE et à l'évaluation des besoins financiers au démarrage"
+              ]
+            },
+            {
+              "subtitle": "Modélisation juridique",
+              "details": [
+                "Accompagner dans le choix de la forme juridique",
+                "Accompagner dans le choix de la convention collective",
+                "Accompagner à la rédaction des documents constitutifs (statuts, convention de mise à disposition, règlement intérieur adhérents)"
+              ]
+            },
+            {
+              "title": "Démarrer son GE",
+              "details": [
                 "Rechercher des aides financières au démarrage",
                 "Préparer le recrutement du premier salarié de l'équipe d'animation (profil, fiche de poste…)",
                 "Organiser l'embauche des premiers salariés (contrat de travail, fiche de mise à disposition…)"

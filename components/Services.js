@@ -16,6 +16,7 @@ import Hero from "./Hero/Hero";
 import NavBurgerMenu from "./Header/NavBurgerMenu";
 import TeamSection from "./ServicesSections/TeamSection";
 import ServicesCardContact from "./UIKit/ServicesCardContact";
+import OffersSection from "./ServicesSections/OffersSection";
 
 //STYLES IMPORTS
 import styles from "../styles/Services.module.css";
@@ -95,7 +96,10 @@ function Services() {
             {/* File d'ariane  */}
             {breadcrumb()}
             <div className={styles.container}>
-              <TeamSection />
+              <div className={styles.textContainer}>
+                <TeamSection />
+                <OffersSection />
+              </div>
               <ServicesCardContact />
             </div>
           </div>
