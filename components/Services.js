@@ -19,6 +19,8 @@ import ServicesCardContact from "./UIKit/ServicesCardContact";
 import OffersSection from "./ServicesSections/OffersSection";
 import CustomSupportSection from "./ServicesSections/CustomSupportSection";
 import EventsLink from "./ServicesSections/EventsLink";
+import Footer from "./UIKit/Footer";
+import Mentions from "./UIKit/Mentions";
 
 //STYLES IMPORTS
 import styles from "../styles/Services.module.css";
@@ -109,6 +111,10 @@ function Services() {
           </div>
         </div>
       </main>
+      <footer>
+        <Footer />
+        <Mentions />
+      </footer>
     </>
   );
 }
