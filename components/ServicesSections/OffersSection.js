@@ -30,7 +30,6 @@ function OffersSection() {
   if (!selectedServicesData) {
     return null;
   }
-  console.log("selectedServicesData : ", selectedServicesData);
 
   // CONST TO DISPLAY OFFERS
   const offersSection = selectedServicesData.sections.find(
@@ -39,7 +38,6 @@ function OffersSection() {
   if (!offersSection) {
     return null;
   }
-  console.log("offersSection : ", offersSection);
 
   // CONST TO DISPLAY OFFERS CONTENT
   const offersContent = offersSection?.items || "";
@@ -47,28 +45,15 @@ function OffersSection() {
     return null;
   }
 
-  // console.log("offersContent : ", offersContent);
-
   // CONST TO DISPLAY SELECTED SERVICES DATA
   const offersScopeSection = selectedServicesData.sections.find(
     (section) => section.type === "offer_scope"
   );
 
-  // console.log("offersScopeSection : ", offersScopeSection);
-
   // CONST TO DISPLAY OFFERS PRICING DATA
   const offersPricingData = selectedServicesData.sections.find(
     (section) => section.type === "pricing_offers"
   );
-
-  // console.log("offersPricingData : ", offersPricingData);
-
-  // CONST TO DISPLAY OFFERS PRICING DATA
-  const offersCustomSupportData = selectedServicesData.sections.find(
-    (section) => section.type === "custom_support"
-  );
-
-  // console.log("offersCustomSupportData : ", offersCustomSupportData);
 
   // ---------------------------------------
   // FUNCTION TO SELECT MATCHING OFFERS DATA
@@ -154,21 +139,6 @@ function OffersSection() {
     </div>
   ));
 
-  // CONST TO DISPLAY CUSTOM SUPPORT
-
-  const offersCustomSupport = offersCustomSupportData?.topics.map((data, i) => (
-    <div key={i} className={styles.sectionDetailWrapper}>
-      <Image
-        className={styles.serviceLeafIllustration}
-        src="/illustrations/greenLeaf.svg"
-        alt="illustration feuille verte"
-        height={12}
-        width={12}
-      />
-      <p className={`${styles.sectionDetail} ${styles.padding}`}>{data}</p>
-    </div>
-  ));
-
   return (
     <div className={styles.offersContainer}>
       <h2 className={styles.sectionTitle}>Niveaux d'offre</h2>
@@ -209,15 +179,6 @@ function OffersSection() {
             de questions restantes d'une année sur l'autre : un forfait = une
             année civile.
           </p>
-        </div>
-      )}
-      {offersCustomSupport && (
-        <div>
-          <h3 className={styles.sectionSubtitle}>
-            Des accompagnements sur-mesure
-          </h3>
-          <h4 className={styles.paragraphTitle}>Quelles thématiques ?</h4>
-          {offersCustomSupport}
         </div>
       )}
     </div>

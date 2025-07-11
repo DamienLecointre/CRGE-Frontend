@@ -17,6 +17,7 @@ import NavBurgerMenu from "./Header/NavBurgerMenu";
 import TeamSection from "./ServicesSections/TeamSection";
 import ServicesCardContact from "./UIKit/ServicesCardContact";
 import OffersSection from "./ServicesSections/OffersSection";
+import CustomSupportSection from "./ServicesSections/CustomSupportSection";
 
 //STYLES IMPORTS
 import styles from "../styles/Services.module.css";
@@ -99,6 +100,7 @@ function Services() {
               <div className={styles.textContainer}>
                 <TeamSection />
                 <OffersSection />
+                <CustomSupportSection />
               </div>
               <ServicesCardContact />
             </div>
