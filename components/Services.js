@@ -18,6 +18,7 @@ import TeamSection from "./ServicesSections/TeamSection";
 import ServicesCardContact from "./UIKit/ServicesCardContact";
 import OffersSection from "./ServicesSections/OffersSection";
 import CustomSupportSection from "./ServicesSections/CustomSupportSection";
+import EventsLink from "./ServicesSections/EventsLink";
 
 //STYLES IMPORTS
 import styles from "../styles/Services.module.css";
@@ -104,6 +105,7 @@ function Services() {
               </div>
               <ServicesCardContact />
             </div>
+            <EventsLink />
           </div>
         </div>
       </main>

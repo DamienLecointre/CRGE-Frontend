@@ -5,6 +5,7 @@
       "category": "Formation",
       "title": "Formation : Communiquer sur les réseaux sociaux pour faire connaître son GE",
       "lieu": "Distanciel",
+      "topic": "Gestion",
       "speaker": {
         "name": "Aurélie Edely",
         "role": "chargée de communication à CRGE"
@@ -77,6 +78,7 @@
       "category": "Webinaire",
       "title": "Atelier pratique - Externalisation du CSE : Enjeux, modalités et bonnes pratiques",
       "lieu": "Distanciel",
+      "topic": "Formation",
       "speaker": {
         "name": "Julie VANDÔME",
         "role": "Directrice opérationnelle de CRGE"
@@ -98,6 +100,7 @@
       "category": "Formation",
       "title": "Formation : Construire une stratégie RH adaptée au fonctionnement des GE",
       "lieu": "Présentiel (Toulouse)",
+      "topic": "Paye",
       "speaker": {
         "name": "Hugo Lefèvre",
         "role": "consultant RH spécialisé GE"
@@ -156,6 +159,7 @@
       "category": "Formation flash",
       "title": "Formation Flash : Réaliser une DPAE sans erreur",
       "lieu": "Distanciel",
+      "topic": "Gestion",
       "speaker": {
         "name": "Julie Mercier",
         "role": "experte paie et déclarations sociales"
@@ -207,6 +211,7 @@
       "category": "Webinaire",
       "title": "Webinaire : Cadre juridique de la mutualisation des salariés",
       "lieu": "Distanciel",
+      "topic": "Juridique",
       "speaker": {
         "name": "Cyrielle BERGER",
         "role": "Directrice de CRGE"
@@ -230,6 +235,7 @@
       "category": "Formation",
       "title": "Formation : Accompagner les salariés multisites dans un GE",
       "lieu": "Présentiel (Bordeaux)",
+      "topic": "Formation",
       "speaker": {
         "name": "Thomas Roussel",
         "role": "psychologue du travail"
@@ -287,6 +293,7 @@
       "category": "Formation",
       "title": "Formation : Intégrer l’égalité professionnelle dans les pratiques RH d’un GE",
       "lieu": "Distanciel",
+      "topic": "Formation",
       "speaker": {
         "name": "Isabelle Moreau",
         "role": "consultante en égalité professionnelle"
@@ -345,6 +352,7 @@
       "category": "Formation flash",
       "title": "Formation Flash : Prévenir les risques psychosociaux dans les GE",
       "lieu": "Distanciel",
+      "topic": "Formation",
       "speaker": {
         "name": "Laurent Petit",
         "role": "psychologue du travail"
@@ -403,6 +411,7 @@
       "category": "Webinaire",
       "title": "Webinaire : Réussir l’intégration des nouveaux salariés dans un GE",
       "lieu": "Distanciel",
+      "topic": "Gestion",
       "speaker": {
         "name": "Marc Villeneuve",
         "role": "expert en management RH"
@@ -426,6 +435,7 @@
       "category": "Formation",
       "title": "Formation : Sécuriser les contrats de travail dans un GE",
       "lieu": "Présentiel (Lyon)",
+      "topic": "Paye",
       "speaker": {
         "name": "Chloé Garnier",
         "role": "avocate en droit social"
