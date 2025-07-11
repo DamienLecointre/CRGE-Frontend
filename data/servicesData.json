@@ -13,7 +13,7 @@
           "members": [
             {
               "name": "Charlène MARTIN",
-              "role": "Conseillère juridique (salariée CRGE)",
+              "role": "Conseillère juridique",
               "picture":"/ressources/JuridiqueCharlene.png"
             },
             {
@@ -68,7 +68,32 @@
             "La demande de relecture, de commentaire, d'aide à la rédaction ou d'analyse d'un acte juridique (contrat, statuts, convention, accord)",
             "Toute demande faisant l'objet d'une prestation de service dédiée"
           ],
-          "access": "En adhérant à CRGE et en souscrivant un abonnement annuel et forfaitaire. Son tarif, dégressif, varie selon le volume de questions :"
+          "access": "En adhérant à CRGE et en souscrivant un abonnement annuel et forfaitaire*. Son tarif, dégressif, varie selon le volume de questions :"
+        },
+        {
+          "type": "pricing_offers",
+          "pricing":[
+            {
+              "title": "10 questions",
+              "price": "400€",
+              "unit": "soit 40€ l'unité"
+            },
+            {
+              "title": "20 questions",
+              "price": "720€",
+              "unit": "soit 36€ l'unité"
+            },
+            {
+              "title": "30 questions",
+              "price": "1020€",
+              "unit": "soit 34€ l'unité"
+            },
+            {
+              "title": "Question unitaire",
+              "price": "50€",
+              "unit": ""
+            }
+          ]
         },
         {
           "type": "custom_support",
