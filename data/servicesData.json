@@ -202,8 +202,8 @@
           ]
         },
         {
-          "type": "access",
-          "content": "En adhérant à CRGE et en prenant rendez-vous pour exposer votre besoin. Consultez notre page Nous rejoindre ou contactez-nous."
+          "type": "offer_scope",
+          "access": "En adhérant à CRGE et en prenant rendez-vous pour exposer votre besoin. Consultez notre page Nous rejoindre ou contactez-nous."
         }
       ]
     },
