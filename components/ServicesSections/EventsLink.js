@@ -16,11 +16,9 @@ import styles from "../../styles/ServicesSections/EventsLink.module.css";
 function EventsLink() {
   // CONST TO GET SERVICES TITLE
   const servicesContent = useSelector((state) => state.services.value);
-  console.log("servicesContent :", servicesContent);
 
   // CONT TO GET ALL EVENTS
   const events = useSelector((state) => state.homepage.events);
-  console.log("events : ", events);
 
   // CONST TO FILTER EVENTS BY TOPICS
   const filteredEvents = events?.filter(

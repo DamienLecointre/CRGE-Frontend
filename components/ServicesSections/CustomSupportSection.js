@@ -31,14 +31,10 @@ function CustomSupportSection() {
     return null;
   }
 
-  console.log("selectedServicesData : ", selectedServicesData);
-
   // CONST TO DISPLAY OFFERS PRICING DATA
   const offersCustomSupportData = selectedServicesData.sections.find(
     (section) => section.type === "custom_support"
   );
-
-  // console.log("offersCustomSupportData : ", offersCustomSupportData);
 
   // CONST TO DISPLAY CUSTOM SUPPORT
 

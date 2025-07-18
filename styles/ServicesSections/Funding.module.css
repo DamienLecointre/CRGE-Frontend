@@ -1,0 +1,32 @@
+/* -----------
+GENERAL TAG
+----------- */
+
+.sectionTitle {
+  font-size: var(--fontSize25);
+  font-weight: var(--fontWeightBold);
+  color: var(--colorBlue);
+  text-decoration: underline;
+  text-decoration-color: var(--bgAccentColorLow);
+  text-decoration-thickness: 8px;
+  text-underline-offset: -4px;
+  text-decoration-skip-ink: none;
+  margin: 48px 0 32px;
+}
+
+.sectionDetail {
+  font-family: var(--fontFamilyOpen);
+  font-size: var(--fontSize1);
+  font-weight: var(--fontWeightRegular);
+  line-height: var(--lineHeight15);
+  color: var(--colorSecondary);
+}
+
+/* -----------
+SPECIAL TAG
+----------- */
+
+.margin {
+  margin-top: 18px;
+  margin-bottom: 18px;
+}

@@ -16,6 +16,7 @@ import Hero from "./Hero/Hero";
 import NavBurgerMenu from "./Header/NavBurgerMenu";
 import TeamSection from "./ServicesSections/TeamSection";
 import ServicesCardContact from "./UIKit/ServicesCardContact";
+import Funding from "./ServicesSections/Funding";
 import OffersSection from "./ServicesSections/OffersSection";
 import CustomSupportSection from "./ServicesSections/CustomSupportSection";
 import EventsLink from "./ServicesSections/EventsLink";
@@ -102,6 +103,7 @@ function Services() {
             <div className={styles.container}>
               <div className={styles.textContainer}>
                 <TeamSection />
+                <Funding />
                 <OffersSection />
                 <CustomSupportSection />
               </div>
