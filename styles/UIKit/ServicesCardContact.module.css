@@ -17,4 +17,15 @@
   text-decoration-thickness: 8px;
   text-underline-offset: -4px;
   text-decoration-skip-ink: none;
+  word-break: break-word;
+}
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 950px) {
+  .cardContainer {
+    width: 100%;
+  }
 }

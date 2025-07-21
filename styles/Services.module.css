@@ -56,3 +56,23 @@ BREADCRUMB
 .lastBreadcrumb {
   color: var(--colorSecondaryMedium);
 }
+
+/* -------------
+MEDIA QUERIES
+------------- */
+
+@media (max-width: 950px) {
+  .container {
+    flex-direction: column;
+    row-gap: 80px;
+  }
+  .textContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .responsivepaddingInline {
+    padding-inline: 40px;
+  }
+}

@@ -52,3 +52,19 @@ SPECIAL TAG
   margin-bottom: 18px;
 }
 
+/* -------------
+MEDIA QUERIES
+------------- */
+@media (max-width: 800px) {
+  .cardsContainer {
+    flex-direction: column;
+    row-gap: 80px;
+  }
+}
+
+@media (max-width: 450px) {
+  .eventTitle {
+    font-size: var(--fontSize25);
+    line-height: var(--lineHeight35);
+  }
+}
